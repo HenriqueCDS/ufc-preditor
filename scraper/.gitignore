@@ -1,0 +1,10 @@
+# Perfil do Chromium (cookies + resultado do desafio anti-bot).
+# Nao versionar: contem estado de sessao e e recriavel.
+.pw-profile/
+
+# Saida bruta do scraper. A base publicada fica em ../DATA/.
+data/
+
+# Backups criados por finalize.py antes de sobrescrever DATA/
+*.bak
+*.tmp
