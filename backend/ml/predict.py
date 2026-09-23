@@ -15,6 +15,7 @@ import pandas as pd
 
 from .data_prep import extract_weight_class
 from .features import ALL_FEATURES, STAT_INFO, build_feature_row
+from .fighter_stats import build_fighter_stats
 
 ARTIFACTS_DIR = Path(__file__).resolve().parent / 'artifacts'
 
@@ -32,12 +33,12 @@ class Predictor:
         artifacts_dir = Path(artifacts_dir)
         if not (artifacts_dir / 'model.joblib').exists():
             raise ArtifactsNotFoundError(
-                f'Nenhum artefato em {artifacts_dir}. Rode "python -m ml.train" primeiro.'
+                f'Nenhum artefato em {artifacts_dir}. Rode "cd backend && python -m ml.train" primeiro.'
             )
         self.model = joblib.load(artifacts_dir / 'model.joblib')
         self.wc_le = joblib.load(artifacts_dir / 'weight_class_encoder.joblib')
-        self.fighters = pd.read_parquet(artifacts_dir / 'fighters.parquet').set_index('Fighter_Name')
-        self.fights = pd.read_parquet(artifacts_dir / 'fights.parquet')
+        self.fighters = pd.read_csv(artifacts_dir / 'fighters.csv').set_index('Fighter_Name')
+        self.fights = pd.read_csv(artifacts_dir / 'fights.csv')
 
     def search_fighter(self, name, top_n=5):
         name_lower = name.lower().strip()
@@ -63,6 +64,20 @@ class Predictor:
         if name not in self.fighters.index:
             raise FighterNotFoundError(f'Lutador nao encontrado: "{name}"')
         return self.fighters.loc[name]
+
+    def _resolve_name(self, name):
+        """Exact (case-insensitive) match first, then first partial match."""
+        name_l = name.strip().lower()
+        exact = [n for n in self.fighters.index if n.lower() == name_l]
+        if exact:
+            return exact[0]
+        partial = [n for n in self.fighters.index if name_l in n.lower()]
+        if partial:
+            return partial[0]
+        raise FighterNotFoundError(f'Lutador nao encontrado: "{name}"')
+
+    def fighter_stats(self, name):
+        return build_fighter_stats(self._resolve_name(name), self.fighters, self.fights)
 
     def predict_fight(self, fighter1_name, fighter2_name, weight_class='Lightweight'):
         f1 = self._get_fighter(fighter1_name)
@@ -109,20 +124,7 @@ class Predictor:
         return results
 
     def compare_fighters(self, fighter1_name, fighter2_name):
-        def find(name):
-            name_l = name.strip().lower()
-            exact = [n for n in self.fighters.index if n.lower() == name_l]
-            if exact:
-                return exact[0]
-            partial = [n for n in self.fighters.index if name_l in n.lower()]
-            return partial[0] if partial else None
-
-        name1, name2 = find(fighter1_name), find(fighter2_name)
-        if name1 is None:
-            raise FighterNotFoundError(f'Lutador nao encontrado: "{fighter1_name}"')
-        if name2 is None:
-            raise FighterNotFoundError(f'Lutador nao encontrado: "{fighter2_name}"')
-
+        name1, name2 = self._resolve_name(fighter1_name), self._resolve_name(fighter2_name)
         s1, s2 = self.fighters.loc[name1], self.fighters.loc[name2]
         adv = {1: 0, 2: 0}
         stats = []

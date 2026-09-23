@@ -1,0 +1,15 @@
+# Runtime deps for the Vercel Python service (main.py).
+# uvicorn is only used for local dev (`uvicorn main:app`) -- Vercel's Python
+# runtime serves the ASGI `app` directly and doesn't need it, but installing
+# it here does no harm.
+fastapi>=0.117
+uvicorn>=0.34
+
+# ml/ package deps (training + inference). xgboost is only actually needed
+# at inference time because it's the model train.py picked as best; if you
+# retrain and a sklearn-only model wins, you can drop this dependency.
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.5
+xgboost>=2.0
+joblib>=1.4

@@ -41,3 +41,63 @@ export interface CardFightInput {
   f2: string;
   weight_class?: string;
 }
+
+export type MethodGroup = "ko_tko" | "submission" | "decision" | "other";
+
+export interface FighterPercentile {
+  key: string;
+  label: string;
+  value: number;
+  /** 0-100, already inverted for "baixo e melhor" stats: higher is always better. */
+  percentile: number;
+  direction: StatDirection;
+}
+
+export interface FighterRecord {
+  fights: number;
+  wins: number;
+  losses: number;
+  win_rate: number | null;
+  finish_rate: number | null;
+  current_streak: number;
+  best_streak: number;
+  wins_by: Record<MethodGroup, number>;
+  losses_by: Record<MethodGroup, number>;
+}
+
+export interface FighterStriking {
+  sig_landed: number;
+  sig_attempted: number;
+  sig_accuracy: number | null;
+  sig_absorbed: number;
+  sig_defense: number | null;
+  knockdowns: number;
+  td_landed: number;
+  td_attempted: number;
+  td_accuracy: number | null;
+  sub_attempts: number;
+  control_avg_sec: number;
+  avg_fight_min: number;
+  targets: { head: number | null; body: number | null; leg: number | null };
+  positions: { distance: number | null; clinch: number | null; ground: number | null };
+}
+
+export interface FighterHistoryItem {
+  date: string;
+  opponent: string;
+  result: "W" | "L";
+  method: string;
+  round: number | null;
+  weight_class: string;
+}
+
+/** `record`/`striking` are null when the fighter has no fight in the UFC dataset. */
+export interface FighterStatsResult {
+  name: string;
+  profile: { height_cm: number; reach_cm: number; weight_lbs: number; age: number };
+  percentiles: FighterPercentile[];
+  record: FighterRecord | null;
+  striking: FighterStriking | null;
+  by_year: { year: number; wins: number; losses: number }[];
+  history: FighterHistoryItem[];
+}

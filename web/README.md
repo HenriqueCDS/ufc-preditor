@@ -1,20 +1,25 @@
 # UFC Preditor — Frontend
 
-Next.js (App Router) + TypeScript + Tailwind CSS + Chart.js. Consome uma API
-de predição ainda não implementada (ver `../ml/` para a lógica de treino e
-inferência já extraída do notebook).
+Next.js (App Router) + TypeScript + Tailwind CSS + Chart.js. Consome o
+backend FastAPI em [`../backend/`](../backend/), deployado junto como um
+**Vercel Service** (ver [`../vercel.json`](../vercel.json)) — mesma origem,
+sem CORS.
 
 ## Rodando localmente
 
 ```bash
 npm install
-cp .env.local.example .env.local   # aponte NEXT_PUBLIC_API_URL para o backend
 npm run dev
 ```
 
-Sem um backend rodando em `NEXT_PUBLIC_API_URL`, as páginas `/predict` e
-`/compare` carregam normalmente mas mostram um erro amigável ao tentar
-buscar/prever (`"NEXT_PUBLIC_API_URL nao configurada..."`).
+Sozinho (`npm run dev`), as páginas `/predict` e `/compare` carregam
+normalmente, mas as chamadas a `/api/...` falham (nenhum backend respondendo
+em `/api`) até você também rodar o backend. Duas opções:
+
+- **Junto, como em produção**: `npx vercel dev` na raiz do repo (usa o
+  `vercel.json` para servir frontend + backend na mesma origem)
+- **Separado**: rode `uvicorn main:app --port 8000` em `backend/` e crie
+  `web/.env.local` com `NEXT_PUBLIC_API_URL=http://localhost:8000/api`
 
 ## Páginas
 
@@ -23,27 +28,25 @@ buscar/prever (`"NEXT_PUBLIC_API_URL nao configurada..."`).
 | `/` | Dashboard — resumo do dataset e comparação de AUC-ROC entre os 4 modelos (`src/data/model-metrics.ts`, snapshot estático do último treino) |
 | `/predict` | Formulário de predição de luta (dois lutadores + categoria de peso) com gráfico de probabilidade |
 | `/compare` | Comparação de estatísticas de carreira entre dois lutadores (radar chart + tabela) |
+| `/statistics` | Abas "Geral" (EDA: metodos, categorias de peso, evolucao temporal, correlacoes e striking; dados estaticos em `src/data/eda-stats.json`, regenerados com `cd backend && python -m ml.eda`) e "Por lutador" (`GET /api/fighters/stats`: cartel, metodos, percentis, striking/grappling, historico) |
 
-## Contrato de API esperado (`src/lib/api.ts`)
-
-O backend ainda não foi escolhido — este arquivo define o contrato HTTP que
-qualquer implementação (FastAPI, Flask, ...) precisa satisfazer:
+## Contrato de API (`src/lib/api.ts`)
 
 ```
-GET  /fighters/search?q=...&top_n=8        -> string[]
-GET  /fighters/compare?f1=...&f2=...       -> CompareFightersResult
-POST /predict        { fighter1, fighter2, weight_class } -> PredictFightResult
-POST /predict/card    { fights: [{ f1, f2, weight_class? }] } -> PredictFightResult[]
+GET  /api/fighters/search?q=...&top_n=8    -> string[]
+GET  /api/fighters/compare?f1=...&f2=...   -> CompareFightersResult
+GET  /api/fighters/stats?name=...            -> FighterStatsResult
+POST /api/predict        { fighter1, fighter2, weight_class } -> PredictFightResult
+POST /api/predict/card    { fights: [{ f1, f2, weight_class? }] } -> PredictFightResult[]
 ```
 
-Os tipos de retorno (`src/lib/types.ts`) espelham exatamente os dicts que
-`ml/predict.py::Predictor` já retorna — um backend HTTP fino em cima dessa
-classe (FastAPI, por exemplo) atende o contrato sem transformação extra.
+Os tipos de retorno (`src/lib/types.ts`) espelham os dicts que
+`backend/ml/predict.py::Predictor` retorna. `NEXT_PUBLIC_API_URL` é opcional —
+por padrão o client usa o path relativo `/api`, que resolve pra mesma origem
+(correto tanto em produção via Vercel Services quanto em `vercel dev` local).
 
 ## Deploy
 
-Pensado para o Vercel (é um app Next.js padrão). Se o backend de predição
-não também for hospedado no Vercel (scikit-learn/xgboost/pandas em Python
-Serverless Function tem limite de tamanho de bundle apertado), aponte
-`NEXT_PUBLIC_API_URL` para onde o backend estiver (Render, Railway, Fly.io,
-etc.) e configure CORS lá para aceitar o domínio do frontend.
+Este projeto é um dos dois **services** declarados em `../vercel.json`
+(`root: "web/"`). Um único deploy do repositório sobe frontend e backend
+juntos, no mesmo domínio — não é um projeto Vercel isolado.

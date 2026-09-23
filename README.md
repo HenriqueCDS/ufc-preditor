@@ -19,6 +19,7 @@ Projeto completo de Machine Learning para prever o resultado de lutas do UFC —
 8. [Limitações e Próximos Passos](#8-limitações-e-próximos-passos)
 9. [Como usar](#9-como-usar)
 10. [Tecnologias](#10-tecnologias)
+11. [Aplicação Web](#11-aplicação-web)
 
 ---
 
@@ -48,6 +49,11 @@ Tipo de problema: **classificação binária**
 |---|---|
 | `ufc_fighters_final.csv` | 4.455 lutadores com estatísticas de carreira |
 | `ufc_gold_dataset_final.csv` | 8.551 lutas registradas (1994–2026) |
+
+**Mantendo os dados atualizados:** [`scraper/`](scraper/) reconstrói esses dois
+CSVs direto do ufcstats.com de forma incremental (só lutadores cujo cartel
+mudou, só eventos novos), sem alterar o schema que este notebook lê — ver
+[`scraper/README.md`](scraper/README.md).
 
 **Features disponíveis:**
 - **Físicas:** altura, peso, alcance (wingspan)
@@ -176,11 +182,12 @@ Para cada luta `F1 vs F2`, é criada uma cópia espelhada `F2 vs F1`.
 
 | Aspecto | Resultado |
 |---|---|
-| **Melhor modelo** | Gradient Boosting / XGBoost |
-| **AUC-ROC** | ~0.72–0.78 |
-| **Acurácia** | 65–72% |
+| **Melhor modelo (validação)** | Gradient Boosting — AUC-ROC 0.8105 (XGBoost e Regressão Logística ficam a menos de 0.001 de distância) |
+| **Melhor modelo (teste)** | XGBoost — AUC-ROC 0.7943 |
+| **AUC-ROC** | 0.788–0.810 entre os 4 modelos (validação e teste) |
+| **Acurácia** | 70–73% (validação), 70–71% (teste) |
 | **Feature mais importante** | `DIFF_Win_Rate` e `DIFF_Weighted_Exp` |
-| **Overfitting** | Mínimo — gap treino/validação < 0.05 |
+| **Overfitting** | Mínimo — gap validação/teste ≈ 0.015–0.02 de AUC-ROC |
 
 ### Por que Gradient Boosting e XGBoost vencem?
 
@@ -208,11 +215,10 @@ Para cada luta `F1 vs F2`, é criada uma cópia espelhada `F2 vs F1`.
 - Fatores psicológicos: motivação, pressão, ambiente do evento
 - Mudanças recentes: novo camp de treinamento, novo treinador
 
-> 65–72% de acurácia é excelente para predição de MMA. Quem afirma acertar mais de 90% está exagerando.
+> 70–73% de acurácia é excelente para predição de MMA. Quem afirma acertar mais de 90% está exagerando.
 
 ### Melhorias futuras
 
-- Data scraping para manter os dados sempre atualizados
 - Estatísticas por luta recente (não só totais de carreira)
 - Dados de camp de treinamento e coaching staff
 - NLP em entrevistas pré-luta para detectar confiança/pressão
@@ -221,6 +227,8 @@ Para cada luta `F1 vs F2`, é criada uma cópia espelhada `F2 vs F1`.
 ---
 
 ## 9. Como usar
+
+Direto no notebook:
 
 ```python
 # Buscar lutador pelo nome
@@ -236,6 +244,8 @@ compare_fighters("Conor McGregor", "Dustin Poirier")
 predict_card(card_fights)
 ```
 
+Ou pela aplicação web (mesma lógica, sem precisar abrir o Jupyter) — ver [seção 11](#11-aplicação-web).
+
 ---
 
 ## 10. Tecnologias
@@ -250,39 +260,44 @@ predict_card(card_fights)
 
 ---
 
-## 11. Aplicação Web (em construção)
+## 11. Aplicação Web
 
-A lógica deste notebook foi extraída para um pacote reutilizável em
-[`ml/`](ml/), e um frontend Next.js foi iniciado em [`web/`](web/).
+A lógica deste notebook foi extraída para um backend FastAPI e um frontend
+Next.js, deployados juntos no Vercel via [Services](https://vercel.com/docs/services)
+(mesmo domínio, sem CORS) — ver [`vercel.json`](vercel.json).
 
 ```
-ml/
-  data_prep.py    # limpeza + parsing (equivalente às células 2, 6, 11)
-  features.py     # features DIFF_/compostas + augmentação (células 26-29)
-  train.py        # treina os 4 modelos e salva artefatos em ml/artifacts/
-  predict.py       # Predictor: search_fighter/predict_fight/compare_fighters/
-                    #   predict_card sem I/O — pronto para qualquer backend
+backend/
+  main.py           # FastAPI: rotas /api/... chamando ml.predict.Predictor
+  requirements.txt
+  ml/
+    data_prep.py    # limpeza + parsing (equivalente às células 2, 6, 11)
+    features.py     # features DIFF_/compostas + augmentação (células 26-29)
+    train.py        # treina os 4 modelos e salva artefatos em ml/artifacts/
+    predict.py      # Predictor: search_fighter/predict_fight/compare_fighters/
+                     #   predict_card — usado pelo main.py, sem I/O próprio
+    artifacts/       # model.joblib, fighters.csv, fights.csv, ... (versionado)
 web/
-  src/app/         # Dashboard, /predict, /compare (Next.js App Router)
-  src/lib/api.ts    # contrato HTTP esperado do backend (ainda não escolhido)
+  src/app/          # Dashboard, /predict, /compare, /statistics (Next.js App Router)
+  src/lib/api.ts     # client HTTP para /api/... (mesmo domínio em produção)
+vercel.json          # declara os 2 services (web/, backend/) e o roteamento
 ```
 
-Rodar o treino localmente (gera `ml/artifacts/`, ~35 min em CPU comum devido
-à busca de hiperparâmetros; não requer GPU):
+Rodar o treino localmente (regrava `backend/ml/artifacts/`, ~35 min em CPU
+comum devido à busca de hiperparâmetros; não requer GPU — commitar o
+resultado depois, veja [`backend/README.md`](backend/README.md)):
 
 ```bash
-pip install -r ml/requirements.txt
+cd backend
+pip install -r requirements.txt
 python -m ml.train
 ```
 
-Rodar o frontend:
+Rodar frontend + backend juntos, como em produção:
 
 ```bash
-cd web
-npm install
-npm run dev
+npx vercel dev
 ```
 
-O backend que vai servir `ml.predict.Predictor` via HTTP ainda está em
-definição — o contrato que ele precisa implementar está documentado em
-[`web/src/lib/api.ts`](web/src/lib/api.ts) e [`web/README.md`](web/README.md).
+Ou cada um separado — veja [`backend/README.md`](backend/README.md) e
+[`web/README.md`](web/README.md) para detalhes e o contrato de API completo.

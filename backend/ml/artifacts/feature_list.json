@@ -1,0 +1,23 @@
+[
+  "DIFF_Height_cm",
+  "DIFF_Weight_lbs",
+  "DIFF_Reach_cm",
+  "DIFF_Age",
+  "DIFF_Win_Rate",
+  "DIFF_Total_Fights",
+  "DIFF_SLpM",
+  "DIFF_Str_Acc_f",
+  "DIFF_SApM",
+  "DIFF_Str_Def_f",
+  "DIFF_TD_Avg",
+  "DIFF_TD_Acc_f",
+  "DIFF_TD_Def_f",
+  "DIFF_Sub_Avg",
+  "DIFF_Efficiency",
+  "DIFF_TD_Success",
+  "DIFF_Grappling_Ctrl",
+  "DIFF_Strike_Ratio",
+  "DIFF_Weighted_Exp",
+  "DIFF_Streak",
+  "Weight_Class_Enc"
+]

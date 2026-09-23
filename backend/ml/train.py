@@ -1,12 +1,14 @@
 """Train the 4 candidate models and export inference artifacts.
 
 Runs entirely on CPU in a few minutes (~17k rows, 21 features) -- no GPU,
-no cloud needed. Re-run whenever data/*.csv changes:
+no cloud needed. Re-run whenever ../../data/*.csv changes:
 
-    python -m ml.train
+    cd backend && python -m ml.train
 
-Everything downstream (the API, whichever framework you pick) only ever
-reads ml/artifacts/ -- it never imports scikit-learn training code.
+Artifacts land in backend/ml/artifacts/ and are committed to git -- Vercel's
+build step never runs this (it would need sklearn/xgboost just to train, and
+takes ~35min). main.py only ever reads the artifacts, never imports this
+module.
 """
 import json
 import time
@@ -30,8 +32,8 @@ from .data_prep import load_and_clean_fighters, load_and_clean_fights
 from .features import ALL_FEATURES, build_training_dataset
 
 SEED = 42
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / 'data'
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+DATA_DIR = REPO_ROOT / 'data'
 ARTIFACTS_DIR = Path(__file__).resolve().parent / 'artifacts'
 
 
@@ -145,8 +147,8 @@ def train():
     ARTIFACTS_DIR.mkdir(exist_ok=True)
     joblib.dump(best_pipe, ARTIFACTS_DIR / 'model.joblib')
     joblib.dump(wc_le, ARTIFACTS_DIR / 'weight_class_encoder.joblib')
-    fighters_clean.to_parquet(ARTIFACTS_DIR / 'fighters.parquet', index=False)
-    fights_clean.to_parquet(ARTIFACTS_DIR / 'fights.parquet', index=False)
+    fighters_clean.to_csv(ARTIFACTS_DIR / 'fighters.csv', index=False)
+    fights_clean.to_csv(ARTIFACTS_DIR / 'fights.csv', index=False)
     (ARTIFACTS_DIR / 'feature_list.json').write_text(json.dumps(ALL_FEATURES, indent=2), encoding='utf-8')
     (ARTIFACTS_DIR / 'metrics.json').write_text(
         json.dumps({'best_model': best_name, 'models': metrics}, indent=2, default=float),

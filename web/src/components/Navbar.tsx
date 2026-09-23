@@ -4,6 +4,7 @@ const LINKS = [
   { href: "/", label: "Dashboard" },
   { href: "/predict", label: "Prever Luta" },
   { href: "/compare", label: "Comparar Lutadores" },
+  { href: "/statistics", label: "Estatisticas" },
 ];
 
 export function Navbar() {
