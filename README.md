@@ -247,3 +247,42 @@ predict_card(card_fights)
 | `scikit-learn` | Pipeline, modelos, métricas, busca de hiperparâmetros |
 | `xgboost` | Gradient Boosting otimizado |
 | `scipy` | Winsorização e estatísticas |
+
+---
+
+## 11. Aplicação Web (em construção)
+
+A lógica deste notebook foi extraída para um pacote reutilizável em
+[`ml/`](ml/), e um frontend Next.js foi iniciado em [`web/`](web/).
+
+```
+ml/
+  data_prep.py    # limpeza + parsing (equivalente às células 2, 6, 11)
+  features.py     # features DIFF_/compostas + augmentação (células 26-29)
+  train.py        # treina os 4 modelos e salva artefatos em ml/artifacts/
+  predict.py       # Predictor: search_fighter/predict_fight/compare_fighters/
+                    #   predict_card sem I/O — pronto para qualquer backend
+web/
+  src/app/         # Dashboard, /predict, /compare (Next.js App Router)
+  src/lib/api.ts    # contrato HTTP esperado do backend (ainda não escolhido)
+```
+
+Rodar o treino localmente (gera `ml/artifacts/`, ~35 min em CPU comum devido
+à busca de hiperparâmetros; não requer GPU):
+
+```bash
+pip install -r ml/requirements.txt
+python -m ml.train
+```
+
+Rodar o frontend:
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+O backend que vai servir `ml.predict.Predictor` via HTTP ainda está em
+definição — o contrato que ele precisa implementar está documentado em
+[`web/src/lib/api.ts`](web/src/lib/api.ts) e [`web/README.md`](web/README.md).
