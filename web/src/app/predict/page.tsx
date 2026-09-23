@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { FighterSearchInput } from "@/components/FighterSearchInput";
+import { FighterComparison } from "@/components/FighterComparison";
 import { WinProbabilityChart } from "@/components/charts/WinProbabilityChart";
-import { ApiError, predictFight } from "@/lib/api";
-import type { PredictFightResult } from "@/lib/types";
+import { ApiError, compareFighters, predictFight } from "@/lib/api";
+import type { CompareFightersResult, PredictFightResult } from "@/lib/types";
 
 const WEIGHT_CLASSES = [
   "Strawweight",
@@ -24,6 +25,7 @@ export default function PredictPage() {
   const [fighter2, setFighter2] = useState("");
   const [weightClass, setWeightClass] = useState("Lightweight");
   const [result, setResult] = useState<PredictFightResult | null>(null);
+  const [comparison, setComparison] = useState<CompareFightersResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -34,15 +36,21 @@ export default function PredictPage() {
     if (!canSubmit) return;
     setLoading(true);
     setError(null);
-    try {
-      const res = await predictFight({ fighter1, fighter2, weightClass });
-      setResult(res);
-    } catch (err) {
-      setResult(null);
-      setError(err instanceof ApiError ? err.message : "Falha ao prever a luta.");
-    } finally {
-      setLoading(false);
-    }
+    // Independent calls: one failing must not hide the other's result.
+    const [prediction, comparisonResult] = await Promise.allSettled([
+      predictFight({ fighter1, fighter2, weightClass }),
+      compareFighters(fighter1, fighter2),
+    ]);
+    setResult(prediction.status === "fulfilled" ? prediction.value : null);
+    setComparison(comparisonResult.status === "fulfilled" ? comparisonResult.value : null);
+
+    const failures = [prediction, comparisonResult].flatMap((r) =>
+      r.status === "rejected"
+        ? [r.reason instanceof ApiError ? r.reason.message : "Falha ao consultar a API."]
+        : []
+    );
+    setError(failures.length > 0 ? [...new Set(failures)].join(" ") : null);
+    setLoading(false);
   }
 
   return (
@@ -50,7 +58,7 @@ export default function PredictPage() {
       <div>
         <h1 className="text-2xl font-bold">Prever Luta</h1>
         <p className="mt-1 text-sm text-neutral-400">
-          Escolha os dois lutadores e a categoria de peso para estimar o vencedor.
+          Escolha os dois lutadores e a categoria de peso para estimar o vencedor e ver a comparacao de estatisticas.
         </p>
       </div>
 
@@ -117,6 +125,13 @@ export default function PredictPage() {
               <dd className="text-neutral-200">{result.weight_class}</dd>
             </div>
           </dl>
+        </section>
+      )}
+
+      {comparison && (
+        <section className="flex flex-col gap-4">
+          <h2 className="text-lg font-semibold">Comparacao entre os lutadores</h2>
+          <FighterComparison result={comparison} />
         </section>
       )}
     </div>

@@ -12,7 +12,7 @@ npm install
 npm run dev
 ```
 
-Sozinho (`npm run dev`), as páginas `/predict` e `/compare` carregam
+Sozinho (`npm run dev`), a página `/predict` carrega
 normalmente, mas as chamadas a `/api/...` falham (nenhum backend respondendo
 em `/api`) até você também rodar o backend. Duas opções:
 
@@ -26,8 +26,7 @@ em `/api`) até você também rodar o backend. Duas opções:
 | Rota | Descrição |
 |---|---|
 | `/` | Dashboard — resumo do dataset e comparação de AUC-ROC entre os 4 modelos (`src/data/model-metrics.ts`, snapshot estático do último treino) |
-| `/predict` | Formulário de predição de luta (dois lutadores + categoria de peso) com gráfico de probabilidade |
-| `/compare` | Comparação de estatísticas de carreira entre dois lutadores (radar chart + tabela) |
+| `/predict` | Predição de luta (dois lutadores + categoria de peso) com gráfico de probabilidade e, logo abaixo, a comparação de estatísticas de carreira dos dois (radar chart + tabela). `/compare` redireciona para cá |
 | `/statistics` | Abas "Geral" (EDA: metodos, categorias de peso, evolucao temporal, correlacoes e striking; dados estaticos em `src/data/eda-stats.json`, regenerados com `cd backend && python -m ml.eda`) e "Por lutador" (`GET /api/fighters/stats`: cartel, metodos, percentis, striking/grappling, historico) |
 
 ## Contrato de API (`src/lib/api.ts`)

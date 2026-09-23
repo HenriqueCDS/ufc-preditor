@@ -278,7 +278,7 @@ backend/
                      #   predict_card — usado pelo main.py, sem I/O próprio
     artifacts/       # model.joblib, fighters.csv, fights.csv, ... (versionado)
 web/
-  src/app/          # Dashboard, /predict, /compare, /statistics (Next.js App Router)
+  src/app/          # Dashboard, /predict (prever + comparar), /statistics (Next.js App Router)
   src/lib/api.ts     # client HTTP para /api/... (mesmo domínio em produção)
 vercel.json          # declara os 2 services (web/, backend/) e o roteamento
 ```

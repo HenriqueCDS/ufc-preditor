@@ -3,6 +3,7 @@
 // rewrite `/api/(.*)` forwards straight to the backend service, so no CORS
 // and no absolute URL needed in production.
 //
+//   GET  /api/fighters                            -> string[] (all names)
 //   GET  /api/fighters/search?q=...              -> string[]
 //   GET  /api/fighters/compare?f1=...&f2=...      -> CompareFightersResult
 //   GET  /api/fighters/stats?name=...             -> FighterStatsResult
@@ -53,6 +54,19 @@ async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
 export function searchFighters(query: string, topN = 8): Promise<FighterSearchResult> {
   const params = new URLSearchParams({ q: query, top_n: String(topN) });
   return apiFetch(`/fighters/search?${params.toString()}`);
+}
+
+let fightersPromise: Promise<FighterSearchResult> | null = null;
+
+// All fighter names, fetched once and cached; filtering happens client-side.
+export function listFighters(): Promise<FighterSearchResult> {
+  if (!fightersPromise) {
+    fightersPromise = apiFetch<FighterSearchResult>("/fighters").catch((err) => {
+      fightersPromise = null; // allow retry after a failure
+      throw err;
+    });
+  }
+  return fightersPromise;
 }
 
 export function predictFight(input: {

@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { ApiError, searchFighters } from "@/lib/api";
+import { useEffect, useMemo, useState } from "react";
+import { ApiError, listFighters } from "@/lib/api";
 
 interface FighterSearchInputProps {
   label: string;
@@ -10,32 +10,40 @@ interface FighterSearchInputProps {
   placeholder?: string;
 }
 
+const MAX_SUGGESTIONS = 50;
+
+function normalize(text: string) {
+  return text
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
 export function FighterSearchInput({ label, value, onChange, placeholder }: FighterSearchInputProps) {
-  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [fighters, setFighters] = useState<string[]>([]);
   const [open, setOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const trimmed = value.trim();
-    const timeoutId = setTimeout(() => {
-      if (trimmed.length < 2) {
-        setSuggestions([]);
-        setError(null);
-        return;
-      }
-      searchFighters(trimmed)
-        .then((results) => {
-          setSuggestions(results);
-          setError(null);
-        })
-        .catch((err: unknown) => {
-          setSuggestions([]);
-          setError(err instanceof ApiError ? err.message : "Falha ao buscar lutadores.");
-        });
-    }, 300);
+    let cancelled = false;
+    listFighters()
+      .then((names) => {
+        if (!cancelled) setFighters(names);
+      })
+      .catch((err: unknown) => {
+        if (!cancelled) setError(err instanceof ApiError ? err.message : "Falha ao buscar lutadores.");
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
-    return () => clearTimeout(timeoutId);
-  }, [value]);
+  const suggestions = useMemo(() => {
+    const query = normalize(value);
+    const filtered = query ? fighters.filter((name) => normalize(name).includes(query)) : fighters;
+    return filtered.slice(0, MAX_SUGGESTIONS);
+  }, [fighters, value]);
 
   return (
     <div className="relative">

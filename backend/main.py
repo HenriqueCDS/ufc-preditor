@@ -53,6 +53,11 @@ def health():
     return {"status": "ok", "fighters": len(predictor.fighters)}
 
 
+@app.get("/api/fighters")
+def list_fighters():
+    return sorted(predictor.fighters.index)
+
+
 @app.get("/api/fighters/search")
 def search_fighters(q: str = Query(min_length=1), top_n: int = Query(default=8, le=25)):
     return predictor.search_fighter(q, top_n=top_n)

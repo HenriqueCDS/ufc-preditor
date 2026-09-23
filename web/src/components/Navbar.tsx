@@ -2,8 +2,7 @@ import Link from "next/link";
 
 const LINKS = [
   { href: "/", label: "Dashboard" },
-  { href: "/predict", label: "Prever Luta" },
-  { href: "/compare", label: "Comparar Lutadores" },
+  { href: "/predict", label: "Prever e Comparar" },
   { href: "/statistics", label: "Estatisticas" },
 ];
 

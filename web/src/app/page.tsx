@@ -19,13 +19,7 @@ export default function DashboardPage() {
             href="/predict"
             className="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-500"
           >
-            Prever uma luta
-          </Link>
-          <Link
-            href="/compare"
-            className="rounded-lg border border-neutral-700 px-4 py-2 text-sm font-semibold text-neutral-200 transition hover:border-neutral-500"
-          >
-            Comparar lutadores
+            Prever e comparar lutadores
           </Link>
         </div>
       </section>
