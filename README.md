@@ -1,303 +1,304 @@
-# UFC — Preditor de Resultados com Machine Learning
+# UFC Preditor
 
-**Disciplina:** Linguagem de Programação Python Aplicada a Machine Learning  
-**Versão:** v5 (2026)
+**Pipeline de Machine Learning que transforma o histórico público do UFC em previsões de vencedor, comparações de lutadores e estatísticas — do scraper ao site, no ar como um único deploy.**
 
-Projeto completo de Machine Learning para prever o resultado de lutas do UFC — desde a limpeza dos dados até a predição de cards reais.
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.5%2B-F7931E?logo=scikitlearn&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-2.0%2B-EB6B00)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.117%2B-009688?logo=fastapi&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-scraper-2EAD33?logo=playwright&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-4-06B6D4?logo=tailwindcss&logoColor=white)
+![Chart.js](https://img.shields.io/badge/Chart.js-4.5-FF6384?logo=chartdotjs&logoColor=white)
+![Vercel](https://img.shields.io/badge/deploy-Vercel%20Services-000000?logo=vercel&logoColor=white)
+![AUC-ROC](https://img.shields.io/badge/AUC--ROC%20(teste)-0.798-success)
 
----
-
-## Sumário
-
-1. [O Problema](#1-o-problema)
-2. [Dados](#2-dados)
-3. [Pipeline do Projeto](#3-pipeline-do-projeto)
-4. [Engenharia de Features](#4-engenharia-de-features)
-5. [Modelos Treinados](#5-modelos-treinados)
-6. [Avaliação](#6-avaliação)
-7. [Resultados](#7-resultados)
-8. [Limitações e Próximos Passos](#8-limitações-e-próximos-passos)
-9. [Como usar](#9-como-usar)
-10. [Tecnologias](#10-tecnologias)
-11. [Aplicação Web](#11-aplicação-web)
+Projeto da disciplina **Linguagem de Programação Python Aplicada a Machine Learning**.
 
 ---
 
-## 1. O Problema
+## O problema
 
-O UFC é a maior organização de MMA do mundo. Cada luta tem dois lutadores e apenas um vence.
+Cada luta do UFC tem dois lutadores e um vencedor. Palpite de bar e "feeling" de
+narrador não escalam — e quem promete acertar mais de 90% está vendendo
+ilusão, porque MMA tem muita variância (um golpe muda tudo).
 
-**Objetivo:** construir um modelo de ML capaz de prever **qual dos dois lutadores vai vencer** antes da luta acontecer.
+Este projeto ataca a pergunta com dados: **antes da luta, quem tem mais chance de
+vencer?** — como classificação binária (`1` = Fighter 1 vence, `0` = Fighter 2).
 
-Tipo de problema: **classificação binária**
+A tese: **a diferença entre as estatísticas de carreira dos dois lutadores
+(striking, grappling, experiência, físico) é um bom preditor do resultado.** Em
+vez de dar ao modelo os números de cada lutador, damos a *diferença* entre eles —
+assim ele aprende quem é melhor, não quem está no canto vermelho.
 
-| Valor do target | Significado |
-|---|---|
-| `1` | Fighter 1 vence |
-| `0` | Fighter 2 vence |
-
-**Hipótese central:**
-> A diferença nas estatísticas de carreira entre dois lutadores é um bom preditor do resultado. Lutadores com vantagem consistente em striking, grappling e experiência tendem a vencer mais.
-
----
-
-## 2. Dados
-
-**Fonte:** [Kaggle — UFC Dataset 1994–2026](https://www.kaggle.com/datasets/jossilva3110/ufc-dataset-1994-2026)
-
-| Arquivo | Conteúdo |
-|---|---|
-| `ufc_fighters_final.csv` | 4.455 lutadores com estatísticas de carreira |
-| `ufc_gold_dataset_final.csv` | 8.551 lutas registradas (1994–2026) |
-
-**Mantendo os dados atualizados:** [`scraper/`](scraper/) reconstrói esses dois
-CSVs direto do ufcstats.com de forma incremental (só lutadores cujo cartel
-mudou, só eventos novos), sem alterar o schema que este notebook lê — ver
-[`scraper/README.md`](scraper/README.md).
-
-**Features disponíveis:**
-- **Físicas:** altura, peso, alcance (wingspan)
-- **Técnicas:** golpes por minuto (SLpM), precisão de striking, takedowns, defesa
-- **Históricas:** Win Rate, total de lutas, sequência de vitórias/derrotas
+Com ~8,7 mil lutas e ~4,6 mil lutadores, os quatro modelos testados chegam a
+**~72% de acurácia e AUC-ROC de 0.79–0.80 em dados nunca vistos**.
 
 ---
 
-## 3. Pipeline do Projeto
+## Demonstração
 
-```
-Dados Brutos → Limpeza → Feature Engineering → Treino → Avaliação → Predição
+Saída real do `Predictor` treinado, não mockup.
+
+### Buscar um lutador
+
+```console
+>>> Predictor().search_fighter("Jones", 5)
+['Mason Jones', 'Paul Jones', 'Jon Jones', 'Nathan Jones', 'Marcus Jones']
 ```
 
-### Etapa 1 — Definindo o Problema
-Formulação como classificação binária, definição do target e das hipóteses.
+### Prever uma luta
 
-### Etapa 2 — Preparação e Limpeza dos Dados
-- Conversão de unidades americanas (pés/polegadas → cm, `%` → decimal)
-- Preenchimento de valores ausentes com **mediana** (robusta a outliers)
-- Controle de outliers com **Winsorização** (percentis 1%–99%)
-- Remoção de lutas sem resultado definido (empates, "no contest")
-- Codificação numérica das categorias de peso
+```console
+>>> Predictor().predict_fight("Islam Makhachev", "Charles Oliveira", "Lightweight")
+{
+  "predicted_winner": "Islam Makhachev",
+  "prob_fighter1": 0.870,
+  "prob_fighter2": 0.130,
+  "confidence": 0.870,
+  "confidence_level": "ALTA",
+  ...
+}
+```
 
-### Etapa 3 — Análise Exploratória (EDA)
-- Balanceamento do target (F1 vs F2)
-- Métodos de vitória: nocaute, finalização, decisão dos juízes
-- Distribuição por categorias de peso e evolução temporal (1994–2026)
-- Matriz de correlação entre estatísticas
-- Análise de striking por nível de desempenho
+### Prever um card
 
-### Etapa 4 — Engenharia de Features
-Criação das variáveis diferenciais e compostas (ver seção 4).
+```console
+Conor McGregor     vs Dustin Poirier     -> Dustin Poirier     61.2%  MEDIA
+Islam Makhachev    vs Charles Oliveira   -> Islam Makhachev    87.0%  ALTA
+Alex Pereira       vs Jiri Prochazka     -> Jiri Prochazka     64.2%  MEDIA
+```
 
-### Etapa 5 — Divisão Treino / Validação / Teste
+Lutas equilibradas saem com confiança `MEDIA`; só diferenças grandes de perfil
+chegam a `ALTA`. O modelo sabe quando não sabe.
 
-| Conjunto | Proporção | Uso |
+---
+
+## Pipeline completo
+
+Do site do UFC até a probabilidade na tela, em cinco etapas — cada uma isolada
+na sua pasta, nenhuma faz o que a anterior já fez:
+
+| # | Etapa | Onde | Saída |
+|---|---|---|---|
+| 1 | **Coletar** | [`scraper/`](scraper/) (`run_update.py`) | `DATA/*.csv` atualizados do ufcstats.com, de forma incremental |
+| 2 | **Limpar e criar features** | [`backend/ml/data_prep.py`](backend/ml/data_prep.py), [`features.py`](backend/ml/features.py) | 21 features diferenciais + augmentação por espelhamento |
+| 3 | **Treinar** | [`backend/ml/train.py`](backend/ml/train.py) | 4 modelos com busca de hiperparâmetros; `artifacts/` (modelo, métricas, tabelas) |
+| 4 | **Servir** | [`backend/main.py`](backend/main.py) + [`predict.py`](backend/ml/predict.py) | API `/api/...` sobre a classe `Predictor` |
+| 5 | **Exibir** | [`web/`](web/) | Dashboard, predição, comparação e estatísticas |
+
+O notebook [`Projeto_final_ufc_predidor.ipynb`](Projeto_final_ufc_predidor.ipynb)
+é a versão didática e original de todo o pipeline; o `backend/ml/` é a mesma
+lógica extraída para código de produção.
+
+---
+
+## Aplicação web
+
+| Rota | O que entrega |
+|---|---|
+| `/` | Dashboard: resumo do dataset e comparação de AUC-ROC entre os 4 modelos |
+| `/predict` | Escolha dois lutadores e a categoria de peso → probabilidade de cada um, gráfico, e comparação de carreira (radar + tabela). `/compare` redireciona para cá |
+| `/statistics` | Aba **Geral** (EDA: métodos de vitória, categorias, evolução temporal, correlações) e aba **Por lutador** (cartel, percentis, striking/grappling, histórico) |
+
+### API
+
+| Rota | Método | Retorno |
 |---|---|---|
-| Treino | 70% | Aprendizado dos padrões |
-| Validação | 15% | Ajuste de hiperparâmetros |
-| Teste | 15% | Avaliação final — dados nunca vistos |
+| `/api/health` | GET | Status e nº de lutadores carregados |
+| `/api/fighters` | GET | Lista de lutadores |
+| `/api/fighters/search?q=&top_n=` | GET | Nomes que casam com a busca |
+| `/api/fighters/compare?f1=&f2=` | GET | Estatísticas lado a lado e vantagens |
+| `/api/fighters/stats?name=` | GET | Perfil, percentis e histórico |
+| `/api/predict` | POST | Predição de uma luta |
+| `/api/predict/card` | POST | Predição de um card inteiro |
 
-Divisão estratificada (`stratify=y`) para manter proporção de classes em cada conjunto.
+Lutador não encontrado devolve `404` com `{"detail": "..."}`. Contrato completo em
+[backend/README.md](backend/README.md) e [web/README.md](web/README.md).
 
-### Etapa 6 — Treinamento dos Modelos
-Quatro algoritmos com busca de hiperparâmetros via `GridSearchCV` e `RandomizedSearchCV` com validação cruzada 5-fold.
+### Como rodar
 
-### Etapa 7 — Avaliação e Comparação
-Métricas múltiplas, curvas ROC, matrizes de confusão e curvas de aprendizado.
-
-### Etapa 8 — Predição em "Produção"
-Predição de lutadores individuais e de cards completos (ex.: UFC Freedom 250).
-
----
-
-## 4. Engenharia de Features
-
-### Ideia central: features diferenciais
-
-Em vez de passar as estatísticas de cada lutador separadamente, criamos **diferenças**:
-
-```
-DIFF_SLpM = SLpM(Fighter_1) - SLpM(Fighter_2)
-```
-
-- Valor **positivo** → F1 tem vantagem nessa estatística
-- Valor **negativo** → F2 tem vantagem
-- Garante **invariância posicional**: o modelo aprende quem é melhor, não quem é F1 ou F2
-
-### Features compostas
-
-| Feature | O que mede |
-|---|---|
-| `DIFF_Efficiency` | Eficiência líquida no striking (golpes acertados vs sofridos) |
-| `DIFF_TD_Success` | Takedowns bem-sucedidos por minuto |
-| `DIFF_Grappling_Ctrl` | Controle geral do grappling |
-| `DIFF_Strike_Ratio` | Proporção golpes desferidos vs sofridos |
-| `DIFF_Weighted_Exp` | Experiência ponderada pela qualidade (Win Rate × log de lutas) |
-| `DIFF_Streak` | Momento atual — sequência de vitórias recentes |
-
-### Data Augmentation por simetria posicional
-
-Para cada luta `F1 vs F2`, é criada uma cópia espelhada `F2 vs F1`.
-
-- Dataset: **~8.500 → ~17.000 linhas**
-- Target: **50/50 perfeitamente balanceado**
-- Garante que o modelo aprenda que o resultado depende de quem é melhor, não da posição
-
----
-
-## 5. Modelos Treinados
-
-| Modelo | Como funciona | Complexidade |
-|---|---|---|
-| **Regressão Logística** | Pesos lineares por feature | Baixa |
-| **Random Forest** | Ensemble de centenas de árvores de decisão por votação | Média |
-| **Gradient Boosting** | Árvores em sequência, cada uma corrige os erros da anterior | Alta |
-| **XGBoost** | Gradient Boosting otimizado com regularização embutida | Alta |
-
----
-
-## 6. Avaliação
-
-### Métricas utilizadas
-
-| Métrica | O que mede |
-|---|---|
-| **Acurácia** | % de previsões corretas |
-| **Precisão** | Dos que previu como F1 vencendo, quantos realmente venceram? |
-| **Recall** | Das vitórias reais de F1, quantas o modelo identificou? |
-| **F1-Score** | Equilíbrio entre Precisão e Recall |
-| **AUC-ROC** | Capacidade de separar as classes (0.5 = aleatório, 1.0 = perfeito) |
-
-> O **AUC-ROC** é a métrica principal pois avalia o modelo em todos os limiares de decisão possíveis, dando uma visão mais honesta da capacidade discriminativa.
-
-### Matriz de Confusão
-
-| | Previu: F1 vence | Previu: F2 vence |
-|---|---|---|
-| **Real: F1 venceu** | Verdadeiro Positivo (VP) ✓ | Falso Negativo (FN) ✗ |
-| **Real: F2 venceu** | Falso Positivo (FP) ✗ | Verdadeiro Negativo (VN) ✓ |
-
----
-
-## 7. Resultados
-
-| Aspecto | Resultado |
-|---|---|
-| **Melhor modelo (validação)** | Gradient Boosting — AUC-ROC 0.8105 (XGBoost e Regressão Logística ficam a menos de 0.001 de distância) |
-| **Melhor modelo (teste)** | XGBoost — AUC-ROC 0.7943 |
-| **AUC-ROC** | 0.788–0.810 entre os 4 modelos (validação e teste) |
-| **Acurácia** | 70–73% (validação), 70–71% (teste) |
-| **Feature mais importante** | `DIFF_Win_Rate` e `DIFF_Weighted_Exp` |
-| **Overfitting** | Mínimo — gap validação/teste ≈ 0.015–0.02 de AUC-ROC |
-
-### Por que Gradient Boosting e XGBoost vencem?
-
-1. **Relações não-lineares:** a combinação de vantagens em striking + grappling não é simplesmente aditiva
-2. **Regularização natural:** learning rate baixo + muitas árvores pequenas funciona como freio contra overfitting
-3. **Foco nos casos difíceis:** cada nova árvore corrige os erros da anterior
-
-### Comparação prática
-
-| Modelo | Pontos Fortes | Limitações |
-|---|---|---|
-| Regressão Logística | Rápido, interpretável, bem calibrado | Só captura relações lineares |
-| Random Forest | Robusto, estável | Comprime probabilidades extremas |
-| Gradient Boosting | Alta acurácia, captura interações complexas | Mais lento para treinar |
-| XGBoost | Rápido, regularizado, escalável | Requer instalação separada |
-
----
-
-## 8. Limitações e Próximos Passos
-
-### O que o modelo não consegue capturar
-
-- Condição física atual: lesões, fadiga, preparação específica
-- Dinâmicas de estilo x estilo (ex.: wrestler vs striker)
-- Fatores psicológicos: motivação, pressão, ambiente do evento
-- Mudanças recentes: novo camp de treinamento, novo treinador
-
-> 70–73% de acurácia é excelente para predição de MMA. Quem afirma acertar mais de 90% está exagerando.
-
-### Melhorias futuras
-
-- Estatísticas por luta recente (não só totais de carreira)
-- Dados de camp de treinamento e coaching staff
-- NLP em entrevistas pré-luta para detectar confiança/pressão
-- Modelos de séries temporais para capturar trajetória de desempenho
-
----
-
-## 9. Como usar
-
-Direto no notebook:
-
-```python
-# Buscar lutador pelo nome
-search_fighter("Conor")
-
-# Prever resultado de uma luta
-predict_fight("Conor McGregor", "Dustin Poirier", model=gb_best, weight_class="Lightweight")
-
-# Comparar estatísticas dos dois lutadores
-compare_fighters("Conor McGregor", "Dustin Poirier")
-
-# Prever um card completo
-predict_card(card_fights)
-```
-
-Ou pela aplicação web (mesma lógica, sem precisar abrir o Jupyter) — ver [seção 11](#11-aplicação-web).
-
----
-
-## 10. Tecnologias
-
-| Biblioteca | Uso |
-|---|---|
-| `pandas` / `numpy` | Manipulação e limpeza de dados |
-| `matplotlib` / `seaborn` | Visualizações e gráficos |
-| `scikit-learn` | Pipeline, modelos, métricas, busca de hiperparâmetros |
-| `xgboost` | Gradient Boosting otimizado |
-| `scipy` | Winsorização e estatísticas |
-
----
-
-## 11. Aplicação Web
-
-A lógica deste notebook foi extraída para um backend FastAPI e um frontend
-Next.js, deployados juntos no Vercel via [Services](https://vercel.com/docs/services)
-(mesmo domínio, sem CORS) — ver [`vercel.json`](vercel.json).
-
-```
-backend/
-  main.py           # FastAPI: rotas /api/... chamando ml.predict.Predictor
-  requirements.txt
-  ml/
-    data_prep.py    # limpeza + parsing (equivalente às células 2, 6, 11)
-    features.py     # features DIFF_/compostas + augmentação (células 26-29)
-    train.py        # treina os 4 modelos e salva artefatos em ml/artifacts/
-    predict.py      # Predictor: search_fighter/predict_fight/compare_fighters/
-                     #   predict_card — usado pelo main.py, sem I/O próprio
-    artifacts/       # model.joblib, fighters.csv, fights.csv, ... (versionado)
-web/
-  src/app/          # Dashboard, /predict (prever + comparar), /statistics (Next.js App Router)
-  src/lib/api.ts     # client HTTP para /api/... (mesmo domínio em produção)
-vercel.json          # declara os 2 services (web/, backend/) e o roteamento
-```
-
-Rodar o treino localmente (regrava `backend/ml/artifacts/`, ~35 min em CPU
-comum devido à busca de hiperparâmetros; não requer GPU — commitar o
-resultado depois, veja [`backend/README.md`](backend/README.md)):
-
-```bash
-cd backend
-pip install -r requirements.txt
-python -m ml.train
-```
-
-Rodar frontend + backend juntos, como em produção:
+Tudo junto, como em produção (mesma origem, roteamento via `vercel.json`):
 
 ```bash
 npx vercel dev
 ```
 
-Ou cada um separado — veja [`backend/README.md`](backend/README.md) e
-[`web/README.md`](web/README.md) para detalhes e o contrato de API completo.
+Ou separado:
+
+```bash
+# backend
+cd backend && pip install -r requirements.txt uvicorn
+uvicorn main:app --reload --port 8000
+
+# frontend (outro terminal) — crie web/.env.local com
+#   NEXT_PUBLIC_API_URL=http://localhost:8000/api
+cd web && npm install && npm run dev
+```
+
+---
+
+## Arquitetura
+
+```
+  ufcstats.com
+       │
+       ▼
+  ┌──────────────────────┐   Python / Playwright
+  │      scraper/        │   • Chromium real (o anti-bot barra requests)
+  │   run_update.py      │   • incremental: só eventos novos e cartéis alterados
+  └──────────┬───────────┘   • falha sempre alta (BlockedError, StructureError)
+             │
+             ▼   DATA/ufc_fighters_final.csv · ufc_gold_dataset_final.csv
+  ┌──────────────────────┐   Python / scikit-learn / XGBoost
+  │   backend/ml/        │   • limpeza + winsorização
+  │  data_prep · features│   • features DIFF_* e compostas, sem vazamento
+  │  train               │   • split 70/15/15 · 4 modelos · CV 5-fold
+  └──────────┬───────────┘   • escolhe o melhor por AUC-ROC de validação
+             │
+             ▼   backend/ml/artifacts/  (versionado no git)
+  ┌──────────────────────┐   FastAPI
+  │  Predictor + main.py │   • Predictor carregado uma vez (module scope)
+  │      /api/...        │   • main.py só valida entrada e traduz erros
+  └──────────┬───────────┘   • zero lógica de ML nas rotas
+             │
+             ▼
+  ┌──────────────────────┐   Next.js · TypeScript · Chart.js
+  │        web/          │   • único ponto HTTP: src/lib/api.ts
+  │  /  /predict  /stats │   • mesma origem que a API, sem CORS
+  └──────────────────────┘
+```
+
+```
+ufc-preditor/
+├── DATA/                 # base publicada (lida pelo notebook e pelo treino)
+├── scraper/              # atualização da base
+├── backend/
+│   ├── main.py           # FastAPI
+│   └── ml/               # data_prep · features · train · predict · fighter_stats · eda
+│       └── artifacts/    # model.joblib, metrics.json, fighters.csv, fights.csv...
+├── web/src/{app,components,lib,data}
+├── Projeto_final_ufc_predidor.ipynb
+└── vercel.json           # 2 services + rewrites
+```
+
+---
+
+## Resultados
+
+Fonte: [`backend/ml/artifacts/metrics.json`](backend/ml/artifacts/metrics.json).
+
+| Modelo | CV AUC | Validação — Acurácia | Validação — AUC | Teste — Acurácia | Teste — AUC |
+|---|---|---|---|---|---|
+| Regressão Logística | 0.7954 | 73.2% | 0.8057 | 72.3% | **0.8031** |
+| Random Forest | 0.7904 | 72.1% | 0.7987 | 71.8% | 0.7913 |
+| Gradient Boosting | 0.7994 | 73.0% | 0.8066 | 72.4% | 0.7959 |
+| **XGBoost** (em produção) | 0.7999 | 73.0% | **0.8084** | 71.7% | 0.7978 |
+
+- **XGBoost** vence na validação, então é o modelo servido.
+- Os quatro ficam a ~0.01 de AUC uns dos outros — até a regressão logística
+  empata. **O ganho vem das features, não do algoritmo.**
+- Overfitting mínimo: gap validação/teste de 0.005–0.011 de AUC.
+
+---
+
+## Decisões técnicas
+
+As escolhas que definiram o projeto, e o porquê de cada uma.
+
+### Features diferenciais e augmentação por espelhamento
+
+`DIFF_SLpM = SLpM(F1) − SLpM(F2)`. Positivo: F1 leva vantagem; negativo: F2.
+Isso dá **invariância posicional** — o modelo não pode aprender "quem está na
+posição F1 ganha mais". Reforçando: cada luta `F1 vs F2` ganha uma cópia
+`F2 vs F1`, o dataset dobra e o target fica 50/50.
+
+Além das diferenças cruas, há compostas que codificam conhecimento do esporte:
+`Efficiency` (golpes acertados vs sofridos), `TD_Success`, `Grappling_Ctrl`,
+`Strike_Ratio`, `Weighted_Exp` (win rate × log de lutas) e `Streak`.
+
+### Sem vazamento temporal
+
+O *streak* de um lutador é calculado **só com lutas anteriores** à luta prevista.
+Usar o cartel final para prever uma luta de 2015 deixaria o modelo "ver o
+futuro" e inflaria as métricas com um resultado que não se repete em produção.
+
+### AUC-ROC como métrica principal
+
+Acurácia depende de um limiar de decisão; a AUC avalia o modelo em todos eles e
+mede a capacidade real de separar vencedor de perdedor. O split é estratificado
+70/15/15 e o conjunto de teste só é lido na avaliação final.
+
+### Camadas com fronteiras rígidas
+
+`predict.py` devolve dicts puros, sem print, plot nem HTTP. `main.py` só valida
+entrada (Pydantic), chama o `Predictor` e converte exceções de domínio
+(`FighterNotFoundError`) em `404`. Treino e inferência **compartilham
+`features.py`** — a fórmula de uma feature existe em um lugar só, então
+modelo e API não divergem.
+
+### Scraper que falha alto
+
+O ufcstats passou a servir um desafio anti-bot em JavaScript: um `requests`
+recebe HTTP 200 com uma tela de carregamento e o scraper original, sem tabela,
+fazia `continue` e terminava com sucesso — sem coletar nada. Aqui o transporte é
+um Chromium real e **toda falha é ruidosa**. A atualização é incremental (o
+índice alfabético já traz a maior parte dos dados; só perfis com cartel alterado
+são reabertos), e a escrita é atômica. Detalhes em [scraper/README.md](scraper/README.md).
+
+### Artefatos versionados de propósito
+
+O build do Vercel não treina modelo (levaria ~35 min e exigiria sklearn só para
+isso). `backend/ml/artifacts/` é commitado, e a API só *lê* esses arquivos.
+Para caber no limite de 500 MB da function, usa-se `xgboost-cpu` (mesmo
+`import xgboost`, sem a dependência de GPU) e artefatos em CSV em vez de
+Parquet, eliminando ~85 MB de `pyarrow`.
+
+### Dois Vercel Services, um domínio
+
+Frontend e backend são dois *services* no mesmo projeto (`vercel.json`), com
+rewrite `/api/(.*)` → backend. Mesma origem: sem CORS, um deploy só.
+
+### Honestidade sobre o teto
+
+MMA tem variância alta. O modelo não vê lesão, fadiga, camp de treino, estilo
+contra estilo nem psicologia. ~72% de acurácia é um resultado sólido — e o
+projeto não finge que é mais que isso.
+
+---
+
+## Atualizando dados e modelo
+
+```bash
+cd scraper && python run_update.py     # 1. atualiza DATA/ (abre um Chrome; não é headless)
+cd backend && python -m ml.train       # 2. retreina (~35 min em CPU) e regrava artifacts/
+git add DATA/ backend/ml/artifacts/    # 3. versiona dados e artefatos
+```
+
+Depois de retreinar, atualize também `web/src/data/model-metrics.ts` (a partir
+do novo `metrics.json`), rode `python -m ml.eda` em `backend/` para regenerar
+`web/src/data/eda-stats.json` e confira a tabela de resultados acima.
+
+---
+
+## Limitações e próximos passos
+
+- Estatísticas por **luta recente**, não só totais de carreira
+- Dados de camp de treinamento e comissão técnica
+- NLP em entrevistas pré-luta para detectar confiança/pressão
+- Modelos de série temporal para a trajetória de desempenho
+
+---
+
+## Stack
+
+| Camada | Tecnologia |
+|---|---|
+| Coleta | Python, Playwright, BeautifulSoup, pandas |
+| ML | pandas, NumPy, scikit-learn, XGBoost, SciPy, joblib |
+| API | FastAPI (+ uvicorn local) |
+| Frontend | Next.js 16, React 19, TypeScript, Tailwind CSS 4, Chart.js 4 |
+| Exploração | Jupyter, matplotlib, seaborn |
+| Deploy | Vercel Services |
