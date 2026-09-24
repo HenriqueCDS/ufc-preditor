@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FighterSearchInput } from "@/components/FighterSearchInput";
 import { FighterComparison } from "@/components/FighterComparison";
 import { WinProbabilityChart } from "@/components/charts/WinProbabilityChart";
+import { translateWeightClass } from "@/lib/weight-classes";
 import { ApiError, compareFighters, predictFight } from "@/lib/api";
 import type { CompareFightersResult, PredictFightResult } from "@/lib/types";
 
@@ -75,7 +76,7 @@ export default function PredictPage() {
           >
             {WEIGHT_CLASSES.map((wc) => (
               <option key={wc} value={wc}>
-                {wc}
+                {translateWeightClass(wc)}
               </option>
             ))}
           </select>
@@ -122,7 +123,7 @@ export default function PredictPage() {
             </div>
             <div className="col-span-2">
               <dt className="text-neutral-500">Categoria</dt>
-              <dd className="text-neutral-200">{result.weight_class}</dd>
+              <dd className="text-neutral-200">{translateWeightClass(result.weight_class)}</dd>
             </div>
           </dl>
         </section>

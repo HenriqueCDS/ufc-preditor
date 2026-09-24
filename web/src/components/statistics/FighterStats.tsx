@@ -9,6 +9,7 @@ import {
 } from "@/components/charts/FighterCharts";
 import { ApiError, getFighterStats } from "@/lib/api";
 import type { FighterStatsResult } from "@/lib/types";
+import { translateWeightClass } from "@/lib/weight-classes";
 
 const pct = (v: number | null) => (v === null ? "-" : `${(v * 100).toFixed(1)}%`);
 const num = (n: number) => n.toLocaleString("pt-BR");
@@ -233,7 +234,7 @@ function FighterReport({ data }: { data: FighterStatsResult }) {
                     </td>
                     <td className="px-3 py-2 text-neutral-400">{f.method}</td>
                     <td className="px-3 py-2 text-neutral-400">{f.round ?? "-"}</td>
-                    <td className="px-3 py-2 text-neutral-400">{f.weight_class}</td>
+                    <td className="px-3 py-2 text-neutral-400">{translateWeightClass(f.weight_class)}</td>
                   </tr>
                 ))}
               </tbody>

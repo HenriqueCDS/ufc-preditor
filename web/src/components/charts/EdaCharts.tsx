@@ -1,6 +1,7 @@
 "use client";
 
 import type { ChartOptions } from "chart.js";
+import { translateWeightClass } from "@/lib/weight-classes";
 import { Bar, Doughnut, Line, Scatter } from "react-chartjs-2";
 import {
   CHART_GRID_COLOR,
@@ -87,7 +88,7 @@ export function WeightClassChart() {
   return (
     <Bar
       data={{
-        labels: entries.map(([k]) => k),
+        labels: entries.map(([k]) => translateWeightClass(k)),
         datasets: [{ data: entries.map(([, n]) => n), backgroundColor: UFC_BLUE, borderRadius: 4 }],
       }}
       options={{
