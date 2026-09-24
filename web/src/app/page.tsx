@@ -42,12 +42,12 @@ export default function DashboardPage() {
           alt=""
           fill
           priority
-          placeholder="blur"
+          unoptimized
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/70 to-neutral-950/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/55 to-neutral-950/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/70 via-transparent to-transparent" />
 
         <div className="relative mx-auto w-full max-w-5xl px-4 pb-12 sm:pb-16">
           <span className="inline-block rounded-full border border-red-600/50 bg-red-600/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-red-400">
