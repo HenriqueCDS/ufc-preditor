@@ -19,7 +19,7 @@ from typing import Literal
 from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 
-from ml.predict import ArtifactsNotFoundError, FighterNotFoundError, Predictor
+from ml.predict import ArtifactsNotFoundError, EventNotFoundError, FighterNotFoundError, Predictor
 
 app = FastAPI(title="UFC Preditor API")
 
@@ -94,3 +94,16 @@ def predict_card(body: PredictCardRequest):
         for f in body.fights
     ]
     return predictor.predict_card(fights)
+
+
+@app.get("/api/events/upcoming")
+def upcoming_events():
+    return predictor.upcoming_events()
+
+
+@app.get("/api/events/{event_id}")
+def event_card(event_id: str):
+    try:
+        return predictor.event_card(event_id)
+    except EventNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc

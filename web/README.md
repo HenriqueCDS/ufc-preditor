@@ -27,6 +27,7 @@ em `/api`) até você também rodar o backend. Duas opções:
 |---|---|
 | `/` | Dashboard — resumo do dataset e comparação de AUC-ROC entre os 4 modelos (`src/data/model-metrics.ts`, snapshot estático do último treino) |
 | `/predict` | Predição de luta (dois lutadores + categoria de peso) com gráfico de probabilidade e, logo abaixo, a comparação de estatísticas de carreira dos dois (radar chart + tabela). `/compare` redireciona para cá |
+| `/events` | Próximos eventos (`GET /api/events/upcoming`). Cada card abre `/events/[id]` com a previsão de todas as lutas; estreantes sem dados aparecem como "Lutador novo sem dados para previsão" |
 | `/statistics` | Abas "Geral" (EDA: metodos, categorias de peso, evolucao temporal, correlacoes e striking; dados estaticos em `src/data/eda-stats.json`, regenerados com `cd backend && python -m ml.eda`) e "Por lutador" (`GET /api/fighters/stats`: cartel, metodos, percentis, striking/grappling, historico) |
 
 ## Contrato de API (`src/lib/api.ts`)
@@ -37,6 +38,8 @@ GET  /api/fighters/compare?f1=...&f2=...   -> CompareFightersResult
 GET  /api/fighters/stats?name=...            -> FighterStatsResult
 POST /api/predict        { fighter1, fighter2, weight_class } -> PredictFightResult
 POST /api/predict/card    { fights: [{ f1, f2, weight_class? }] } -> PredictFightResult[]
+GET  /api/events/upcoming                  -> UpcomingEventsResult
+GET  /api/events/{id}                      -> EventCardResult
 ```
 
 Os tipos de retorno (`src/lib/types.ts`) espelham os dicts que

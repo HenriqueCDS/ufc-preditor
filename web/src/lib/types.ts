@@ -101,3 +101,38 @@ export interface FighterStatsResult {
   by_year: { year: number; wins: number; losses: number }[];
   history: FighterHistoryItem[];
 }
+
+export interface UpcomingEventSummary {
+  id: string;
+  name: string;
+  /** ISO date, YYYY-MM-DD */
+  date: string;
+  location: string;
+  fights_count: number;
+}
+
+export interface UpcomingEventsResult {
+  /** ISO timestamp of the last scrape; null if upcoming.json does not exist yet. */
+  scraped_at: string | null;
+  events: UpcomingEventSummary[];
+}
+
+/** `status: "no_data"` = at least one fighter is a debutant absent from the dataset; `prediction` is then null. */
+export interface EventFight {
+  fighter1: string;
+  fighter2: string;
+  weight_class: string;
+  title_bout: boolean;
+  status: "ok" | "no_data";
+  missing: string[];
+  prediction: PredictFightResult | null;
+}
+
+export interface EventCardResult {
+  id: string;
+  name: string;
+  date: string;
+  location: string;
+  scraped_at: string | null;
+  fights: EventFight[];
+}

@@ -9,6 +9,8 @@
 //   GET  /api/fighters/stats?name=...             -> FighterStatsResult
 //   POST /api/predict        { fighter1, fighter2, weight_class } -> PredictFightResult
 //   POST /api/predict/card    { fights: CardFightInput[] }        -> PredictFightResult[]
+//   GET  /api/events/upcoming                     -> UpcomingEventsResult
+//   GET  /api/events/{id}                         -> EventCardResult (prediction per fight)
 //
 // Override NEXT_PUBLIC_API_URL (see .env.local.example) only if you're
 // running the backend separately from the frontend (e.g. plain `uvicorn`
@@ -17,9 +19,11 @@
 import type {
   CardFightInput,
   CompareFightersResult,
+  EventCardResult,
   FighterSearchResult,
   FighterStatsResult,
   PredictFightResult,
+  UpcomingEventsResult,
 } from "./types";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "/api";
@@ -99,4 +103,12 @@ export function compareFighters(fighter1: string, fighter2: string): Promise<Com
 export function getFighterStats(name: string): Promise<FighterStatsResult> {
   const params = new URLSearchParams({ name });
   return apiFetch(`/fighters/stats?${params.toString()}`);
+}
+
+export function getUpcomingEvents(): Promise<UpcomingEventsResult> {
+  return apiFetch("/events/upcoming");
+}
+
+export function getEventCard(eventId: string): Promise<EventCardResult> {
+  return apiFetch(`/events/${encodeURIComponent(eventId)}`);
 }

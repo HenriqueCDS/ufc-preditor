@@ -1,0 +1,462 @@
+{
+  "scraped_at": "2026-09-24T19:22:34+00:00",
+  "source": "http://ufcstats.com/statistics/events/upcoming",
+  "events": [
+    {
+      "id": "7e654edcddd71550",
+      "name": "UFC Fight Night: Rosas Jr. vs. Barcelos",
+      "date": "2026-09-26",
+      "location": "Las Vegas, Nevada, USA",
+      "url": "http://ufcstats.com/event-details/7e654edcddd71550",
+      "fights": [
+        {
+          "fighter1": "Raul Rosas Jr.",
+          "fighter2": "Raoni Barcelos",
+          "weight_class": "Bantamweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Rodolfo Vieira",
+          "fighter2": "Robert Bryczek",
+          "weight_class": "Middleweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Mahammadali Osmanli",
+          "fighter2": "Ilimbek Akylbek",
+          "weight_class": "Bantamweight",
+          "title_bout": true
+        },
+        {
+          "fighter1": "Melissa Amaya",
+          "fighter2": "Tina Black",
+          "weight_class": "Women's Strawweight",
+          "title_bout": true
+        },
+        {
+          "fighter1": "Brady Hiestand",
+          "fighter2": "Rinya Nakamura",
+          "weight_class": "Bantamweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Rodolfo Bellato",
+          "fighter2": "Christian Edwards",
+          "weight_class": "Light Heavyweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Elves Brener",
+          "fighter2": "Josiah Harrell",
+          "weight_class": "Lightweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Montel Jackson",
+          "fighter2": "Ricky Simon",
+          "weight_class": "Bantamweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Norma Dumont",
+          "fighter2": "Ailin Perez",
+          "weight_class": "Women's Bantamweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "John Castaneda",
+          "fighter2": "Alatengheili",
+          "weight_class": "Bantamweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Mickey Gall",
+          "fighter2": "Sedriques Dumas",
+          "weight_class": "Middleweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Vanessa Demopoulos",
+          "fighter2": "Yazmin Jauregui",
+          "weight_class": "Women's Strawweight",
+          "title_bout": false
+        }
+      ]
+    },
+    {
+      "id": "ad3fdba28a7540cf",
+      "name": "UFC 332: Silva vs. Wang",
+      "date": "2026-10-03",
+      "location": "Salt Lake City, Utah, USA",
+      "url": "http://ufcstats.com/event-details/ad3fdba28a7540cf",
+      "fights": [
+        {
+          "fighter1": "Natalia Silva",
+          "fighter2": "Wang Cong",
+          "weight_class": "Women's Flyweight",
+          "title_bout": true
+        },
+        {
+          "fighter1": "Deiveson Figueiredo",
+          "fighter2": "Payton Talbott",
+          "weight_class": "Bantamweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "King Green",
+          "fighter2": "Esteban Ribovics",
+          "weight_class": "Lightweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Roberto Soldic",
+          "fighter2": "Khaos Williams",
+          "weight_class": "Welterweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Ateba Gautier",
+          "fighter2": "Roman Kopylov",
+          "weight_class": "Middleweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Imanol Rodriguez",
+          "fighter2": "Alden Coria",
+          "weight_class": "Flyweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Damian Pinas",
+          "fighter2": "Andrey Pulyaev",
+          "weight_class": "Middleweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Marcus McGhee",
+          "fighter2": "Benardo Sopaj",
+          "weight_class": "Bantamweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Anthony Wint",
+          "fighter2": "Lucas Armand",
+          "weight_class": "Heavyweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Johnny Walker",
+          "fighter2": "Mick Parkin",
+          "weight_class": "Heavyweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Rafael Dos Anjos",
+          "fighter2": "Alexander Hernandez",
+          "weight_class": "Lightweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Marvin Vettori",
+          "fighter2": "Ismail Naurdiev",
+          "weight_class": "Middleweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Court McGee",
+          "fighter2": "Eric Nolan",
+          "weight_class": "Welterweight",
+          "title_bout": false
+        }
+      ]
+    },
+    {
+      "id": "7f98d9d5a10fa25c",
+      "name": "UFC Fight Night: Allen vs. Duncan",
+      "date": "2026-10-10",
+      "location": "Las Vegas, Nevada, USA",
+      "url": "http://ufcstats.com/event-details/7f98d9d5a10fa25c",
+      "fights": [
+        {
+          "fighter1": "Brendan Allen",
+          "fighter2": "Christian Leroy Duncan",
+          "weight_class": "Middleweight",
+          "title_bout": false
+        }
+      ]
+    },
+    {
+      "id": "55e94a9b525dcf45",
+      "name": "UFC Fight Night: Buckley vs. Malott",
+      "date": "2026-10-17",
+      "location": "Edmonton, Alberta, Canada",
+      "url": "http://ufcstats.com/event-details/55e94a9b525dcf45",
+      "fights": [
+        {
+          "fighter1": "Joaquin Buckley",
+          "fighter2": "Mike Malott",
+          "weight_class": "Welterweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Erin Blanchfield",
+          "fighter2": "Jasmine Jasudavicius",
+          "weight_class": "Women's Flyweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Kyle Nelson",
+          "fighter2": "Cristian Perez",
+          "weight_class": "Lightweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Marc-Andre Barriault",
+          "fighter2": "Kyle Daukaus",
+          "weight_class": "Middleweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Louis Jourdain",
+          "fighter2": "Timmy Cuamba",
+          "weight_class": "Bantamweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Mandel Nallo",
+          "fighter2": "Nate Landwehr",
+          "weight_class": "Lightweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Tanner Boser",
+          "fighter2": "Jhonata Diniz",
+          "weight_class": "Heavyweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Julien Leblanc",
+          "fighter2": "Gilbert Urbina",
+          "weight_class": "Middleweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Javad Mahjoub",
+          "fighter2": "Louie Sutherland",
+          "weight_class": "Heavyweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Jamey-Lyn Horth",
+          "fighter2": "Katlyn Cerminara",
+          "weight_class": "Women's Flyweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Chad Anheliger",
+          "fighter2": "Steven Koslow",
+          "weight_class": "Bantamweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Melissa Croden",
+          "fighter2": "Chelsea Chandler",
+          "weight_class": "Women's Bantamweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Cody Chovancek",
+          "fighter2": "SuYoung You",
+          "weight_class": "Bantamweight",
+          "title_bout": false
+        }
+      ]
+    },
+    {
+      "id": "cc18abc046b382c9",
+      "name": "UFC 333: Volkanovski vs. Evloev",
+      "date": "2026-10-24",
+      "location": "Abu Dhabi, Abu Dhabi, United Arab Emirates",
+      "url": "http://ufcstats.com/event-details/cc18abc046b382c9",
+      "fights": [
+        {
+          "fighter1": "Alexander Volkanovski",
+          "fighter2": "Movsar Evloev",
+          "weight_class": "Featherweight",
+          "title_bout": true
+        },
+        {
+          "fighter1": "Petr Yan",
+          "fighter2": "Merab Dvalishvili",
+          "weight_class": "Bantamweight",
+          "title_bout": true
+        },
+        {
+          "fighter1": "Lone'er Kavanagh",
+          "fighter2": "Ramazan Temirov",
+          "weight_class": "Flyweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Alexander Volkov",
+          "fighter2": "Rizvan Kuniev",
+          "weight_class": "Heavyweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Arnold Allen",
+          "fighter2": "Aaron Pico",
+          "weight_class": "Featherweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Azamat Murzakanov",
+          "fighter2": "Dominick Reyes",
+          "weight_class": "Light Heavyweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Nikita Krylov",
+          "fighter2": "Abdul Rakhman Yakhyaev",
+          "weight_class": "Light Heavyweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Abus Magomedov",
+          "fighter2": "Cam Rowston",
+          "weight_class": "Middleweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Grant Dawson",
+          "fighter2": "Nurullo Aliev",
+          "weight_class": "Lightweight",
+          "title_bout": false
+        }
+      ]
+    },
+    {
+      "id": "0a66de3a797cf73a",
+      "name": "UFC Fight Night: Moicano vs. Nolan",
+      "date": "2026-10-31",
+      "location": "Las Vegas, Nevada, USA",
+      "url": "http://ufcstats.com/event-details/0a66de3a797cf73a",
+      "fights": [
+        {
+          "fighter1": "Renato Moicano",
+          "fighter2": "Tom Nolan",
+          "weight_class": "Lightweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Nick Klein",
+          "fighter2": "Joe Kropschot",
+          "weight_class": "Middleweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Lucia Szabova",
+          "fighter2": "Tainara Lisboa",
+          "weight_class": "Women's Flyweight",
+          "title_bout": false
+        }
+      ]
+    },
+    {
+      "id": "110404b505fb562c",
+      "name": "UFC Fight Night: Bonfim vs. Brady",
+      "date": "2026-11-07",
+      "location": "Las Vegas, Nevada, USA",
+      "url": "http://ufcstats.com/event-details/110404b505fb562c",
+      "fights": [
+        {
+          "fighter1": "Gabriel Bonfim",
+          "fighter2": "Sean Brady",
+          "weight_class": "Welterweight",
+          "title_bout": false
+        }
+      ]
+    },
+    {
+      "id": "402ea3b5ee233852",
+      "name": "UFC 334: Gane vs. Hokit",
+      "date": "2026-11-14",
+      "location": "New York City, New York, USA",
+      "url": "http://ufcstats.com/event-details/402ea3b5ee233852",
+      "fights": [
+        {
+          "fighter1": "Ciryl Gane",
+          "fighter2": "Josh Hokit",
+          "weight_class": "Heavyweight",
+          "title_bout": true
+        },
+        {
+          "fighter1": "Kayla Harrison",
+          "fighter2": "Amanda Nunes",
+          "weight_class": "Women's Bantamweight",
+          "title_bout": true
+        },
+        {
+          "fighter1": "Caio Borralho",
+          "fighter2": "Yousri Belgaroui",
+          "weight_class": "Middleweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Uros Medic",
+          "fighter2": "Kevin Holland",
+          "weight_class": "Welterweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Bilal Hasan",
+          "fighter2": "Luis Gurule",
+          "weight_class": "Flyweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Stephen Thompson",
+          "fighter2": "Charles Radtke",
+          "weight_class": "Welterweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Drew Dober",
+          "fighter2": "Chris Duncan",
+          "weight_class": "Lightweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Jim Miller",
+          "fighter2": "Terrance McKinney",
+          "weight_class": "Lightweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Donte Johnson",
+          "fighter2": "Baisangur Susurkaev",
+          "weight_class": "Middleweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Bia Mesquita",
+          "fighter2": "Macy Chiasson",
+          "weight_class": "Women's Bantamweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Adrian Yanez",
+          "fighter2": "Juan Diaz",
+          "weight_class": "Bantamweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Nazim Sadykhov",
+          "fighter2": "Jefferson Nascimento",
+          "weight_class": "Lightweight",
+          "title_bout": false
+        }
+      ]
+    }
+  ]
+}

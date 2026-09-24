@@ -32,8 +32,12 @@ npx vercel dev
 | `/api/fighters/stats` | GET | `?name=...` | `FighterStatsResult` |
 | `/api/predict` | POST | `{fighter1, fighter2, weight_class}` | `PredictFightResult` |
 | `/api/predict/card` | POST | `{fights: [{f1, f2, weight_class?}]}` | `PredictFightResult[]` |
+| `/api/events/upcoming` | GET | — | `{scraped_at, events: [{id, name, date, location, fights_count}]}` |
+| `/api/events/{id}` | GET | — | `EventCardResult` (cada luta com `prediction`, ou `status: "no_data"` + `missing` para estreantes) |
 
-Lutador não encontrado → `404` com `{"detail": "..."}`.
+Lutador ou evento não encontrado → `404` com `{"detail": "..."}`.
+
+`/api/events/*` lê `ml/artifacts/upcoming.json`, publicado pelo workflow agendado `.github/workflows/update-upcoming.yml` (via `scraper/scrape_upcoming.py`). Lutadores que não constam em `fighters.csv` (match exato, sem acento/caixa) não são previstos.
 
 ## Artefatos do modelo (`ml/artifacts/`)
 

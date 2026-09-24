@@ -127,3 +127,21 @@ git add DATA/ && git commit && git push
 - **Não redistribua** os dados brutos de forma que conflite com os termos do site.
 - Se o anti-bot travar: confirme `headless=False`, apague `.pw-profile/` e tente de novo.
 - Se aparecer `StructureError`: o HTML do site mudou. Abra a URL no navegador e ajuste o seletor — é falha honesta, não silenciosa.
+
+---
+
+## Próximos eventos (`scrape_upcoming.py`)
+
+Lê `ufcstats.com/statistics/events/upcoming` + a página de cada evento e publica
+`backend/ml/artifacts/upcoming.json` (só reescreve se o card mudou). O site usa esse
+arquivo em `/events`.
+
+```bash
+python scrape_upcoming.py               # local (navegador visível)
+xvfb-run -a python scrape_upcoming.py   # Linux/CI
+```
+
+Roda sozinho todo domingo pelo workflow `.github/workflows/update-upcoming.yml` (também
+manual em *Actions → Run workflow*): commita o JSON em `main` e a Vercel faz o deploy.
+Se o anti-bot bloquear o runner, o job falha e o site mantém o último JSON bom.
+Testes offline (HTML real em `tests/fixtures/`): `python test_scraper.py`.

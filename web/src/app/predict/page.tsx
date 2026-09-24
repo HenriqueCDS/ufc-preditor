@@ -1,30 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { FighterSearchInput } from "@/components/FighterSearchInput";
 import { FighterComparison } from "@/components/FighterComparison";
 import { WinProbabilityChart } from "@/components/charts/WinProbabilityChart";
-import { translateWeightClass } from "@/lib/weight-classes";
+import { WEIGHT_CLASSES, translateWeightClass } from "@/lib/weight-classes";
 import { ApiError, compareFighters, predictFight } from "@/lib/api";
 import type { CompareFightersResult, PredictFightResult } from "@/lib/types";
 
-const WEIGHT_CLASSES = [
-  "Strawweight",
-  "Flyweight",
-  "Bantamweight",
-  "Featherweight",
-  "Lightweight",
-  "Welterweight",
-  "Middleweight",
-  "Light Heavyweight",
-  "Heavyweight",
-  "Super Heavyweight",
-];
-
-export default function PredictPage() {
-  const [fighter1, setFighter1] = useState("");
-  const [fighter2, setFighter2] = useState("");
-  const [weightClass, setWeightClass] = useState("Lightweight");
+// Deep link from /events: /predict?f1=...&f2=...&wc=... pre-fills the form and runs it.
+function PredictForm() {
+  const searchParams = useSearchParams();
+  const [fighter1, setFighter1] = useState(searchParams.get("f1") ?? "");
+  const [fighter2, setFighter2] = useState(searchParams.get("f2") ?? "");
+  const [weightClass, setWeightClass] = useState(searchParams.get("wc") ?? "Lightweight");
   const [result, setResult] = useState<PredictFightResult | null>(null);
   const [comparison, setComparison] = useState<CompareFightersResult | null>(null);
   const [loading, setLoading] = useState(false);
@@ -32,9 +22,7 @@ export default function PredictPage() {
 
   const canSubmit = fighter1.trim().length > 0 && fighter2.trim().length > 0 && !loading;
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!canSubmit) return;
+  async function run() {
     setLoading(true);
     setError(null);
     // Independent calls: one failing must not hide the other's result.
@@ -53,6 +41,19 @@ export default function PredictPage() {
     setError(failures.length > 0 ? [...new Set(failures)].join(" ") : null);
     setLoading(false);
   }
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (canSubmit) run();
+  }
+
+  const autoRan = useRef(false);
+  useEffect(() => {
+    if (autoRan.current || !searchParams.get("f1") || !searchParams.get("f2")) return;
+    autoRan.current = true;
+    run();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="flex flex-col gap-8">
@@ -136,5 +137,14 @@ export default function PredictPage() {
         </section>
       )}
     </div>
+  );
+}
+
+export default function PredictPage() {
+  // useSearchParams needs a Suspense boundary for static prerendering.
+  return (
+    <Suspense>
+      <PredictForm />
+    </Suspense>
   );
 }

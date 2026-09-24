@@ -11,12 +11,15 @@ silencio nos scripts originais).
 from __future__ import annotations
 
 import sys
+from pathlib import Path
 
 import pandas as pd
 
 from finalize import parse_dates
 from scrape_combats import calculate_fight_duration, clean_fraction, clean_time
 from scrape_fighters import _missing, needs_profile_visit
+from scrape_upcoming import event_id_from_url, parse_event_fights, parse_events_list
+from ufc_fetch import StructureError
 
 failures: list[str] = []
 
@@ -104,6 +107,29 @@ try:
     failures.append("parse_dates nao abortou")
 except SystemExit:
     print("  ok   abortou em vez de gravar NaT em silencio")
+
+print("\nscrape_upcoming (HTML real salvo em tests/fixtures)")
+FIX = Path(__file__).parent / "tests" / "fixtures"
+events = parse_events_list((FIX / "upcoming.html").read_text(encoding="utf-8"))
+check("lista nao vazia", len(events) > 0, True)
+check("data ISO", len(events[0]["date"]), 10)
+check("id extraido da url", events[0]["id"], event_id_from_url(events[0]["url"]))
+check("nome e local preenchidos", bool(events[0]["name"] and events[0]["location"]), True)
+
+fights = parse_event_fights((FIX / "event.html").read_text(encoding="utf-8"))
+check("12 lutas no card", len(fights), 12)
+check("luta principal primeiro", (fights[0]["fighter1"], fights[0]["fighter2"]),
+      ("Raul Rosas Jr.", "Raoni Barcelos"))
+check("categoria feminina preservada", fights[3]["weight_class"], "Women's Strawweight")
+check("cinturao detectado", fights[3]["title_bout"], True)
+check("sem cinturao", fights[0]["title_bout"], False)
+
+try:
+    parse_events_list("<html><body>Checking your browser</body></html>")
+    print("  FAIL deveria ter levantado StructureError")
+    failures.append("parse_events_list nao levantou")
+except StructureError:
+    print("  ok   HTML sem tabela levanta StructureError")
 
 print()
 if failures:

@@ -7,6 +7,8 @@ Usage:
     predictor = Predictor()          # load artifacts once, reuse across requests
     predictor.predict_fight("Conor McGregor", "Dustin Poirier")
 """
+import json
+import unicodedata
 from pathlib import Path
 
 import joblib
@@ -28,6 +30,19 @@ class FighterNotFoundError(ValueError):
     pass
 
 
+class EventNotFoundError(ValueError):
+    pass
+
+
+def _normalize_name(name):
+    """Lowercase, accent-free, single-spaced -- so 'Jiří Procházka' from
+    ufcstats matches however the dataset spells it."""
+    stripped = ''.join(
+        c for c in unicodedata.normalize('NFKD', str(name)) if not unicodedata.combining(c)
+    )
+    return ' '.join(stripped.lower().split())
+
+
 class Predictor:
     def __init__(self, artifacts_dir=ARTIFACTS_DIR):
         artifacts_dir = Path(artifacts_dir)
@@ -39,6 +54,8 @@ class Predictor:
         self.wc_le = joblib.load(artifacts_dir / 'weight_class_encoder.joblib')
         self.fighters = pd.read_csv(artifacts_dir / 'fighters.csv').set_index('Fighter_Name')
         self.fights = pd.read_csv(artifacts_dir / 'fights.csv')
+        self.upcoming_path = artifacts_dir / 'upcoming.json'
+        self._normalized_fighters = {_normalize_name(n): n for n in self.fighters.index}
 
     def search_fighter(self, name, top_n=5):
         name_lower = name.lower().strip()
@@ -122,6 +139,61 @@ class Predictor:
                 continue
         results.sort(key=lambda r: r['confidence'], reverse=True)
         return results
+
+    # -- proximos eventos (upcoming.json, publicado por scraper/scrape_upcoming.py)
+
+    def _load_upcoming(self):
+        """Read on every call: the file is refreshed by CI and is tiny."""
+        if not self.upcoming_path.exists():
+            return {'scraped_at': None, 'events': []}
+        return json.loads(self.upcoming_path.read_text(encoding='utf-8'))
+
+    def upcoming_events(self):
+        data = self._load_upcoming()
+        return {
+            'scraped_at': data.get('scraped_at'),
+            'events': [
+                {k: e[k] for k in ('id', 'name', 'date', 'location')} | {'fights_count': len(e['fights'])}
+                for e in data['events']
+            ],
+        }
+
+    def event_card(self, event_id):
+        """Every fight of the event with its prediction. Fighters absent from
+        the dataset (debutants) yield `status: 'no_data'` and no prediction --
+        never dropped, never guessed."""
+        data = self._load_upcoming()
+        event = next((e for e in data['events'] if e['id'] == event_id), None)
+        if event is None:
+            raise EventNotFoundError(f'Evento nao encontrado: "{event_id}"')
+
+        fights = []
+        for fight in event['fights']:
+            # Exact match only (accent/case-insensitive): a partial match could
+            # silently pair a debutant with a different, known fighter.
+            n1 = self._normalized_fighters.get(_normalize_name(fight['fighter1']))
+            n2 = self._normalized_fighters.get(_normalize_name(fight['fighter2']))
+            item = {
+                'fighter1': fight['fighter1'],
+                'fighter2': fight['fighter2'],
+                'weight_class': fight['weight_class'],
+                'title_bout': fight['title_bout'],
+                'status': 'ok',
+                'missing': [],
+                'prediction': None,
+            }
+            if n1 is None or n2 is None:
+                item['status'] = 'no_data'
+                item['missing'] = [f for f, n in ((fight['fighter1'], n1), (fight['fighter2'], n2)) if n is None]
+            else:
+                item['prediction'] = self.predict_fight(n1, n2, fight['weight_class'])
+            fights.append(item)
+
+        return {
+            'id': event['id'], 'name': event['name'], 'date': event['date'],
+            'location': event['location'], 'scraped_at': data.get('scraped_at'),
+            'fights': fights,
+        }
 
     def compare_fighters(self, fighter1_name, fighter2_name):
         name1, name2 = self._resolve_name(fighter1_name), self._resolve_name(fighter2_name)
