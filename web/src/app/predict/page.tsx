@@ -101,8 +101,8 @@ function PredictForm() {
       )}
 
       {result && (
-        <section className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-6">
-          <div className="mb-4 flex items-baseline justify-between">
+        <section className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-4 sm:p-6">
+          <div className="mb-4 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <h2 className="text-lg font-semibold">
               Vencedor previsto: <span className="text-red-500">{result.predicted_winner}</span>
             </h2>

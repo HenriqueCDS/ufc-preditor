@@ -36,7 +36,9 @@ export default function DashboardPage() {
   return (
     <div className="flex flex-col">
       {/* Banner (full-bleed) */}
-      <section className="relative -mt-8 ml-[calc(50%-50vw)] flex min-h-[26rem] w-screen items-end overflow-hidden sm:min-h-[32rem]">
+      <section className="relative -mt-8 ml-[calc(50%-50vw)] flex w-screen items-end overflow-hidden sm:min-h-[32rem]">
+        {/* Mobile: image is a strip above the text (the art has its own logo). */}
+        <div className="absolute inset-x-0 top-0 h-72 sm:inset-0 sm:h-auto">
         <Image
           src={banner}
           alt=""
@@ -46,30 +48,27 @@ export default function DashboardPage() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/55 to-neutral-950/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-neutral-950/20" />
+        </div>
 
-        <div className="relative mx-auto w-full max-w-5xl px-4 pb-12 sm:pb-16">
-          <span className="inline-block rounded-full border border-red-600/50 bg-red-600/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-red-400">
-            Machine Learning &middot; MMA
-          </span>
-          <h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-6xl">
+        <div className="relative mx-auto w-full max-w-5xl px-4 pb-12 pt-64 sm:pb-16 sm:pt-0">
+          <h1 className="text-6xl font-extrabold sm:text-8xl">
             UFC <span className="text-red-600">Preditor</span>
           </h1>
-          <p className="mt-4 max-w-xl text-base text-neutral-300 sm:text-lg">
+          <p className="mt-4 max-w-xl border-l-4 border-red-600 pl-4 text-base text-neutral-200 sm:text-lg">
             Descubra quem tem a vantagem antes do gongo. Um modelo treinado com mais de
             30 anos de historico do UFC estima a probabilidade de vitoria de cada lutador.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/predict"
-              className="rounded-lg bg-red-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-red-900/40 transition hover:bg-red-500"
+              className="bg-red-600 px-6 py-3 font-display text-lg font-bold uppercase tracking-wide text-white transition hover:bg-red-500"
             >
               Prever e comparar lutadores
             </Link>
             <a
               href="#sobre"
-              className="rounded-lg border border-neutral-600 bg-neutral-950/40 px-5 py-2.5 text-sm font-semibold text-neutral-200 backdrop-blur transition hover:border-neutral-400"
+              className="border-2 border-neutral-300 px-6 py-3 font-display text-lg font-bold uppercase tracking-wide text-neutral-100 transition hover:bg-neutral-100 hover:text-neutral-950"
             >
               Sobre o projeto
             </a>
@@ -91,8 +90,7 @@ export default function DashboardPage() {
 
       {/* Sobre o projeto */}
       <section id="sobre" className="scroll-mt-8 pt-20">
-        <p className="text-xs font-semibold uppercase tracking-widest text-red-500">Sobre o projeto</p>
-        <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
+        <h2 className="text-3xl font-bold sm:text-5xl">
           Um pipeline completo de Machine Learning
         </h2>
         <p className="mt-4 max-w-3xl text-neutral-400">
@@ -113,7 +111,7 @@ export default function DashboardPage() {
               key={step.title}
               className="flex gap-4 rounded-xl border border-neutral-800 bg-neutral-900/50 p-5"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-600/15 text-sm font-bold text-red-400">
+              <span className="font-display text-5xl font-extrabold leading-none text-red-600">
                 {i + 1}
               </span>
               <div>

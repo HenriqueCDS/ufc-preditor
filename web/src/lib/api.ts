@@ -49,8 +49,11 @@ async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
     throw new ApiError(`Nao foi possivel conectar em ${API_BASE_URL}. O backend esta rodando?`);
   }
   if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    throw new ApiError(body || `Erro ${res.status} ao chamar a API`, res.status);
+    // FastAPI errors are {"detail": "..."}; anything else (an HTML 404 from the
+    // frontend when the backend is down, a gateway page) must not reach the UI.
+    const body = await res.json().catch(() => null);
+    const detail = typeof body?.detail === "string" ? body.detail : null;
+    throw new ApiError(detail ?? `Erro ${res.status} ao chamar a API`, res.status);
   }
   return res.json() as Promise<T>;
 }

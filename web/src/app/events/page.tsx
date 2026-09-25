@@ -42,7 +42,7 @@ export default function EventsPage() {
               href={`/events/${event.id}`}
               className="flex items-center justify-between gap-4 rounded-xl border border-neutral-800 bg-neutral-900/50 p-4 transition hover:border-red-600"
             >
-              <div>
+              <div className="min-w-0">
                 <h2 className="font-semibold">{event.name}</h2>
                 <p className="mt-1 text-sm text-neutral-400">
                   {formatIsoDate(event.date)} · {event.location}

@@ -51,13 +51,13 @@ function FightRow({ fight }: { fight: EventFight }) {
         {fight.title_bout && <span className="font-semibold text-yellow-500">Disputa de cinturao</span>}
       </div>
 
-      <div className="mb-3 flex items-center justify-between gap-4 font-semibold">
-        <span className={p && p.predicted_winner === fight.fighter1 ? "text-red-500" : ""}>
+      <div className="mb-3 flex items-center justify-between gap-2 font-semibold sm:gap-4">
+        <span className={`min-w-0 ${p && p.predicted_winner === fight.fighter1 ? "text-red-500" : ""}`}>
           {fight.fighter1}
           {fight.missing.includes(fight.fighter1) && <NewBadge />}
         </span>
         <span className="text-xs font-normal text-neutral-500">vs</span>
-        <span className={`text-right ${p && p.predicted_winner === fight.fighter2 ? "text-blue-500" : ""}`}>
+        <span className={`min-w-0 text-right ${p && p.predicted_winner === fight.fighter2 ? "text-blue-500" : ""}`}>
           {fight.missing.includes(fight.fighter2) && <NewBadge />}
           {fight.fighter2}
         </span>
