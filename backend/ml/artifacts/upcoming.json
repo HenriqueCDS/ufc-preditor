@@ -1,88 +1,7 @@
 {
-  "scraped_at": "2026-09-24T19:22:34+00:00",
+  "scraped_at": "2026-09-27T14:23:17+00:00",
   "source": "http://ufcstats.com/statistics/events/upcoming",
   "events": [
-    {
-      "id": "7e654edcddd71550",
-      "name": "UFC Fight Night: Rosas Jr. vs. Barcelos",
-      "date": "2026-09-26",
-      "location": "Las Vegas, Nevada, USA",
-      "url": "http://ufcstats.com/event-details/7e654edcddd71550",
-      "fights": [
-        {
-          "fighter1": "Raul Rosas Jr.",
-          "fighter2": "Raoni Barcelos",
-          "weight_class": "Bantamweight",
-          "title_bout": false
-        },
-        {
-          "fighter1": "Rodolfo Vieira",
-          "fighter2": "Robert Bryczek",
-          "weight_class": "Middleweight",
-          "title_bout": false
-        },
-        {
-          "fighter1": "Mahammadali Osmanli",
-          "fighter2": "Ilimbek Akylbek",
-          "weight_class": "Bantamweight",
-          "title_bout": true
-        },
-        {
-          "fighter1": "Melissa Amaya",
-          "fighter2": "Tina Black",
-          "weight_class": "Women's Strawweight",
-          "title_bout": true
-        },
-        {
-          "fighter1": "Brady Hiestand",
-          "fighter2": "Rinya Nakamura",
-          "weight_class": "Bantamweight",
-          "title_bout": false
-        },
-        {
-          "fighter1": "Rodolfo Bellato",
-          "fighter2": "Christian Edwards",
-          "weight_class": "Light Heavyweight",
-          "title_bout": false
-        },
-        {
-          "fighter1": "Elves Brener",
-          "fighter2": "Josiah Harrell",
-          "weight_class": "Lightweight",
-          "title_bout": false
-        },
-        {
-          "fighter1": "Montel Jackson",
-          "fighter2": "Ricky Simon",
-          "weight_class": "Bantamweight",
-          "title_bout": false
-        },
-        {
-          "fighter1": "Norma Dumont",
-          "fighter2": "Ailin Perez",
-          "weight_class": "Women's Bantamweight",
-          "title_bout": false
-        },
-        {
-          "fighter1": "John Castaneda",
-          "fighter2": "Alatengheili",
-          "weight_class": "Bantamweight",
-          "title_bout": false
-        },
-        {
-          "fighter1": "Mickey Gall",
-          "fighter2": "Sedriques Dumas",
-          "weight_class": "Middleweight",
-          "title_bout": false
-        },
-        {
-          "fighter1": "Vanessa Demopoulos",
-          "fighter2": "Yazmin Jauregui",
-          "weight_class": "Women's Strawweight",
-          "title_bout": false
-        }
-      ]
-    },
     {
       "id": "ad3fdba28a7540cf",
       "name": "UFC 332: Silva vs. Wang",
@@ -181,6 +100,36 @@
           "fighter1": "Brendan Allen",
           "fighter2": "Christian Leroy Duncan",
           "weight_class": "Middleweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Matheus Camilo",
+          "fighter2": "Jai Herbert",
+          "weight_class": "Lightweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Loopy Godinez",
+          "fighter2": "Ketlen Souza",
+          "weight_class": "Women's Strawweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Andre Fili",
+          "fighter2": "Kai Kamaka III",
+          "weight_class": "Featherweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Julius Walker",
+          "fighter2": "Gerald Meerschaert",
+          "weight_class": "Light Heavyweight",
+          "title_bout": false
+        },
+        {
+          "fighter1": "Malcolm Wellmaker",
+          "fighter2": "Otari Tanzilovi",
+          "weight_class": "Bantamweight",
           "title_bout": false
         }
       ]
