@@ -1,20 +1,81 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --accent: #e0212d;
+  --background: #0e0d0c;
+  --foreground: #ebe6dc;
+  --accent: #c8102e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-barlow);
+  --font-display: var(--font-barlow-condensed);
   --font-mono: var(--font-geist-mono);
+}
+
+/* Warm "octagon" palette: replaces Tailwind's cool greys and stock red. */
+@theme {
+  --color-neutral-100: #ebe6dc;
+  --color-neutral-200: #d9d3c7;
+  --color-neutral-300: #bdb6a8;
+  --color-neutral-400: #a29b8c;
+  --color-neutral-500: #7f7869;
+  --color-neutral-600: #5c574b;
+  --color-neutral-700: #423e35;
+  --color-neutral-800: #2c2924;
+  --color-neutral-900: #1a1815;
+  --color-neutral-950: #0e0d0c;
+
+  --color-red-400: #e2596b;
+  --color-red-500: #d92a41;
+  --color-red-600: #c8102e;
+
+  /* Fight-poster look: hard edges instead of soft rounded cards. */
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-barlow), system-ui, sans-serif;
+}
+
+h1,
+h2 {
+  font-family: var(--font-display), Impact, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+
+h3,
+h4 {
+  font-family: var(--font-display), Impact, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* Section titles get a short red bar, like a card header. */
+section > h2::before {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 4px;
+  margin-bottom: 0.6rem;
+  background: var(--accent);
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
 }

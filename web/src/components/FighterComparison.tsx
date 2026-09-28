@@ -5,7 +5,7 @@ export function FighterComparison({ result }: { result: CompareFightersResult })
   return (
     <section className="grid gap-6 lg:grid-cols-2">
       <div className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-4">
-        <div className="mb-2 flex justify-between text-sm text-neutral-400">
+        <div className="mb-2 flex justify-between gap-2 text-sm text-neutral-400">
           <span className="text-red-500">{result.fighter1}</span>
           <span className="text-blue-400">{result.fighter2}</span>
         </div>
@@ -18,8 +18,8 @@ export function FighterComparison({ result }: { result: CompareFightersResult })
         </p>
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-neutral-800">
-        <table className="w-full text-sm">
+      <div className="overflow-x-auto rounded-xl border border-neutral-800">
+        <table className="w-full text-xs sm:text-sm">
           <thead className="bg-neutral-900 text-neutral-400">
             <tr>
               <th className="px-3 py-2 text-left font-medium">Estatistica</th>
