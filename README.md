@@ -103,6 +103,18 @@ lógica extraída para código de produção.
 | `/predict` | Escolha dois lutadores e a categoria de peso → probabilidade de cada um, gráfico, e comparação de carreira (radar + tabela). `/compare` redireciona para cá |
 | `/statistics` | Aba **Geral** (EDA: métodos de vitória, categorias, evolução temporal, correlações) e aba **Por lutador** (cartel, percentis, striking/grappling, histórico) |
 
+**`/` — Dashboard**
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+**`/predict` — Previsão de luta**
+
+![Previsão de luta](docs/screenshots/predict.png)
+
+**`/statistics` — Estatísticas (aba Geral)**
+
+![Estatísticas](docs/screenshots/statistics.png)
+
 ### API
 
 | Rota | Método | Retorno |
@@ -280,6 +292,60 @@ git add DATA/ backend/ml/artifacts/    # 3. versiona dados e artefatos
 Depois de retreinar, atualize também `web/src/data/model-metrics.ts` (a partir
 do novo `metrics.json`), rode `python -m ml.eda` em `backend/` para regenerar
 `web/src/data/eda-stats.json` e confira a tabela de resultados acima.
+
+---
+
+## CI/CD (GitHub Actions)
+
+O passo acima roda sozinho toda semana. Dois workflows em
+[`.github/workflows/`](.github/workflows/) mantêm a base, o modelo e os
+próximos eventos atualizados sem intervenção manual — e como o deploy é
+automático a cada push em `main` (Vercel), um commit desses workflows já
+coloca o site novo no ar.
+
+| Workflow | Agenda | O que faz | Commita |
+|---|---|---|---|
+| [`update-full.yml`](.github/workflows/update-full.yml) | Domingo, 09:00 UTC (06:00 em Brasília) | Roda o scraper completo, arquiva a comparação previsão-vs-resultado do último evento e **retreina o modelo** | `DATA/*.csv` + `backend/ml/artifacts/*` |
+| [`update-upcoming.yml`](.github/workflows/update-upcoming.yml) | Domingo, 09:00 UTC (06:00 em Brasília) | Roda o scraper dos próximos cards | `backend/ml/artifacts/upcoming.json` |
+
+Ambos também têm `workflow_dispatch` (botão "Run workflow" na aba Actions do
+GitHub), para forçar uma execução fora do horário sem esperar o cron.
+
+### Por que dois workflows e não um
+
+Mesmo horário, arquivos diferentes, sem dependência entre eles — separar
+evita que uma falha no scraper de próximos eventos derrube o retreino (ou
+vice-versa), e cada um usa `concurrency` própria (`update-full` /
+`update-upcoming`) para não rodar em paralelo consigo mesmo. Os dois ainda
+podem terminar perto um do outro e tentar dar push quase ao mesmo tempo; por
+isso cada job faz `git pull --rebase origin main` antes do `git push`.
+
+### Ordem importa no retreino
+
+Dentro de `update-full.yml`, o arquivamento do card "IA previu vs. resultado"
+roda **antes** do retreino de propósito: o modelo usado para gerar aquela
+previsão ainda é o da semana anterior, que nunca viu o resultado do evento
+que acabou de ser raspado. Se o retreino rodasse primeiro, a comparação
+estaria usando um modelo que já "viu" o resultado — a mesma classe de
+vazamento temporal descrita em [Decisões técnicas](#sem-vazamento-temporal),
+só que no card em vez de na feature. Ver
+[`backend/ml/archive_last_event.py`](backend/ml/archive_last_event.py).
+
+### Navegador visível em display virtual
+
+O anti-bot do ufcstats.com barra Chromium headless (o mesmo motivo que faz o
+scraper usar Playwright em vez de `requests` — ver
+[Decisões técnicas](#scraper-que-falha-alto)). No runner do GitHub Actions,
+sem cabeça gráfica, isso significa rodar o navegador "visível" dentro de um
+display virtual via `xvfb-run`. Se o anti-bot endurecer e bloquear mesmo
+assim, o job **falha** — o scraper nunca grava dado parcial, então `main`
+continua servindo a base e o modelo anteriores até alguém investigar.
+
+### Autor dos commits automáticos
+
+Os dois workflows commitam como `github-actions[bot]`, só quando há mudança
+de fato (`git diff --quiet` decide se vale a pena). `permissions: contents:
+write` no topo do arquivo é o que autoriza esse push de volta para `main`.
 
 ---
 
