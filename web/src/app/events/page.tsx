@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { LastEventSummary } from "@/components/LastEventSummary";
 import { LoadingState } from "@/components/LoadingState";
 import { ApiError, getUpcomingEvents } from "@/lib/api";
-import { formatIsoDate, formatTimestamp } from "@/lib/format";
+import { formatIsoDate, formatTimestamp, isPastDate } from "@/lib/format";
 import type { UpcomingEventsResult } from "@/lib/types";
 
 export default function EventsPage() {
@@ -19,6 +20,8 @@ export default function EventsPage() {
 
   return (
     <div className="flex flex-col gap-8">
+      <LastEventSummary />
+
       <div>
         <h1 className="text-2xl font-bold">Proximos Eventos</h1>
         <p className="mt-1 text-sm text-neutral-400">
@@ -43,7 +46,14 @@ export default function EventsPage() {
               className="flex items-center justify-between gap-4 rounded-xl border border-neutral-800 bg-neutral-900/50 p-4 transition hover:border-red-600"
             >
               <div>
-                <h2 className="font-semibold">{event.name}</h2>
+                <h2 className="font-semibold">
+                  {event.name}
+                  {isPastDate(event.date) && (
+                    <span className="ml-2 rounded-full bg-neutral-700/50 px-2 py-0.5 align-middle text-[10px] font-semibold uppercase tracking-wide text-neutral-300">
+                      Ja aconteceu
+                    </span>
+                  )}
+                </h2>
                 <p className="mt-1 text-sm text-neutral-400">
                   {formatIsoDate(event.date)} · {event.location}
                 </p>

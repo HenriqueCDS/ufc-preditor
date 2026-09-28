@@ -8,3 +8,9 @@ export function formatIsoDate(iso: string): string {
 export function formatTimestamp(iso: string): string {
   return new Date(iso).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
 }
+
+/** "2026-09-26" < hoje? Comparacao de string pura (mesmo truque de
+ * formatIsoDate): datas ISO ordenam igual a strings, sem risco de fuso. */
+export function isPastDate(iso: string): boolean {
+  return iso < new Date().toISOString().slice(0, 10);
+}

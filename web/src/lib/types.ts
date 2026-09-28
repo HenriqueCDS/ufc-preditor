@@ -136,3 +136,30 @@ export interface EventCardResult {
   scraped_at: string | null;
   fights: EventFight[];
 }
+
+/** `result` e' o que de fato aconteceu; `prediction` foi calculada com o
+ * modelo de ANTES do evento (arquivada antes do retreino), entao a
+ * comparacao com `correct` e' fora da amostra, nao vazamento. */
+export interface LastEventFight extends EventFight {
+  result: {
+    winner: string;
+    method: string;
+    round: number | null;
+    time: string | null;
+  };
+  /** null quando `status` e' "no_data" (sem previsao para comparar). */
+  correct: boolean | null;
+}
+
+/** `id`/`name`/`location` podem ser null: so vem de upcoming.json se o
+ * evento ainda estava la quando o arquivamento rodou. Quando `id` bate com
+ * o de um item de `UpcomingEventsResult`, e' o mesmo evento -- a pagina do
+ * evento usa isso pra trocar a previsao "ao vivo" pela comparacao arquivada. */
+export interface LastEventResult {
+  event_date: string;
+  id: string | null;
+  name: string | null;
+  location: string | null;
+  generated_at: string;
+  fights: LastEventFight[];
+}

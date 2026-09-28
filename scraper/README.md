@@ -41,6 +41,8 @@ Faz tudo em ordem: lutas → lutadores → limpeza → publicação em `DATA/`.
 
 Uma janela do Chrome abre fora da área visível. **É necessária** — o anti-bot não passa em modo headless. `Ctrl+C` é seguro: o checkpoint retoma de onde parou.
 
+Roda sozinho todo domingo pelo workflow `.github/workflows/update-full.yml` (também manual em *Actions → Run workflow*): atualiza `DATA/`, arquiva a previsão vs. resultado do último evento (`backend/ml/archive_last_event.py`), retreina o modelo (`python -m ml.train`) e commita tudo em `main` — a Vercel faz o deploy. Workflow separado do `update-upcoming.yml` abaixo, mesmo horário.
+
 ### Scripts individuais
 
 ```bash

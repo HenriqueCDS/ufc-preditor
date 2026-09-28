@@ -1,0 +1,85 @@
+name: Atualizar base completa
+
+# Roda o scraper de lutas/lutadores (run_update.py), arquiva a comparacao
+# previsao-vs-resultado do ultimo evento concluido, retreina o modelo e
+# commita DATA/*.csv + backend/ml/artifacts/*. O push em main dispara o
+# deploy da Vercel, que passa a servir o modelo novo e o card de
+# "Ultimo Evento" atualizado.
+#
+# Ordem importa: o retreino roda DEPOIS do arquivamento de propósito -- o
+# modelo usado para "o que a IA previu" ainda e' o da semana anterior
+# (nunca viu o resultado deste evento), entao a comparacao e' fora da
+# amostra, nunca vazamento de dados. Ver backend/ml/archive_last_event.py.
+#
+# O anti-bot do ufcstats nao passa com Chromium headless, entao o navegador
+# roda "visivel" dentro de um display virtual (xvfb), igual ao
+# update-upcoming.yml. Se o anti-bot bloquear, o job FALHA (o scraper nunca
+# grava dado parcial) e main continua com a base e o modelo anteriores.
+#
+# Workflow separado de update-upcoming.yml (mesmo horario, arquivos
+# diferentes) -- o `git pull --rebase` antes do push evita conflito caso os
+# dois terminem perto um do outro.
+
+on:
+  schedule:
+    - cron: "0 9 * * 0" # todo domingo, 09:00 UTC (06:00 em Brasilia)
+  workflow_dispatch: # botao "Run workflow" para testar/forcar
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-full
+  cancel-in-progress: false
+
+jobs:
+  scrape-and-train:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            scraper/requirements.txt
+            backend/requirements.txt
+
+      - name: Instalar dependencias do scraper
+        run: |
+          pip install -r scraper/requirements.txt
+          playwright install --with-deps chromium
+
+      - name: Instalar dependencias do backend (treino + inferencia)
+        run: pip install -r backend/requirements.txt
+
+      - name: Testes offline do scraper
+        working-directory: scraper
+        run: python test_scraper.py
+
+      - name: Atualizar lutas e lutadores (DATA/)
+        working-directory: scraper
+        run: xvfb-run -a --server-args="-screen 0 1280x900x24" python run_update.py
+
+      - name: Arquivar previsao vs. resultado do ultimo evento
+        working-directory: backend
+        run: python -m ml.archive_last_event
+
+      - name: Retreinar o modelo
+        working-directory: backend
+        run: python -m ml.train
+
+      - name: Commitar se mudou
+        run: |
+          git add DATA/ backend/ml/artifacts/
+          if git diff --cached --quiet; then
+            echo "Nada mudou (sem evento novo desde a ultima execucao)."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: atualiza base e retreina o modelo (scraper agendado)"
+          git pull --rebase origin main
+          git push

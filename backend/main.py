@@ -12,16 +12,26 @@ Local dev without `vercel dev`:
     uvicorn main:app --reload --port 8000
 Routes are still under /api/... (e.g. http://localhost:8000/api/fighters/search)
 since that prefix is baked into the route paths below, not added by the
-rewrite -- see backend/README.md.
+rewrite -- see backend/README.md. In this mode the frontend (localhost:3000)
+and backend (localhost:8000) are different origins, so CORS below is needed
+purely for local dev -- production stays same-origin and never hits it.
 """
 from typing import Literal
 
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from ml.predict import ArtifactsNotFoundError, EventNotFoundError, FighterNotFoundError, Predictor
 
 app = FastAPI(title="UFC Preditor API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origin_regex=r"http://(localhost|127\.0\.0\.1):\d+",
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 try:
     predictor = Predictor()
@@ -99,6 +109,14 @@ def predict_card(body: PredictCardRequest):
 @app.get("/api/events/upcoming")
 def upcoming_events():
     return predictor.upcoming_events()
+
+
+@app.get("/api/events/last")
+def last_event():
+    data = predictor.last_event()
+    if data is None:
+        raise HTTPException(status_code=404, detail="Nenhum evento concluido arquivado ainda.")
+    return data
 
 
 @app.get("/api/events/{event_id}")

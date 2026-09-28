@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { AccuracyStat, LastEventFightRow } from "@/components/LastEventFightRow";
 import { LoadingState } from "@/components/LoadingState";
-import { ApiError, getEventCard } from "@/lib/api";
-import { formatIsoDate, formatTimestamp } from "@/lib/format";
+import { ApiError, getEventCard, getLastEvent } from "@/lib/api";
+import { formatIsoDate, formatTimestamp, isPastDate } from "@/lib/format";
 import { baseWeightClass, translateWeightClass } from "@/lib/weight-classes";
-import type { EventCardResult, EventFight, PredictFightResult } from "@/lib/types";
+import type { EventCardResult, EventFight, LastEventResult, PredictFightResult } from "@/lib/types";
 
 function ProbabilityBar({ prob1 }: { prob1: number }) {
   const pct1 = prob1 * 100;
@@ -89,13 +90,23 @@ function FightRow({ fight }: { fight: EventFight }) {
 export default function EventCardPage() {
   const { id } = useParams<{ id: string }>();
   const [card, setCard] = useState<EventCardResult | null>(null);
+  const [lastEvent, setLastEvent] = useState<LastEventResult | null>();
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     getEventCard(id)
       .then(setCard)
       .catch((err) => setError(err instanceof ApiError ? err.message : "Falha ao consultar a API."));
+    getLastEvent()
+      .then(setLastEvent)
+      .catch(() => setLastEvent(null));
   }, [id]);
+
+  // Evento ja concluido e arquivado: mostra a comparacao (previsao de antes
+  // do evento x resultado real) em vez da previsao "ao vivo" do card, que
+  // usaria o modelo ja retreinado com o resultado -- ver
+  // backend/ml/archive_last_event.py.
+  const archivedEvent = lastEvent && lastEvent.id === id ? lastEvent : null;
 
   return (
     <div className="flex flex-col gap-8">
@@ -111,14 +122,35 @@ export default function EventCardPage() {
       {card && (
         <>
           <div>
-            <h1 className="text-2xl font-bold">{card.name}</h1>
+            <h1 className="text-2xl font-bold">
+              {card.name}
+              {isPastDate(card.date) && (
+                <span className="ml-2 rounded-full bg-neutral-700/50 px-2 py-0.5 align-middle text-xs font-semibold uppercase tracking-wide text-neutral-300">
+                  Ja aconteceu
+                </span>
+              )}
+            </h1>
             <p className="mt-1 text-sm text-neutral-400">
               {formatIsoDate(card.date)} · {card.location}
               {card.scraped_at && ` · card atualizado em ${formatTimestamp(card.scraped_at)}`}
             </p>
+            {isPastDate(card.date) && !archivedEvent && (
+              <p className="mt-2 rounded-lg border border-neutral-700 bg-neutral-950/60 px-3 py-2 text-sm text-neutral-400">
+                Esse card ja aconteceu, mas o resultado ainda nao foi processado. Volte em breve para ver a
+                comparacao com o que o modelo previu.
+              </p>
+            )}
           </div>
 
-          {card.fights.length === 0 ? (
+          {archivedEvent && <AccuracyStat fights={archivedEvent.fights} />}
+
+          {archivedEvent ? (
+            <ol className="grid gap-3">
+              {archivedEvent.fights.map((fight) => (
+                <LastEventFightRow key={`${fight.fighter1}-${fight.fighter2}`} fight={fight} />
+              ))}
+            </ol>
+          ) : card.fights.length === 0 ? (
             <p className="text-sm text-neutral-400">O card desse evento ainda nao foi divulgado.</p>
           ) : (
             <ol className="grid gap-3">

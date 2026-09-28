@@ -1,0 +1,312 @@
+{
+  "event_date": "2026-09-26",
+  "id": "7e654edcddd71550",
+  "name": "UFC Fight Night: Rosas Jr. vs. Barcelos",
+  "location": "Las Vegas, Nevada, USA",
+  "generated_at": "2026-09-28T15:42:55.251771+00:00",
+  "fights": [
+    {
+      "fighter1": "Raul Rosas Jr.",
+      "fighter2": "Raoni Barcelos",
+      "weight_class": "Bantamweight Bout",
+      "status": "ok",
+      "missing": [],
+      "prediction": {
+        "fighter1": "Raul Rosas Jr.",
+        "fighter2": "Raoni Barcelos",
+        "prob_fighter1": 0.235,
+        "prob_fighter2": 0.765,
+        "predicted_winner": "Raoni Barcelos",
+        "confidence": 0.765,
+        "confidence_level": "ALTA",
+        "streak_f1": 5,
+        "streak_f2": 5,
+        "weight_class": "Bantamweight Bout"
+      },
+      "result": {
+        "winner": "Raul Rosas Jr.",
+        "method": "KO/TKO",
+        "round": 5,
+        "time": "1:38"
+      },
+      "correct": false
+    },
+    {
+      "fighter1": "Norma Dumont",
+      "fighter2": "Ailin Perez",
+      "weight_class": "Women's Bantamweight Bout",
+      "status": "ok",
+      "missing": [],
+      "prediction": {
+        "fighter1": "Norma Dumont",
+        "fighter2": "Ailin Perez",
+        "prob_fighter1": 0.2647,
+        "prob_fighter2": 0.7353,
+        "predicted_winner": "Ailin Perez",
+        "confidence": 0.7353,
+        "confidence_level": "ALTA",
+        "streak_f1": 0,
+        "streak_f2": 6,
+        "weight_class": "Women's Bantamweight Bout"
+      },
+      "result": {
+        "winner": "Ailin Perez",
+        "method": "Decision - Unanimous",
+        "round": 3,
+        "time": "5:00"
+      },
+      "correct": true
+    },
+    {
+      "fighter1": "Luis Hernandez",
+      "fighter2": "Sedriques Dumas",
+      "weight_class": "Light Heavyweight Bout",
+      "status": "ok",
+      "missing": [],
+      "prediction": {
+        "fighter1": "Luis Hernandez",
+        "fighter2": "Sedriques Dumas",
+        "prob_fighter1": 0.9397,
+        "prob_fighter2": 0.0603,
+        "predicted_winner": "Luis Hernandez",
+        "confidence": 0.9397,
+        "confidence_level": "ALTA",
+        "streak_f1": 0,
+        "streak_f2": 0,
+        "weight_class": "Light Heavyweight Bout"
+      },
+      "result": {
+        "winner": "Luis Hernandez",
+        "method": "Submission",
+        "round": 1,
+        "time": "0:57"
+      },
+      "correct": true
+    },
+    {
+      "fighter1": "Mahammadali Osmanli",
+      "fighter2": "Ilimbek Akylbek",
+      "weight_class": "Bantamweight Bout",
+      "status": "no_data",
+      "missing": [
+        "Mahammadali Osmanli"
+      ],
+      "prediction": null,
+      "result": {
+        "winner": "Ilimbek Akylbek",
+        "method": "DQ",
+        "round": 1,
+        "time": "2:19"
+      },
+      "correct": null
+    },
+    {
+      "fighter1": "John Castaneda",
+      "fighter2": "Alatengheili",
+      "weight_class": "Bantamweight Bout",
+      "status": "ok",
+      "missing": [],
+      "prediction": {
+        "fighter1": "John Castaneda",
+        "fighter2": "Alatengheili",
+        "prob_fighter1": 0.8647,
+        "prob_fighter2": 0.1353,
+        "predicted_winner": "John Castaneda",
+        "confidence": 0.8647,
+        "confidence_level": "ALTA",
+        "streak_f1": 0,
+        "streak_f2": 0,
+        "weight_class": "Bantamweight Bout"
+      },
+      "result": {
+        "winner": "Alatengheili",
+        "method": "Decision - Split",
+        "round": 3,
+        "time": "5:00"
+      },
+      "correct": false
+    },
+    {
+      "fighter1": "Montel Jackson",
+      "fighter2": "Ricky Simon",
+      "weight_class": "Bantamweight Bout",
+      "status": "ok",
+      "missing": [],
+      "prediction": {
+        "fighter1": "Montel Jackson",
+        "fighter2": "Ricky Simon",
+        "prob_fighter1": 0.6123,
+        "prob_fighter2": 0.3877,
+        "predicted_winner": "Montel Jackson",
+        "confidence": 0.6123,
+        "confidence_level": "MEDIA",
+        "streak_f1": 0,
+        "streak_f2": 0,
+        "weight_class": "Bantamweight Bout"
+      },
+      "result": {
+        "winner": "Montel Jackson",
+        "method": "KO/TKO",
+        "round": 2,
+        "time": "2:39"
+      },
+      "correct": true
+    },
+    {
+      "fighter1": "Elves Brener",
+      "fighter2": "Josiah Harrell",
+      "weight_class": "Lightweight Bout",
+      "status": "ok",
+      "missing": [],
+      "prediction": {
+        "fighter1": "Elves Brener",
+        "fighter2": "Josiah Harrell",
+        "prob_fighter1": 0.9746,
+        "prob_fighter2": 0.0254,
+        "predicted_winner": "Elves Brener",
+        "confidence": 0.9746,
+        "confidence_level": "ALTA",
+        "streak_f1": 0,
+        "streak_f2": 0,
+        "weight_class": "Lightweight Bout"
+      },
+      "result": {
+        "winner": "Elves Brener",
+        "method": "KO/TKO",
+        "round": 1,
+        "time": "4:14"
+      },
+      "correct": true
+    },
+    {
+      "fighter1": "Rodolfo Vieira",
+      "fighter2": "Robert Bryczek",
+      "weight_class": "Middleweight Bout",
+      "status": "ok",
+      "missing": [],
+      "prediction": {
+        "fighter1": "Rodolfo Vieira",
+        "fighter2": "Robert Bryczek",
+        "prob_fighter1": 0.4583,
+        "prob_fighter2": 0.5417,
+        "predicted_winner": "Robert Bryczek",
+        "confidence": 0.5417,
+        "confidence_level": "BAIXA",
+        "streak_f1": 0,
+        "streak_f2": 0,
+        "weight_class": "Middleweight Bout"
+      },
+      "result": {
+        "winner": "Rodolfo Vieira",
+        "method": "Decision - Unanimous",
+        "round": 3,
+        "time": "5:00"
+      },
+      "correct": false
+    },
+    {
+      "fighter1": "Rodolfo Bellato",
+      "fighter2": "Christian Edwards",
+      "weight_class": "Light Heavyweight Bout",
+      "status": "ok",
+      "missing": [],
+      "prediction": {
+        "fighter1": "Rodolfo Bellato",
+        "fighter2": "Christian Edwards",
+        "prob_fighter1": 0.9104,
+        "prob_fighter2": 0.0896,
+        "predicted_winner": "Rodolfo Bellato",
+        "confidence": 0.9104,
+        "confidence_level": "ALTA",
+        "streak_f1": 1,
+        "streak_f2": 0,
+        "weight_class": "Light Heavyweight Bout"
+      },
+      "result": {
+        "winner": "Christian Edwards",
+        "method": "KO/TKO",
+        "round": 3,
+        "time": "1:47"
+      },
+      "correct": false
+    },
+    {
+      "fighter1": "Melissa Amaya",
+      "fighter2": "Tina Black",
+      "weight_class": "Women's Strawweight Bout",
+      "status": "ok",
+      "missing": [],
+      "prediction": {
+        "fighter1": "Melissa Amaya",
+        "fighter2": "Tina Black",
+        "prob_fighter1": 0.2234,
+        "prob_fighter2": 0.7766,
+        "predicted_winner": "Tina Black",
+        "confidence": 0.7766,
+        "confidence_level": "ALTA",
+        "streak_f1": 0,
+        "streak_f2": 0,
+        "weight_class": "Women's Strawweight Bout"
+      },
+      "result": {
+        "winner": "Tina Black",
+        "method": "KO/TKO",
+        "round": 2,
+        "time": "3:19"
+      },
+      "correct": true
+    },
+    {
+      "fighter1": "Brady Hiestand",
+      "fighter2": "Rinya Nakamura",
+      "weight_class": "Bantamweight Bout",
+      "status": "ok",
+      "missing": [],
+      "prediction": {
+        "fighter1": "Brady Hiestand",
+        "fighter2": "Rinya Nakamura",
+        "prob_fighter1": 0.1204,
+        "prob_fighter2": 0.8796,
+        "predicted_winner": "Rinya Nakamura",
+        "confidence": 0.8796,
+        "confidence_level": "ALTA",
+        "streak_f1": 3,
+        "streak_f2": 1,
+        "weight_class": "Bantamweight Bout"
+      },
+      "result": {
+        "winner": "Brady Hiestand",
+        "method": "Submission",
+        "round": 2,
+        "time": "4:07"
+      },
+      "correct": false
+    },
+    {
+      "fighter1": "Vanessa Demopoulos",
+      "fighter2": "Yazmin Jauregui",
+      "weight_class": "Women's Strawweight Bout",
+      "status": "ok",
+      "missing": [],
+      "prediction": {
+        "fighter1": "Vanessa Demopoulos",
+        "fighter2": "Yazmin Jauregui",
+        "prob_fighter1": 0.0383,
+        "prob_fighter2": 0.9617,
+        "predicted_winner": "Yazmin Jauregui",
+        "confidence": 0.9617,
+        "confidence_level": "ALTA",
+        "streak_f1": 0,
+        "streak_f2": 0,
+        "weight_class": "Women's Strawweight Bout"
+      },
+      "result": {
+        "winner": "Yazmin Jauregui",
+        "method": "KO/TKO",
+        "round": 1,
+        "time": "1:02"
+      },
+      "correct": true
+    }
+  ]
+}

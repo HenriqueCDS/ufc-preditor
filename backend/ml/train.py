@@ -33,7 +33,10 @@ from .features import ALL_FEATURES, build_training_dataset
 
 SEED = 42
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-DATA_DIR = REPO_ROOT / 'data'
+# 'DATA' maiusculo: e o nome real do diretorio versionado (ver scraper/finalize.py).
+# Windows/mac tem filesystem case-insensitive e perdoa 'data' minusculo, mas o
+# Linux dos runners do GitHub Actions nao -- teria dado FileNotFoundError.
+DATA_DIR = REPO_ROOT / 'DATA'
 ARTIFACTS_DIR = Path(__file__).resolve().parent / 'artifacts'
 
 

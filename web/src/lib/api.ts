@@ -10,6 +10,7 @@
 //   POST /api/predict        { fighter1, fighter2, weight_class } -> PredictFightResult
 //   POST /api/predict/card    { fights: CardFightInput[] }        -> PredictFightResult[]
 //   GET  /api/events/upcoming                     -> UpcomingEventsResult
+//   GET  /api/events/last                         -> LastEventResult (404 se nada arquivado ainda)
 //   GET  /api/events/{id}                         -> EventCardResult (prediction per fight)
 //
 // Override NEXT_PUBLIC_API_URL (see .env.local.example) only if you're
@@ -22,6 +23,7 @@ import type {
   EventCardResult,
   FighterSearchResult,
   FighterStatsResult,
+  LastEventResult,
   PredictFightResult,
   UpcomingEventsResult,
 } from "./types";
@@ -111,4 +113,14 @@ export function getUpcomingEvents(): Promise<UpcomingEventsResult> {
 
 export function getEventCard(eventId: string): Promise<EventCardResult> {
   return apiFetch(`/events/${encodeURIComponent(eventId)}`);
+}
+
+/** null quando o backend ainda nao arquivou nenhum evento (404). */
+export async function getLastEvent(): Promise<LastEventResult | null> {
+  try {
+    return await apiFetch<LastEventResult>("/events/last");
+  } catch (err) {
+    if (err instanceof ApiError && err.status === 404) return null;
+    throw err;
+  }
 }

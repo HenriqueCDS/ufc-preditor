@@ -55,6 +55,7 @@ class Predictor:
         self.fighters = pd.read_csv(artifacts_dir / 'fighters.csv').set_index('Fighter_Name')
         self.fights = pd.read_csv(artifacts_dir / 'fights.csv')
         self.upcoming_path = artifacts_dir / 'upcoming.json'
+        self.last_event_path = artifacts_dir / 'last_event.json'
         self._normalized_fighters = {_normalize_name(n): n for n in self.fighters.index}
 
     def search_fighter(self, name, top_n=5):
@@ -194,6 +195,16 @@ class Predictor:
             'location': event['location'], 'scraped_at': data.get('scraped_at'),
             'fights': fights,
         }
+
+    # -- ultimo evento concluido (last_event.json, publicado por
+    # ml/archive_last_event.py antes do retreino, ver README do CI)
+
+    def last_event(self):
+        """None se o arquivo ainda nao existe (primeira execucao do
+        workflow completo antes de rodar)."""
+        if not self.last_event_path.exists():
+            return None
+        return json.loads(self.last_event_path.read_text(encoding='utf-8'))
 
     def compare_fighters(self, fighter1_name, fighter2_name):
         name1, name2 = self._resolve_name(fighter1_name), self._resolve_name(fighter2_name)
