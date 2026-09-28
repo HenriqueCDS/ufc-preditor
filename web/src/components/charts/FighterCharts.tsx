@@ -20,8 +20,8 @@ const legend = { position: "bottom" as const, labels: { color: CHART_TEXT_COLOR,
 
 const METHOD_GROUPS = [
   ["ko_tko", "KO/TKO"],
-  ["submission", "Finalizacao"],
-  ["decision", "Decisao"],
+  ["submission", "Finalização"],
+  ["decision", "Decisão"],
   ["other", "Outros"],
 ] as const;
 
@@ -32,7 +32,7 @@ export function MethodBreakdownChart({ record }: { record: FighterRecord }) {
         labels: METHOD_GROUPS.map(([, label]) => label),
         datasets: [
           {
-            label: "Vitorias",
+            label: "Vitórias",
             data: METHOD_GROUPS.map(([k]) => record.wins_by[k]),
             backgroundColor: UFC_GREEN,
             borderRadius: 4,
@@ -61,7 +61,7 @@ export function ResultsByYearChart({ byYear }: { byYear: FighterStatsResult["by_
       data={{
         labels: byYear.map((r) => String(r.year)),
         datasets: [
-          { label: "Vitorias", data: byYear.map((r) => r.wins), backgroundColor: UFC_GREEN },
+          { label: "Vitórias", data: byYear.map((r) => r.wins), backgroundColor: UFC_GREEN },
           { label: "Derrotas", data: byYear.map((r) => r.losses), backgroundColor: UFC_RED },
         ],
       }}

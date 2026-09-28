@@ -10,7 +10,7 @@ export function WinProbabilityChart({ result }: { result: PredictFightResult }) 
     labels: [result.fighter1, result.fighter2],
     datasets: [
       {
-        label: "Probabilidade de vitoria",
+        label: "Probabilidade de vitória",
         data: [result.prob_fighter1 * 100, result.prob_fighter2 * 100],
         backgroundColor: [UFC_RED, UFC_BLUE],
         borderRadius: 6,

@@ -17,6 +17,13 @@
 
 Projeto da disciplina **Linguagem de Programação Python Aplicada a Machine Learning**.
 
+> **Aviso legal.** Projeto educacional e independente, sem qualquer afiliação,
+> patrocínio ou aprovação do UFC ou da Zuffa/TKO — "UFC" aparece apenas para
+> descrever o assunto do projeto. Os dados são coletados publicamente do
+> [ufcstats.com](http://ufcstats.com) só para fins de estudo. As previsões são
+> estimativas estatísticas de um modelo de Machine Learning: não têm garantia
+> de acerto e não devem ser usadas como recomendação para apostas.
+
 ---
 
 ## O problema
@@ -233,15 +240,27 @@ Além das diferenças cruas, há compostas que codificam conhecimento do esporte
 
 ### Sem vazamento temporal
 
-O *streak* de um lutador é calculado **só com lutas anteriores** à luta prevista.
-Usar o cartel final para prever uma luta de 2015 deixaria o modelo "ver o
-futuro" e inflaria as métricas com um resultado que não se repete em produção.
+Toda estatística de carreira usada como feature (streak, taxa de vitórias,
+golpes por minuto, defesa, quedas...) é recalculada por luta, usando **só o
+cartel do lutador antes daquela luta** — nunca as estatísticas atuais/finais.
+Usar o cartel de hoje para prever uma luta de 2015 deixaria o modelo "ver o
+futuro" (aquele lutador só chegou aos números atuais *depois* de vencer ou
+perder lutas posteriores) e inflaria as métricas com um resultado que não se
+repete em produção. Ver [`ml/features.py`](backend/ml/features.py),
+`compute_prior_career_stats`.
+
+Pela mesma razão, o split treino/validação/teste é feito **por luta e por
+data, antes do espelhamento**: as lutas mais antigas vão para o treino, as
+mais recentes para o teste, e só depois cada conjunto é espelhado
+separadamente. Espelhar antes de dividir faria a cópia de uma luta de teste
+cair no treino (ou vice-versa) e o modelo veria, ainda que de forma
+disfarçada, o resultado que deveria estar prevendo. Ver `ml/train.py`.
 
 ### AUC-ROC como métrica principal
 
 Acurácia depende de um limiar de decisão; a AUC avalia o modelo em todos eles e
-mede a capacidade real de separar vencedor de perdedor. O split é estratificado
-70/15/15 e o conjunto de teste só é lido na avaliação final.
+mede a capacidade real de separar vencedor de perdedor. O conjunto de teste
+(as lutas mais recentes) só é lido na avaliação final.
 
 ### Camadas com fronteiras rígidas
 
@@ -351,7 +370,17 @@ write` no topo do arquivo é o que autoriza esse push de volta para `main`.
 
 ## Limitações e próximos passos
 
-- Estatísticas por **luta recente**, não só totais de carreira
+- Lutadores são casados entre `fights` e `fighters` pelo **nome**, não pelo
+  `Fighter_URL` único do ufcstats. Quando dois atletas diferentes têm o mesmo
+  nome (ex.: dois "Bruno Silva"), `load_and_clean_fighters` mantém só o de
+  carreira mais longa, então uma fração pequena de lutas do outro homônimo é
+  associada ao perfil errado. Resolver isso de vez exige propagar
+  `Fighter_URL` até o dataset de lutas, algo que o scraper ainda não faz.
+- Altura, alcance, peso e idade usam o valor **atual/final** do lutador,
+  mesmo em lutas antigas (fisicamente mudam pouco durante a carreira, mas a
+  idade no dia da luta não é recalculada retroativamente).
+- Estatísticas de carreira ainda são cumulativas até a luta, não uma janela
+  das últimas N lutas (uma sequência recente pesa o mesmo que uma antiga)
 - Dados de camp de treinamento e comissão técnica
 - NLP em entrevistas pré-luta para detectar confiança/pressão
 - Modelos de série temporal para a trajetória de desempenho

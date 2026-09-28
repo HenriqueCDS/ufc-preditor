@@ -81,6 +81,18 @@ def load_and_clean_fighters(fighters_csv):
 
     fighters_clean = fighters[['Fighter_Name'] + FIGHTER_FEATURES].copy()
 
+    # ufcstats has a handful of distinct fighters sharing the same display name
+    # (different Fighter_URL, e.g. two unrelated "Bruno Silva"). Fights are
+    # joined to fighters_clean by name, so a duplicate name fans a single fight
+    # out into two training rows and silently mixes one fighter's stats into
+    # the other's fight. Keep only the more established namesake (more career
+    # fights) so each name maps to exactly one row.
+    fighters_clean = (
+        fighters_clean.sort_values('Total_Fights', ascending=False)
+        .drop_duplicates(subset='Fighter_Name', keep='first')
+        .reset_index(drop=True)
+    )
+
     for col in FIGHTER_FEATURES:
         fighters_clean[col] = fighters_clean[col].fillna(fighters_clean[col].median())
     for col in FIGHTER_FEATURES:

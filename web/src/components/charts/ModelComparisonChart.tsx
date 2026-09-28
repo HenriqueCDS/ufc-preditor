@@ -13,7 +13,7 @@ export function ModelComparisonChart() {
     labels: MODEL_METRICS.map((m) => m.label),
     datasets: [
       {
-        label: "AUC-ROC (validacao)",
+        label: "AUC-ROC (validação)",
         data: MODEL_METRICS.map((m) => m.aucRocValidation),
         backgroundColor: UFC_RED,
         borderRadius: 4,
@@ -25,7 +25,7 @@ export function ModelComparisonChart() {
         borderRadius: 4,
       },
       {
-        label: "Acuracia (validacao)",
+        label: "Acurácia (validação)",
         data: MODEL_METRICS.map((m) => m.accuracyValidation),
         backgroundColor: LIGHT_BAR,
         borderRadius: 4,

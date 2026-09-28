@@ -92,8 +92,8 @@ export function LastEventFightRow({ fight }: { fight: LastEventFight }) {
       {p ? (
         <>
           <p className="mt-2 text-sm text-neutral-400">
-            Previsao do modelo (antes do evento):{" "}
-            <span className="font-semibold text-neutral-100">{p.predicted_winner}</span> · Confianca{" "}
+            Previsão do modelo (antes do evento):{" "}
+            <span className="font-semibold text-neutral-100">{p.predicted_winner}</span> · Confiança{" "}
             {(p.confidence * 100).toFixed(1)}% ({p.confidence_level})
           </p>
           <Link
@@ -105,7 +105,7 @@ export function LastEventFightRow({ fight }: { fight: LastEventFight }) {
         </>
       ) : (
         <p className="mt-2 rounded-lg border border-neutral-700 bg-neutral-950/60 px-3 py-2 text-sm text-neutral-400">
-          Sem previsao registrada: {fight.missing.join(" e ")} {fight.missing.length > 1 ? "eram" : "era"} lutador
+          Sem previsão registrada: {fight.missing.join(" e ")} {fight.missing.length > 1 ? "eram" : "era"} lutador
           novo no UFC.
         </p>
       )}

@@ -13,7 +13,7 @@ Pipeline: `scraper/ → DATA/*.csv → backend/ml/train.py → backend/ml/artifa
 |---|---|---|---|
 | Coleta | `scraper/` | Atualiza incrementalmente `DATA/ufc_fighters_final.csv` e `DATA/ufc_gold_dataset_final.csv` do ufcstats.com (Playwright) | Não altera o schema dos CSVs |
 | Limpeza | `backend/ml/data_prep.py` | Parsing/limpeza (altura, alcance, `%`, categoria de peso), constantes `FIGHTER_FEATURES`, `WEIGHT_CLASS_CATEGORIES` | Sem I/O de rede |
-| Features | `backend/ml/features.py` | `DIFF_*` + compostas, `ALL_FEATURES`, `STAT_INFO`, `build_feature_row` (1 luta), `build_training_dataset` (vetorizado + augmentação) | — |
+| Features | `backend/ml/features.py` | `DIFF_*` + compostas, `ALL_FEATURES`, `STAT_INFO`, `build_feature_row` (1 luta), `build_fight_features` (vetorizado, 1 linha/luta real), `mirror_augment` (espelhamento, chamado por split), `compute_prior_career_stats` (estatísticas ponto-no-tempo) | — |
 | Treino | `backend/ml/train.py` | Treina os 4 modelos, salva em `ml/artifacts/` | Nunca roda no deploy |
 | Inferência | `backend/ml/predict.py` | Classe `Predictor`: retorna dicts/listas puros | **Sem print, plot, HTTP ou FastAPI** |
 | API | `backend/main.py` | Rotas `/api/...`, modelos Pydantic, mapeia exceções → HTTP | **Sem lógica de ML** |
@@ -30,7 +30,7 @@ Pipeline: `scraper/ → DATA/*.csv → backend/ml/train.py → backend/ml/artifa
 5. **Features: treino e inferência compartilham `features.py`.** Ao criar/alterar uma feature, altere a função compartilhada (`_composite_features`/`build_feature_row`) e a lista (`ENGINEERED_FEATURES`/`ALL_FEATURES`) — nunca duplique a fórmula no `predict.py`. Features são **diferenciais** (F1 − F2) para invariância posicional; mantenha a augmentação por espelhamento.
 6. Mudou features, dados ou modelo ⇒ **é preciso retreinar** (`cd backend && python -m ml.train`, ~35 min) e commitar `ml/artifacts/`, senão inferência e modelo divergem.
 7. Sem `pyarrow`/Parquet: artefatos tabulares em CSV (bundle pequeno). `SEED = 42` para reprodutibilidade.
-8. Split estratificado 70/15/15; métrica principal AUC-ROC. Sem vazamento temporal: streak calculado só com lutas anteriores (`compute_streak`).
+8. Split 70/15/15 **cronológico por luta** (`train.py`: lutas mais antigas no treino, mais recentes no teste) e feito **antes** do espelhamento — nunca divida `mirror_augment(...)`, senão a cópia espelhada de uma luta de teste cai no treino. Métrica principal AUC-ROC. Sem vazamento temporal: streak (`compute_streak`) e as demais estatísticas de carreira usadas como feature (win rate, SLpM, defesa, quedas...) são recalculadas por luta via `compute_prior_career_stats`, usando só lutas anteriores — nunca o cartel atual/final do lutador (esse só é correto para inferência ao vivo, onde não há "futuro" a vazar).
 9. Texto de UI/mensagens em português; identificadores de código em inglês.
 
 ### Artefatos (`backend/ml/artifacts/`)

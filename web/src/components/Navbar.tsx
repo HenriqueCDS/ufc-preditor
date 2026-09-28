@@ -8,7 +8,7 @@ const LINKS = [
   { href: "/", label: "Dashboard" },
   { href: "/predict", label: "Prever e Comparar" },
   { href: "/events", label: "Eventos" },
-  { href: "/statistics", label: "Estatisticas" },
+  { href: "/statistics", label: "Estatísticas" },
 ];
 
 export function Navbar() {

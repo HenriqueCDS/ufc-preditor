@@ -21,11 +21,11 @@ export function GeneralStats() {
   return (
     <div className="flex flex-col gap-10">
       <section className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-        <StatCard label="Lutas validas" value={fmt(summary.fights)} />
+        <StatCard label="Lutas válidas" value={fmt(summary.fights)} />
         <StatCard label="Lutadores" value={fmt(summary.fighters)} />
-        <StatCard label="Periodo" value={`${summary.yearFrom}-${summary.yearTo}`} />
+        <StatCard label="Período" value={`${summary.yearFrom}-${summary.yearTo}`} />
         <StatCard
-          label="Decisoes dos juizes"
+          label="Decisões dos juízes"
           value={`${((decisions / summary.fights) * 100).toFixed(1)}%`}
           hint="das lutas terminam nos pontos"
         />
@@ -34,17 +34,17 @@ export function GeneralStats() {
       <div className="grid gap-6 lg:grid-cols-2">
         <ChartCard
           title="Balanceamento do alvo"
-          note={`O lutador 1 vence ${(summary.fighter1WinRate * 100).toFixed(1)}% das lutas: a ordem dos lutadores nao e aleatoria no dado bruto. Por isso o treino usa diferencas (F1 - F2) e aumento por espelhamento.`}
+          note={`O lutador 1 vence ${(summary.fighter1WinRate * 100).toFixed(1)}% das lutas: a ordem dos lutadores não é aleatória no dado bruto. Por isso o treino usa diferenças (F1 - F2) e aumento por espelhamento.`}
         >
           <TargetBalanceChart />
         </ChartCard>
-        <ChartCard title="Metodos de vitoria (top 8)">
+        <ChartCard title="Métodos de vitória (top 8)">
           <MethodsDonutChart />
         </ChartCard>
         <ChartCard title="Lutas por categoria de peso">
           <WeightClassChart />
         </ChartCard>
-        <ChartCard title="Metodos por quinquenio (top 4)" note="Decisao unanime, KO/TKO, finalizacao e decisao dividida.">
+        <ChartCard title="Métodos por quinquênio (top 4)" note="Decisão unânime, KO/TKO, finalização e decisão dividida.">
           <MethodsByPeriodChart />
         </ChartCard>
       </div>
@@ -55,7 +55,7 @@ export function GeneralStats() {
 
       <ChartCard
         title="Golpes desferidos x sofridos por perfil de desempenho"
-        note="Cada ponto e um lutador. Acima da diagonal, sofre mais do que acerta. Perfil definido pela taxa de vitorias."
+        note="Cada ponto é um lutador. Acima da diagonal, sofre mais do que acerta. Perfil definido pela taxa de vitórias."
         tall
       >
         <StrikingScatterChart />
@@ -63,24 +63,24 @@ export function GeneralStats() {
 
       <section>
         <h2 className="mb-4 text-lg font-semibold text-neutral-200">
-          Correlacao entre estatisticas dos lutadores
+          Correlação entre estatísticas dos lutadores
         </h2>
         <div className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-4">
           <CorrelationHeatmap />
         </div>
         <p className="mt-2 text-xs text-neutral-500">
-          Vermelho = correlacao positiva, azul = negativa (Pearson).
+          Vermelho = correlação positiva, azul = negativa (Pearson).
         </p>
       </section>
 
       <section>
-        <h2 className="mb-4 text-lg font-semibold text-neutral-200">Estatisticas descritivas</h2>
+        <h2 className="mb-4 text-lg font-semibold text-neutral-200">Estatísticas descritivas</h2>
         <div className="overflow-x-auto rounded-xl border border-neutral-800 bg-neutral-900/50">
           <table className="w-full text-sm">
             <thead className="text-left text-xs uppercase tracking-wide text-neutral-500">
               <tr>
-                <th className="px-4 py-3">Metrica</th>
-                {["Media", "Desvio", "Min", "Mediana", "Max"].map((h) => (
+                <th className="px-4 py-3">Métrica</th>
+                {["Média", "Desvio", "Min", "Mediana", "Max"].map((h) => (
                   <th key={h} className="px-4 py-3 text-right">
                     {h}
                   </th>
@@ -102,7 +102,7 @@ export function GeneralStats() {
           </table>
         </div>
         <p className="mt-2 text-xs text-neutral-500">
-          Lutadores apos imputacao pela mediana e winsorizacao (1%-99%). Snapshot gerado por
+          Lutadores após imputação pela mediana e winsorização (1%-99%). Snapshot gerado por
           `python -m ml.eda`.
         </p>
       </section>

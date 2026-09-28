@@ -26,7 +26,7 @@ export function LastEventSummary() {
   return (
     <section className="flex flex-col gap-3">
       <div>
-        <h2 className="text-lg font-bold">Ultimo Evento</h2>
+        <h2 className="text-lg font-bold">Último Evento</h2>
         <p className="mt-1 text-sm text-neutral-400">
           {data.name ?? `Card de ${formatIsoDate(data.event_date)}`} · {formatIsoDate(data.event_date)}
           {data.location && ` · ${data.location}`}

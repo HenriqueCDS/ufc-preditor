@@ -25,20 +25,20 @@ export interface EdaStats {
 export const EDA_STATS = raw as unknown as EdaStats;
 
 export const METHOD_LABELS: Record<string, string> = {
-  "Decision - Unanimous": "Decisao unanime",
-  "Decision - Split": "Decisao dividida",
-  "Decision - Majority": "Decisao majoritaria",
+  "Decision - Unanimous": "Decisão unânime",
+  "Decision - Split": "Decisão dividida",
+  "Decision - Majority": "Decisão majoritária",
   "KO/TKO": "KO/TKO",
-  Submission: "Finalizacao",
-  "TKO - Doctor's Stoppage": "TKO (medico)",
-  DQ: "Desqualificacao",
+  Submission: "Finalização",
+  "TKO - Doctor's Stoppage": "TKO (médico)",
+  DQ: "Desqualificação",
 };
 
 export const STAT_LABELS: Record<string, string> = {
-  Win_Rate: "Taxa de vitorias",
+  Win_Rate: "Taxa de vitórias",
   SLpM: "Golpes desferidos/min (SLpM)",
   SApM: "Golpes sofridos/min (SApM)",
   TD_Avg: "Quedas/15min (TD Avg)",
-  Sub_Avg: "Finalizacoes/15min (Sub Avg)",
+  Sub_Avg: "Finalizações/15min (Sub Avg)",
   Reach_cm: "Alcance (cm)",
 };

@@ -157,7 +157,7 @@ export function MethodsByPeriodChart() {
 
 const PROFILE_COLORS: Record<string, string> = {
   "Iniciante (<40%)": UFC_RED,
-  "Medio (40-60%)": UFC_ORANGE,
+  "Médio (40-60%)": UFC_ORANGE,
   "Bom (60-75%)": UFC_BLUE,
   "Elite (>75%)": UFC_GREEN,
 };

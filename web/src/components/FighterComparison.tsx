@@ -22,7 +22,7 @@ export function FighterComparison({ result }: { result: CompareFightersResult })
         <table className="w-full text-xs sm:text-sm">
           <thead className="bg-neutral-900 text-neutral-400">
             <tr>
-              <th className="px-3 py-2 text-left font-medium">Estatistica</th>
+              <th className="px-3 py-2 text-left font-medium">Estatística</th>
               <th className="px-3 py-2 text-right font-medium text-red-500">{result.fighter1}</th>
               <th className="px-3 py-2 text-right font-medium text-blue-400">{result.fighter2}</th>
             </tr>

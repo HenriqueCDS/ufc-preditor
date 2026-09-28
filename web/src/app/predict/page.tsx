@@ -60,7 +60,7 @@ function PredictForm() {
       <div>
         <h1 className="text-2xl font-bold">Prever Luta</h1>
         <p className="mt-1 text-sm text-neutral-400">
-          Escolha os dois lutadores e a categoria de peso para estimar o vencedor e ver a comparacao de estatisticas.
+          Escolha os dois lutadores e a categoria de peso para estimar o vencedor e ver a comparação de estatísticas.
         </p>
       </div>
 
@@ -107,7 +107,7 @@ function PredictForm() {
               Vencedor previsto: <span className="text-red-500">{result.predicted_winner}</span>
             </h2>
             <span className="text-sm text-neutral-400">
-              Confianca: {(result.confidence * 100).toFixed(1)}% ({result.confidence_level})
+              Confiança: {(result.confidence * 100).toFixed(1)}% ({result.confidence_level})
             </span>
           </div>
           <div className="h-40">
@@ -116,11 +116,11 @@ function PredictForm() {
           <dl className="mt-4 grid grid-cols-2 gap-4 text-sm text-neutral-400 sm:grid-cols-4">
             <div>
               <dt className="text-neutral-500">Streak {result.fighter1}</dt>
-              <dd className="text-neutral-200">{result.streak_f1} vitorias</dd>
+              <dd className="text-neutral-200">{result.streak_f1} vitórias</dd>
             </div>
             <div>
               <dt className="text-neutral-500">Streak {result.fighter2}</dt>
-              <dd className="text-neutral-200">{result.streak_f2} vitorias</dd>
+              <dd className="text-neutral-200">{result.streak_f2} vitórias</dd>
             </div>
             <div className="col-span-2">
               <dt className="text-neutral-500">Categoria</dt>
@@ -132,7 +132,7 @@ function PredictForm() {
 
       {comparison && (
         <section className="flex flex-col gap-4">
-          <h2 className="text-lg font-semibold">Comparacao entre os lutadores</h2>
+          <h2 className="text-lg font-semibold">Comparação entre os lutadores</h2>
           <FighterComparison result={comparison} />
         </section>
       )}

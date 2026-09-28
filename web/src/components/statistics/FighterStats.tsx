@@ -33,7 +33,7 @@ export function FighterStats() {
       setResult(await getFighterStats(query.trim()));
     } catch (err) {
       setResult(null);
-      setError(err instanceof ApiError ? err.message : "Falha ao buscar estatisticas.");
+      setError(err instanceof ApiError ? err.message : "Falha ao buscar estatísticas.");
     } finally {
       setLoading(false);
     }
@@ -50,7 +50,7 @@ export function FighterStats() {
           disabled={!canSubmit}
           className="rounded-lg bg-red-600 px-4 py-2 font-semibold text-white transition hover:bg-red-500 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          {loading ? "Carregando..." : "Ver estatisticas"}
+          {loading ? "Carregando..." : "Ver estatísticas"}
         </button>
       </form>
 
@@ -62,7 +62,7 @@ export function FighterStats() {
 
       {!result && !error && (
         <p className="text-sm text-neutral-500">
-          Busque um lutador para ver cartel, metodos de vitoria, striking, grappling e historico.
+          Busque um lutador para ver cartel, métodos de vitória, striking, grappling e histórico.
         </p>
       )}
 
@@ -92,14 +92,14 @@ function FighterReport({ data }: { data: FighterStatsResult }) {
               value={`${record.wins}-${record.losses}`}
               hint={`${record.fights} lutas`}
             />
-            <StatCard label="Taxa de vitorias" value={pct(record.win_rate)} />
+            <StatCard label="Taxa de vitórias" value={pct(record.win_rate)} />
             <StatCard
-              label="Vitorias por finalizacao"
+              label="Vitórias por finalização"
               value={pct(record.finish_rate)}
-              hint="KO/TKO + finalizacao"
+              hint="KO/TKO + finalização"
             />
             <StatCard
-              label="Sequencia atual"
+              label="Sequência atual"
               value={String(record.current_streak)}
               hint={`melhor: ${record.best_streak}`}
             />
@@ -116,17 +116,17 @@ function FighterReport({ data }: { data: FighterStatsResult }) {
         </>
       ) : (
         <p className="rounded-lg border border-neutral-800 bg-neutral-900/50 px-4 py-3 text-sm text-neutral-400">
-          Nenhuma luta com resultado definido na base do UFC; so ha as estatisticas de perfil.
+          Nenhuma luta com resultado definido na base do UFC; só há as estatísticas de perfil.
         </p>
       )}
 
       <section>
         <h3 className="mb-1 text-lg font-semibold text-neutral-200">
-          Posicao entre os lutadores
+          Posição entre os lutadores
         </h3>
         <p className="mb-4 text-xs text-neutral-500">
-          Percentil frente a lutadores com 3+ lutas (maior = melhor; em golpes recebidos, menos e
-          melhor). Taxa de vitorias e total de lutas vem do perfil profissional, entao podem incluir
+          Percentil frente a lutadores com 3+ lutas (maior = melhor; em golpes recebidos, menos é
+          melhor). Taxa de vitórias e total de lutas vêm do perfil profissional, então podem incluir
           lutas fora do UFC.
         </p>
         <div className="flex flex-col gap-2 rounded-xl border border-neutral-800 bg-neutral-900/50 p-4">
@@ -162,7 +162,7 @@ function FighterReport({ data }: { data: FighterStatsResult }) {
               <StatCard
                 label="Golpes significativos"
                 value={`${num(striking.sig_landed)}/${num(striking.sig_attempted)}`}
-                hint={`${pct(striking.sig_accuracy)} de precisao`}
+                hint={`${pct(striking.sig_accuracy)} de precisão`}
               />
               <StatCard
                 label="Golpes absorvidos"
@@ -170,17 +170,17 @@ function FighterReport({ data }: { data: FighterStatsResult }) {
                 hint={`${pct(striking.sig_defense)} de defesa`}
               />
               <StatCard label="Knockdowns" value={num(striking.knockdowns)} />
-              <StatCard label="Duracao media" value={`${striking.avg_fight_min.toFixed(1)} min`} />
+              <StatCard label="Duração média" value={`${striking.avg_fight_min.toFixed(1)} min`} />
               <StatCard
                 label="Quedas"
                 value={`${striking.td_landed}/${striking.td_attempted}`}
-                hint={`${pct(striking.td_accuracy)} de precisao`}
+                hint={`${pct(striking.td_accuracy)} de precisão`}
               />
-              <StatCard label="Finalizacoes tentadas" value={num(striking.sub_attempts)} />
+              <StatCard label="Finalizações tentadas" value={num(striking.sub_attempts)} />
               <StatCard
                 label="Controle por luta"
                 value={clock(striking.control_avg_sec)}
-                hint="tempo medio (min:seg)"
+                hint="tempo médio (min:seg)"
               />
             </div>
           </section>
@@ -188,13 +188,13 @@ function FighterReport({ data }: { data: FighterStatsResult }) {
           <div className="grid gap-6 lg:grid-cols-2">
             <Panel title="Alvo dos golpes">
               <ShareDonutChart
-                labels={["Cabeca", "Corpo", "Perna"]}
+                labels={["Cabeça", "Corpo", "Perna"]}
                 values={[striking.targets.head, striking.targets.body, striking.targets.leg]}
               />
             </Panel>
-            <Panel title="Posicao dos golpes">
+            <Panel title="Posição dos golpes">
               <ShareDonutChart
-                labels={["Distancia", "Clinch", "Solo"]}
+                labels={["Distância", "Clinch", "Solo"]}
                 values={[
                   striking.positions.distance,
                   striking.positions.clinch,
@@ -208,12 +208,12 @@ function FighterReport({ data }: { data: FighterStatsResult }) {
 
       {data.history.length > 0 && (
         <section>
-          <h3 className="mb-4 text-lg font-semibold text-neutral-200">Ultimas lutas</h3>
+          <h3 className="mb-4 text-lg font-semibold text-neutral-200">Últimas lutas</h3>
           <div className="overflow-x-auto rounded-xl border border-neutral-800">
             <table className="w-full text-sm">
               <thead className="bg-neutral-900 text-left text-neutral-400">
                 <tr>
-                  {["Data", "Adversario", "Resultado", "Metodo", "Round", "Categoria"].map((h) => (
+                  {["Data", "Adversário", "Resultado", "Método", "Round", "Categoria"].map((h) => (
                     <th key={h} className="px-3 py-2 font-medium">
                       {h}
                     </th>
@@ -230,7 +230,7 @@ function FighterReport({ data }: { data: FighterStatsResult }) {
                         f.result === "W" ? "text-green-400" : "text-red-400"
                       }`}
                     >
-                      {f.result === "W" ? "Vitoria" : "Derrota"}
+                      {f.result === "W" ? "Vitória" : "Derrota"}
                     </td>
                     <td className="px-3 py-2 text-neutral-400">{f.method}</td>
                     <td className="px-3 py-2 text-neutral-400">{f.round ?? "-"}</td>

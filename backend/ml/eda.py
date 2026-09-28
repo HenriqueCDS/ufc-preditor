@@ -21,7 +21,7 @@ CORR_FEATURES = [
 ]
 SUMMARY_FEATURES = ['Win_Rate', 'SLpM', 'SApM', 'TD_Avg', 'Sub_Avg', 'Reach_cm']
 PROFILE_BINS = [0, 0.40, 0.60, 0.75, 1.01]
-PROFILE_LABELS = ['Iniciante (<40%)', 'Medio (40-60%)', 'Bom (60-75%)', 'Elite (>75%)']
+PROFILE_LABELS = ['Iniciante (<40%)', 'Médio (40-60%)', 'Bom (60-75%)', 'Elite (>75%)']
 
 
 def _counts(series):

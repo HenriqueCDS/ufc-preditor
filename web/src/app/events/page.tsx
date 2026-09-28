@@ -23,9 +23,9 @@ export default function EventsPage() {
       <LastEventSummary />
 
       <div>
-        <h1 className="text-2xl font-bold">Proximos Eventos</h1>
+        <h1 className="text-2xl font-bold">Próximos Eventos</h1>
         <p className="mt-1 text-sm text-neutral-400">
-          Escolha um card para ver a previsao de cada luta.
+          Escolha um card para ver a previsão de cada luta.
           {data?.scraped_at && ` Atualizado em ${formatTimestamp(data.scraped_at)}.`}
         </p>
       </div>
@@ -33,9 +33,9 @@ export default function EventsPage() {
       {error && (
         <p className="rounded-lg border border-red-900 bg-red-950/50 px-4 py-3 text-sm text-red-300">{error}</p>
       )}
-      {!data && !error && <LoadingState message="Carregando proximos eventos..." />}
+      {!data && !error && <LoadingState message="Carregando próximos eventos..." />}
       {data && data.events.length === 0 && (
-        <p className="text-sm text-neutral-400">Nenhum evento futuro disponivel no momento.</p>
+        <p className="text-sm text-neutral-400">Nenhum evento futuro disponível no momento.</p>
       )}
 
       <ul className="grid gap-3">
@@ -50,7 +50,7 @@ export default function EventsPage() {
                   {event.name}
                   {isPastDate(event.date) && (
                     <span className="ml-2 rounded-full bg-neutral-700/50 px-2 py-0.5 align-middle text-[10px] font-semibold uppercase tracking-wide text-neutral-300">
-                      Ja aconteceu
+                      Já aconteceu
                     </span>
                   )}
                 </h2>

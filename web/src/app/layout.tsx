@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "UFC Preditor",
-  description: "Predicao de resultados de lutas do UFC com Machine Learning",
+  description: "Predição de resultados de lutas do UFC com Machine Learning",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

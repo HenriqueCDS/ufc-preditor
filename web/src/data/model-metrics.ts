@@ -14,7 +14,7 @@ export interface ModelMetric {
 export const MODEL_METRICS: ModelMetric[] = [
   {
     key: "logistic_regression",
-    label: "Regressao Logistica",
+    label: "Regressão Logística",
     accuracyValidation: 0.7318,
     aucRocValidation: 0.8057,
     aucRocTest: 0.8031,

@@ -18,7 +18,7 @@ import joblib
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, roc_auc_score
-from sklearn.model_selection import GridSearchCV, RandomizedSearchCV, train_test_split
+from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
@@ -29,7 +29,7 @@ except ImportError:
     XGBOOST_AVAILABLE = False
 
 from .data_prep import load_and_clean_fighters, load_and_clean_fights
-from .features import ALL_FEATURES, build_training_dataset
+from .features import ALL_FEATURES, build_fight_features, mirror_augment
 
 SEED = 42
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
@@ -109,14 +109,29 @@ def train():
     print('Carregando e limpando dados...')
     fighters_clean = load_and_clean_fighters(DATA_DIR / 'ufc_fighters_final.csv')
     fights_clean, wc_le = load_and_clean_fights(DATA_DIR / 'ufc_gold_dataset_final.csv')
-    df_aug = build_training_dataset(fighters_clean, fights_clean, seed=SEED)
-    print(f'  Lutadores: {len(fighters_clean):,} | Lutas (aumentadas): {len(df_aug):,}')
+    df = build_fight_features(fighters_clean, fights_clean)
 
-    X = df_aug[ALL_FEATURES].fillna(0).values
-    y = df_aug['target'].values
+    # Split by fight BEFORE mirroring, and chronologically (fights_clean is
+    # sorted by Event_Date, so df is too): train on the oldest fights, test
+    # on the most recent ones. This is what real usage looks like (predicting
+    # future fights from past ones) and it's the only way to guarantee a
+    # fight and its mirrored twin (F1 vs F2 <-> F2 vs F1) never end up on
+    # both sides of a split, which would let the model see the test fight's
+    # outcome during training.
+    n = len(df)
+    n_train = int(n * 0.70)
+    n_val = int(n * 0.85)
+    df_train = mirror_augment(df.iloc[:n_train], seed=SEED)
+    df_val = mirror_augment(df.iloc[n_train:n_val], seed=SEED)
+    df_test = mirror_augment(df.iloc[n_val:], seed=SEED)
+    print(
+        f'  Lutadores: {len(fighters_clean):,} | Lutas: {n:,} '
+        f'(treino {len(df_train):,} / val {len(df_val):,} / teste {len(df_test):,}, aumentadas)'
+    )
 
-    X_train, X_temp, y_train, y_temp = train_test_split(X, y, test_size=0.30, random_state=SEED, stratify=y)
-    X_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=0.50, random_state=SEED, stratify=y_temp)
+    X_train, y_train = df_train[ALL_FEATURES].fillna(0).values, df_train['target'].values
+    X_val, y_val = df_val[ALL_FEATURES].fillna(0).values, df_val['target'].values
+    X_test, y_test = df_test[ALL_FEATURES].fillna(0).values, df_test['target'].values
 
     trainers = {
         'logistic_regression': _train_logistic_regression,

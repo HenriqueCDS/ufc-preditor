@@ -49,7 +49,7 @@ function FightRow({ fight }: { fight: EventFight }) {
     <li className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-4">
       <div className="mb-3 flex items-center justify-between gap-2 text-xs text-neutral-500">
         <span>{translateWeightClass(fight.weight_class)}</span>
-        {fight.title_bout && <span className="font-semibold text-yellow-500">Disputa de cinturao</span>}
+        {fight.title_bout && <span className="font-semibold text-yellow-500">Disputa de cinturão</span>}
       </div>
 
       <div className="mb-3 flex items-center justify-between gap-2 font-semibold sm:gap-4">
@@ -69,7 +69,7 @@ function FightRow({ fight }: { fight: EventFight }) {
           <ProbabilityBar prob1={p.prob_fighter1} />
           <p className="mt-3 text-sm text-neutral-400">
             Vencedor previsto: <span className="font-semibold text-neutral-100">{p.predicted_winner}</span> ·
-            Confianca {(p.confidence * 100).toFixed(1)}% ({p.confidence_level})
+            Confiança {(p.confidence * 100).toFixed(1)}% ({p.confidence_level})
           </p>
           <Link
             href={detailsHref(fight, p)}
@@ -80,7 +80,7 @@ function FightRow({ fight }: { fight: EventFight }) {
         </>
       ) : (
         <p className="rounded-lg border border-neutral-700 bg-neutral-950/60 px-3 py-2 text-sm text-neutral-400">
-          Sem dados para previsao: {fight.missing.join(" e ")} {fight.missing.length > 1 ? "sao lutadores novos" : "e lutador novo"} no UFC.
+          Sem dados para previsão: {fight.missing.join(" e ")} {fight.missing.length > 1 ? "são lutadores novos" : "é lutador novo"} no UFC.
         </p>
       )}
     </li>
@@ -111,13 +111,13 @@ export default function EventCardPage() {
   return (
     <div className="flex flex-col gap-8">
       <Link href="/events" className="text-sm text-neutral-400 transition hover:text-neutral-100">
-        &larr; Proximos eventos
+        &larr; Próximos eventos
       </Link>
 
       {error && (
         <p className="rounded-lg border border-red-900 bg-red-950/50 px-4 py-3 text-sm text-red-300">{error}</p>
       )}
-      {!card && !error && <LoadingState message="Calculando as previsoes do card..." />}
+      {!card && !error && <LoadingState message="Calculando as previsões do card..." />}
 
       {card && (
         <>
@@ -126,7 +126,7 @@ export default function EventCardPage() {
               {card.name}
               {isPastDate(card.date) && (
                 <span className="ml-2 rounded-full bg-neutral-700/50 px-2 py-0.5 align-middle text-xs font-semibold uppercase tracking-wide text-neutral-300">
-                  Ja aconteceu
+                  Já aconteceu
                 </span>
               )}
             </h1>
@@ -136,8 +136,8 @@ export default function EventCardPage() {
             </p>
             {isPastDate(card.date) && !archivedEvent && (
               <p className="mt-2 rounded-lg border border-neutral-700 bg-neutral-950/60 px-3 py-2 text-sm text-neutral-400">
-                Esse card ja aconteceu, mas o resultado ainda nao foi processado. Volte em breve para ver a
-                comparacao com o que o modelo previu.
+                Esse card já aconteceu, mas o resultado ainda não foi processado. Volte em breve para ver a
+                comparação com o que o modelo previu.
               </p>
             )}
           </div>
@@ -151,7 +151,7 @@ export default function EventCardPage() {
               ))}
             </ol>
           ) : card.fights.length === 0 ? (
-            <p className="text-sm text-neutral-400">O card desse evento ainda nao foi divulgado.</p>
+            <p className="text-sm text-neutral-400">O card desse evento ainda não foi divulgado.</p>
           ) : (
             <ol className="grid gap-3">
               {card.fights.map((fight) => (
