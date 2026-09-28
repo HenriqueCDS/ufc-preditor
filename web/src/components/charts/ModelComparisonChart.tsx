@@ -53,8 +53,8 @@ export function ModelComparisonChart() {
         scales: {
           x: { grid: { display: false }, ticks: { color: CHART_TEXT_COLOR } },
           y: {
-            min: 0.6,
-            max: 0.9,
+            min: 0.5,
+            max: 0.8,
             grid: { color: CHART_GRID_COLOR },
             ticks: {
               color: CHART_TEXT_COLOR,

@@ -51,7 +51,7 @@ python scrape_combats.py --limit-events 5 # só os 5 eventos mais recentes (test
 python scrape_combats.py --full-scan      # varre os ~700 eventos até 1993 (auditoria)
 python scrape_fighters.py                 # índice + perfis que mudaram
 python scrape_fighters.py --limit 10      # teste rápido
-python scrape_fighters.py --force-all     # revisita os 4.455 perfis (lento)
+python scrape_fighters.py --force-all     # revisita os 4.623 perfis (lento)
 python finalize.py                        # limpeza e publicação em DATA/
 python test_scraper.py                    # testes (não tocam na rede)
 ```
@@ -60,16 +60,16 @@ python test_scraper.py                    # testes (não tocam na rede)
 
 ## A otimização que torna isso viável
 
-O índice alfabético (`?char=a&page=all`) já traz altura, peso, alcance, guarda e o cartel — **26 páginas para 4.455 lutadores**. Só `DOB` e as 8 estatísticas de carreira exigem abrir o perfil individual.
+O índice alfabético (`?char=a&page=all`) já traz altura, peso, alcance, guarda e o cartel — **26 páginas para 4.623 lutadores**. Só `DOB` e as 8 estatísticas de carreira exigem abrir o perfil individual.
 
 Quem teve o cartel alterado desde o último scrape lutou nesse meio tempo — e é exatamente quem precisa das estatísticas refeitas. O mesmo sinal serve para as duas coisas.
 
 | | Original | Aqui |
 |---|---|---|
-| Atualização mensal | 4.455 perfis (horas) | ~26 páginas + dezenas de perfis (minutos) |
+| Atualização mensal | 4.623 perfis (horas) | ~26 páginas + dezenas de perfis (minutos) |
 | Atualiza lutador já existente | ❌ nunca | ✅ quando o cartel muda |
 
-Na primeira execução, `DATA/` serve de semente — você não recoleta as 8.551 lutas e os 4.455 perfis que já tem.
+Na primeira execução, `DATA/` serve de semente — você não recoleta as 8.890 lutas e os 4.623 perfis que já tem.
 
 ---
 

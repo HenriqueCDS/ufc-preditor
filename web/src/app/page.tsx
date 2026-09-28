@@ -27,8 +27,8 @@ const PIPELINE_STEPS = [
 const MODELS = [
   { name: "Regressão Logística", text: "Pesos lineares por feature. Simples, rápida e a mais bem calibrada." },
   { name: "Random Forest", text: "Centenas de árvores independentes combinadas por votação." },
-  { name: "Gradient Boosting", text: "Árvores em sequência, cada uma corrigindo os erros da anterior." },
-  { name: "XGBoost", text: "Boosting otimizado, com regularização embutida. Melhor AUC-ROC." },
+  { name: "Gradient Boosting", text: "Árvores em sequência, cada uma corrigindo os erros da anterior. Melhor AUC-ROC." },
+  { name: "XGBoost", text: "Boosting otimizado, com regularização embutida." },
 ];
 
 export default function DashboardPage() {

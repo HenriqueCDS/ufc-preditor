@@ -13,7 +13,7 @@
 ![Tailwind](https://img.shields.io/badge/Tailwind-4-06B6D4?logo=tailwindcss&logoColor=white)
 ![Chart.js](https://img.shields.io/badge/Chart.js-4.5-FF6384?logo=chartdotjs&logoColor=white)
 ![Vercel](https://img.shields.io/badge/deploy-Vercel%20Services-000000?logo=vercel&logoColor=white)
-![AUC-ROC](https://img.shields.io/badge/AUC--ROC%20(teste)-0.798-success)
+![AUC-ROC](https://img.shields.io/badge/AUC--ROC%20(teste)-0.655-success)
 
 Projeto da disciplina **Linguagem de Programação Python Aplicada a Machine Learning**.
 
@@ -41,7 +41,9 @@ vez de dar ao modelo os números de cada lutador, damos a *diferença* entre ele
 assim ele aprende quem é melhor, não quem está no canto vermelho.
 
 Com ~8,7 mil lutas e ~4,6 mil lutadores, os quatro modelos testados chegam a
-**~72% de acurácia e AUC-ROC de 0.79–0.80 em dados nunca vistos**.
+**~60% de acurácia e AUC-ROC de 0.65–0.66 em dados nunca vistos** — bem acima
+do acaso (50%), mas sem a inflação que vazamento temporal costuma causar
+nesse tipo de dataset (ver [Sem vazamento temporal](#sem-vazamento-temporal)).
 
 ---
 
@@ -53,7 +55,7 @@ Saída real do `Predictor` treinado, não mockup.
 
 ```console
 >>> Predictor().search_fighter("Jones", 5)
-['Mason Jones', 'Paul Jones', 'Jon Jones', 'Nathan Jones', 'Marcus Jones']
+['Jon Jones', 'Trevin Jones', 'Mason Jones', 'Tito Jones', 'Chris Jones']
 ```
 
 ### Prever uma luta
@@ -62,9 +64,9 @@ Saída real do `Predictor` treinado, não mockup.
 >>> Predictor().predict_fight("Islam Makhachev", "Charles Oliveira", "Lightweight")
 {
   "predicted_winner": "Islam Makhachev",
-  "prob_fighter1": 0.870,
-  "prob_fighter2": 0.130,
-  "confidence": 0.870,
+  "prob_fighter1": 0.855,
+  "prob_fighter2": 0.145,
+  "confidence": 0.855,
   "confidence_level": "ALTA",
   ...
 }
@@ -73,13 +75,15 @@ Saída real do `Predictor` treinado, não mockup.
 ### Prever um card
 
 ```console
-Conor McGregor     vs Dustin Poirier     -> Dustin Poirier     61.2%  MEDIA
-Islam Makhachev    vs Charles Oliveira   -> Islam Makhachev    87.0%  ALTA
-Alex Pereira       vs Jiri Prochazka     -> Jiri Prochazka     64.2%  MEDIA
+Islam Makhachev    vs Charles Oliveira   -> Islam Makhachev    85.5%  ALTA
+Conor McGregor     vs Dustin Poirier     -> Dustin Poirier     53.1%  BAIXA
+Alex Pereira       vs Jiri Prochazka     -> Jiri Prochazka     50.9%  BAIXA
 ```
 
-Lutas equilibradas saem com confiança `MEDIA`; só diferenças grandes de perfil
-chegam a `ALTA`. O modelo sabe quando não sabe.
+A maioria das lutas equilibradas agora sai com confiança `BAIXA` ou `MEDIA`
+(as estatísticas point-in-time deixam menos margem para o modelo "roubar");
+só diferenças grandes de perfil, como a de Makhachev, chegam a `ALTA`. O
+modelo sabe quando não sabe.
 
 ---
 
@@ -211,15 +215,21 @@ Fonte: [`backend/ml/artifacts/metrics.json`](backend/ml/artifacts/metrics.json).
 
 | Modelo | CV AUC | Validação — Acurácia | Validação — AUC | Teste — Acurácia | Teste — AUC |
 |---|---|---|---|---|---|
-| Regressão Logística | 0.7954 | 73.2% | 0.8057 | 72.3% | **0.8031** |
-| Random Forest | 0.7904 | 72.1% | 0.7987 | 71.8% | 0.7913 |
-| Gradient Boosting | 0.7994 | 73.0% | 0.8066 | 72.4% | 0.7959 |
-| **XGBoost** (em produção) | 0.7999 | 73.0% | **0.8084** | 71.7% | 0.7978 |
+| Regressão Logística | 0.6862 | 60.3% | 0.6435 | 60.1% | 0.6628 |
+| Random Forest | 0.6962 | 60.9% | 0.6414 | 61.5% | 0.6531 |
+| **Gradient Boosting** (em produção) | 0.7028 | 59.1% | **0.6445** | 61.2% | 0.6548 |
+| XGBoost | 0.7001 | 58.4% | 0.6429 | 61.9% | 0.6514 |
 
-- **XGBoost** vence na validação, então é o modelo servido.
-- Os quatro ficam a ~0.01 de AUC uns dos outros — até a regressão logística
-  empata. **O ganho vem das features, não do algoritmo.**
-- Overfitting mínimo: gap validação/teste de 0.005–0.011 de AUC.
+- **Gradient Boosting** vence na validação (por uma margem mínima), então é o
+  modelo servido.
+- Os quatro ficam a ~0.002 de AUC uns dos outros — a escolha do algoritmo
+  quase não importa aqui.
+- Gap validação/teste de até 0.02 de AUC, sem sinal de overfitting.
+- Esses números são **bem mais baixos que uma versão anterior deste projeto**,
+  que usava o cartel atual/final de cada lutador como feature até para lutas
+  antigas e dividia treino/teste depois de espelhar os dados. Isso vazava o
+  resultado de lutas futuras para dentro do treino e inflava a AUC para
+  ~0.80. Ver [Sem vazamento temporal](#sem-vazamento-temporal).
 
 ---
 
@@ -295,8 +305,11 @@ rewrite `/api/(.*)` → backend. Mesma origem: sem CORS, um deploy só.
 ### Honestidade sobre o teto
 
 MMA tem variância alta. O modelo não vê lesão, fadiga, camp de treino, estilo
-contra estilo nem psicologia. ~72% de acurácia é um resultado sólido — e o
-projeto não finge que é mais que isso.
+contra estilo nem psicologia. ~60% de acurácia e AUC-ROC de ~0.65 é um
+resultado modesto mas honesto — mercados de apostas profissionais raramente
+passam muito disso, e um AUC bem mais alto que isso costuma ser sinal de
+vazamento de dados, não de um modelo melhor. O projeto não finge que é mais
+que isso.
 
 ---
 

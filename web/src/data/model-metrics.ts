@@ -15,36 +15,36 @@ export const MODEL_METRICS: ModelMetric[] = [
   {
     key: "logistic_regression",
     label: "Regressão Logística",
-    accuracyValidation: 0.7318,
-    aucRocValidation: 0.8057,
-    aucRocTest: 0.8031,
+    accuracyValidation: 0.6028,
+    aucRocValidation: 0.6435,
+    aucRocTest: 0.6628,
   },
   {
     key: "random_forest",
     label: "Random Forest",
-    accuracyValidation: 0.7212,
-    aucRocValidation: 0.7987,
-    aucRocTest: 0.7913,
+    accuracyValidation: 0.6092,
+    aucRocValidation: 0.6414,
+    aucRocTest: 0.6531,
   },
   {
     key: "gradient_boosting",
     label: "Gradient Boosting",
-    accuracyValidation: 0.7288,
-    aucRocValidation: 0.8066,
-    aucRocTest: 0.7959,
+    accuracyValidation: 0.5913,
+    aucRocValidation: 0.6445,
+    aucRocTest: 0.6548,
   },
   {
     key: "xgboost",
     label: "XGBoost",
-    accuracyValidation: 0.7303,
-    aucRocValidation: 0.8084,
-    aucRocTest: 0.7978,
+    accuracyValidation: 0.5837,
+    aucRocValidation: 0.6429,
+    aucRocTest: 0.6514,
   },
 ];
 
-export const BEST_MODEL_KEY = "xgboost";
+export const BEST_MODEL_KEY = "gradient_boosting";
 export const DATASET_SUMMARY = {
-  fighters: 4618,
-  fightsAugmented: 17530,
+  fighters: 4615,
+  fightsAugmented: 17454,
   featureCount: 21,
 };
