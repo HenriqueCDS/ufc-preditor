@@ -4,13 +4,22 @@
 fastapi>=0.117
 
 # ml/ package deps (training + inference).
-pandas>=2.2
-numpy>=1.26
-scikit-learn>=1.5
-joblib>=1.4
+# Pinned EXACTLY to the versions ml/artifacts/*.joblib were pickled with.
+# joblib.load() unpickles scikit-learn estimators by resolving their
+# internal module paths (e.g. sklearn's private `_loss` module) -- those
+# paths change between minor versions, so an open-ended `>=` here lets a
+# routine redeploy silently resolve a newer, incompatible scikit-learn and
+# break every route at import time (ModuleNotFoundError: No module named
+# '_loss'). Bump these only together with a retrain + artifact commit.
+pandas==2.2.3
+numpy==1.26.4
+scikit-learn==1.5.1
+joblib==1.5.1
 
 # xgboost-cpu, not xgboost: same `import xgboost`, but skips the ~300MB
 # nvidia-nccl GPU dependency that pushed the bundle past Vercel's 500MB
 # function limit. Only needed at inference because train.py picked it as
 # the best model; drop it if a sklearn-only model wins after retraining.
+# Pin this too whenever xgboost becomes best_model again, for the same
+# unpickling-compatibility reason as above.
 xgboost-cpu>=2.0
