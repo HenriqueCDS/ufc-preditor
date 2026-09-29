@@ -41,4 +41,22 @@ export const STAT_LABELS: Record<string, string> = {
   TD_Avg: "Quedas/15min (TD Avg)",
   Sub_Avg: "Finalizações/15min (Sub Avg)",
   Reach_cm: "Alcance (cm)",
+  Height_cm: "Altura (cm)",
+  Total_Fights: "Total de lutas",
+  Str_Acc_f: "Precisão de acerto (%)",
+  Str_Def_f: "Defesa de golpes (%)",
+};
+
+// Short axis labels for the correlation heatmap, where space is tight.
+export const STAT_LABELS_SHORT: Record<string, string> = {
+  Win_Rate: "Vitórias",
+  SLpM: "Acertos/min",
+  SApM: "Sofridos/min",
+  TD_Avg: "Quedas",
+  Sub_Avg: "Finalizações",
+  Reach_cm: "Alcance",
+  Height_cm: "Altura",
+  Total_Fights: "Lutas",
+  Str_Acc_f: "Precisão",
+  Str_Def_f: "Defesa",
 };
