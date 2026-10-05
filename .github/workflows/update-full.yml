@@ -2,9 +2,9 @@ name: Atualizar base completa
 
 # Roda o scraper de lutas/lutadores (run_update.py), arquiva a comparacao
 # previsao-vs-resultado do ultimo evento concluido, retreina o modelo e
-# commita DATA/*.csv + backend/ml/artifacts/*. O push em main dispara o
-# deploy da Vercel, que passa a servir o modelo novo e o card de
-# "Ultimo Evento" atualizado.
+# commita DATA/*.csv e publica backend/ml/artifacts/* na release
+# "artifacts-latest" (sobrescrita, sem historico no git). O backend baixa
+# essa release no cold start (ARTIFACTS_BASE_URL).
 #
 # Ordem importa: o retreino roda DEPOIS do arquivamento de propósito -- o
 # modelo usado para "o que a IA previu" ainda e' o da semana anterior
@@ -36,6 +36,10 @@ jobs:
   scrape-and-train:
     runs-on: ubuntu-latest
     timeout-minutes: 90
+    env:
+      # Nao gravar .pyc no checkout: o working tree tem que ficar limpo
+      # para o `git pull --rebase` no fim do job.
+      PYTHONDONTWRITEBYTECODE: "1"
     steps:
       - uses: actions/checkout@v4
 
@@ -71,9 +75,22 @@ jobs:
         working-directory: backend
         run: python -m ml.train
 
-      - name: Commitar se mudou
+      - name: Publicar artefatos na release (sobrescreve, sem historico)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: backend/ml/artifacts
         run: |
-          git add DATA/ backend/ml/artifacts/
+          if ! gh release view artifacts-latest >/dev/null 2>&1; then
+            gh release create artifacts-latest --latest=false \
+              --title "Artefatos do modelo (latest)" \
+              --notes "Sobrescrito a cada execucao agendada. Nao versionado no git." \
+              || gh release view artifacts-latest >/dev/null
+          fi
+          gh release upload artifacts-latest *.joblib *.csv *.json --clobber
+
+      - name: Commitar DATA/ se mudou
+        run: |
+          git add DATA/
           if git diff --cached --quiet; then
             echo "Nada mudou (sem evento novo desde a ultima execucao)."
             exit 0
@@ -81,5 +98,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: atualiza base e retreina o modelo (scraper agendado)"
-          git pull --rebase origin main
+          git pull --rebase --autostash origin main
           git push

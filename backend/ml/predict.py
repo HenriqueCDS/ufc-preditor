@@ -8,7 +8,11 @@ Usage:
     predictor.predict_fight("Conor McGregor", "Dustin Poirier")
 """
 import json
+import os
+import tempfile
 import unicodedata
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 import joblib
@@ -21,9 +25,38 @@ from .fighter_stats import build_fighter_stats
 
 ARTIFACTS_DIR = Path(__file__).resolve().parent / 'artifacts'
 
+# Artefatos publicados na GitHub Release (sobrescritos a cada execucao do
+# workflow, sem historico no git). Ver .github/workflows/update-*.yml.
+REQUIRED_ARTIFACTS = ('model.joblib', 'weight_class_encoder.joblib', 'fighters.csv', 'fights.csv')
+OPTIONAL_ARTIFACTS = ('feature_list.json', 'metrics.json', 'upcoming.json', 'last_event.json')
+
 
 class ArtifactsNotFoundError(RuntimeError):
     """Raised when ml/artifacts/ is missing -- run `python -m ml.train` first."""
+
+
+def _download_artifacts(base_url):
+    """Baixa os artefatos da release para um cache local e devolve o diretorio.
+
+    No Vercel o diretorio do codigo e somente leitura, entao o cache fica em
+    /tmp. Arquivos ja presentes no cache sao reutilizados; a escrita e
+    atomica (.part + rename) para duas instancias nao lerem arquivo pela metade.
+    """
+    cache_dir = Path(os.environ.get('ARTIFACTS_CACHE_DIR', Path(tempfile.gettempdir()) / 'ufc-artifacts'))
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    for name in REQUIRED_ARTIFACTS + OPTIONAL_ARTIFACTS:
+        target = cache_dir / name
+        if target.exists():
+            continue
+        try:
+            with urllib.request.urlopen(f'{base_url.rstrip("/")}/{name}', timeout=60) as resp:
+                partial = target.with_name(name + '.part')
+                partial.write_bytes(resp.read())
+                partial.replace(target)
+        except urllib.error.HTTPError as exc:
+            if name in REQUIRED_ARTIFACTS:
+                raise ArtifactsNotFoundError(f'Artefato obrigatorio nao encontrado em {base_url}/{name}') from exc
+    return cache_dir
 
 
 class FighterNotFoundError(ValueError):
@@ -47,9 +80,13 @@ class Predictor:
     def __init__(self, artifacts_dir=ARTIFACTS_DIR):
         artifacts_dir = Path(artifacts_dir)
         if not (artifacts_dir / 'model.joblib').exists():
-            raise ArtifactsNotFoundError(
-                f'Nenhum artefato em {artifacts_dir}. Rode "cd backend && python -m ml.train" primeiro.'
-            )
+            base_url = os.environ.get('ARTIFACTS_BASE_URL')
+            if not base_url:
+                raise ArtifactsNotFoundError(
+                    f'Nenhum artefato em {artifacts_dir}. Rode "cd backend && python -m ml.train" '
+                    'primeiro ou defina ARTIFACTS_BASE_URL.'
+                )
+            artifacts_dir = _download_artifacts(base_url)
         self.model = joblib.load(artifacts_dir / 'model.joblib')
         self.wc_le = joblib.load(artifacts_dir / 'weight_class_encoder.joblib')
         self.fighters = pd.read_csv(artifacts_dir / 'fighters.csv').set_index('Fighter_Name')

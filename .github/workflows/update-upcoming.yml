@@ -1,8 +1,9 @@
 name: Atualizar proximos eventos
 
-# Roda o scraper de proximos cards do ufcstats.com e commita
-# backend/ml/artifacts/upcoming.json quando algo mudou. O push em main
-# dispara o deploy da Vercel, que passa a servir o card novo em /api/events/*.
+# Roda o scraper de proximos cards do ufcstats.com e publica
+# backend/ml/artifacts/upcoming.json na release "artifacts-latest"
+# (sobrescrita, sem historico no git). O backend pega o card novo no cold
+# start, sem precisar de redeploy.
 #
 # O anti-bot do ufcstats nao passa com Chromium headless, entao o navegador
 # roda "visivel" dentro de um display virtual (xvfb). Se o site endurecer o
@@ -25,6 +26,10 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      # Nao gravar .pyc no checkout: o working tree tem que ficar limpo
+      # para o `git pull --rebase` no fim do job.
+      PYTHONDONTWRITEBYTECODE: "1"
     steps:
       - uses: actions/checkout@v4
 
@@ -47,15 +52,15 @@ jobs:
         working-directory: scraper
         run: xvfb-run -a --server-args="-screen 0 1280x900x24" python scrape_upcoming.py
 
-      - name: Commitar se mudou
+      - name: Publicar proximos eventos na release (sobrescreve, sem historico)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: backend/ml/artifacts
         run: |
-          if git diff --quiet -- backend/ml/artifacts/upcoming.json; then
-            echo "upcoming.json sem mudancas."
-            exit 0
+          if ! gh release view artifacts-latest >/dev/null 2>&1; then
+            gh release create artifacts-latest --latest=false \
+              --title "Artefatos do modelo (latest)" \
+              --notes "Sobrescrito a cada execucao agendada. Nao versionado no git." \
+              || gh release view artifacts-latest >/dev/null
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add backend/ml/artifacts/upcoming.json
-          git commit -m "chore: atualiza proximos eventos (scraper agendado)"
-          git pull --rebase origin main
-          git push
+          gh release upload artifacts-latest upcoming.json --clobber

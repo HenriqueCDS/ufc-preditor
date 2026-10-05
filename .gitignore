@@ -4,10 +4,13 @@ __pycache__/
 .venv/
 venv/
 
-# backend/ml/artifacts/ (model.joblib, fighters.csv, fights.csv, ...) IS
-# committed on purpose: Vercel's build step can't run `python -m ml.train`
-# (needs sklearn/xgboost just to train, takes ~35min). Regenerate locally
-# and commit the diff whenever data/*.csv changes.
+# backend/ml/artifacts/ NAO e' versionado: o scraper agendado publica os
+# artefatos na GitHub Release "artifacts-latest" (sobrescrita a cada
+# execucao, sem historico no git). O backend baixa de la' via
+# ARTIFACTS_BASE_URL. Para rodar local sem baixar, rode `python -m ml.train`.
+backend/ml/artifacts/*.joblib
+backend/ml/artifacts/*.csv
+backend/ml/artifacts/*.json
 
 # Node / Next.js (web/)
 web/node_modules/
@@ -25,3 +28,6 @@ scraper/.pw-profile/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Backups gerados por finalize.py (nao versionar)
+*.bak

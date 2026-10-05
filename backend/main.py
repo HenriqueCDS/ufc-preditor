@@ -37,8 +37,9 @@ try:
     predictor = Predictor()
 except ArtifactsNotFoundError as exc:
     raise RuntimeError(
-        "ml/artifacts/ esta faltando. Rode `cd backend && python -m ml.train` "
-        "e commite os artefatos gerados antes de fazer deploy."
+        "Artefatos do modelo nao encontrados. Defina ARTIFACTS_BASE_URL (URL da "
+        "GitHub Release artifacts-latest) ou rode `cd backend && python -m ml.train` "
+        "localmente."
     ) from exc
 
 
