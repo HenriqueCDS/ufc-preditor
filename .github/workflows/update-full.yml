@@ -40,6 +40,10 @@ jobs:
       # Nao gravar .pyc no checkout: o working tree tem que ficar limpo
       # para o `git pull --rebase` no fim do job.
       PYTHONDONTWRITEBYTECODE: "1"
+      # Os artefatos nao estao mais no checkout. O arquivamento precisa do
+      # modelo da semana anterior (ainda na release, pois o upload so acontece
+      # depois do retreino), entao o Predictor baixa de la'.
+      ARTIFACTS_BASE_URL: https://github.com/HenriqueCDS/ufc-preditor/releases/download/artifacts-latest
     steps:
       - uses: actions/checkout@v4
 
