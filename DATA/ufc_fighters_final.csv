@@ -1,40 +1,32 @@
 Fighter_Name,Height,Weight,Reach,Stance,DOB,Wins,Losses,Draws,SLpM,Str_Acc,SApM,Str_Def,TD_Avg,TD_Acc,TD_Def,Sub_Avg,Fighter_URL
-Chad Anheliger,"5' 6""",135 lbs.,"64.0""",Orthodox,1986-12-01,13,9,0,3.0,47%,2.87,52%,0.58,30%,34%,0.4,http://ufcstats.com/fighter-details/c7c39e2fb70248b3
-Jason Asher,"5' 11""",145 lbs.,"72.0""",Switch,2000-08-10,5,1,0,6.2,53%,11.27,40%,1.0,12%,66%,1.0,http://ufcstats.com/fighter-details/78685c71d5c7f864
-Marc-Andre Barriault,"6' 1""",185 lbs.,"74.0""",Orthodox,1990-02-18,18,11,0,5.69,47%,5.82,49%,0.33,28%,68%,0.1,http://ufcstats.com/fighter-details/8e9eb3fc86db0f7d
-Erin Blanchfield,"5' 4""",125 lbs.,"66.0""",Orthodox,1999-05-04,14,3,0,5.12,44%,4.1,59%,1.85,34%,72%,0.8,http://ufcstats.com/fighter-details/669970f7feba8ecd
-Tanner Boser,"6' 2""",245 lbs.,"75.0""",Orthodox,1991-08-02,23,11,1,4.63,54%,2.78,58%,0.34,75%,69%,0.1,http://ufcstats.com/fighter-details/04c8b08b16a5b99e
-Joaquin Buckley,"5' 10""",170 lbs.,"76.0""",Southpaw,1994-04-27,21,9,0,3.55,36%,3.16,57%,1.37,45%,70%,0.1,http://ufcstats.com/fighter-details/b9437600497350f3
-Ilias Bulaid,"5' 8""",145 lbs.,"71.0""",Orthodox,1995-05-01,9,1,0,1.6,60%,2.4,45%,1.0,100%,35%,0.0,http://ufcstats.com/fighter-details/d189880f25580bcf
-Davi Cabral,"5' 8""",185 lbs.,"71.0""",Orthodox,1999-03-19,7,1,0,6.69,45%,11.34,48%,2.91,66%,0%,1.4,http://ufcstats.com/fighter-details/a6e76a8bf3c59ef6
-Katlyn Cerminara,"5' 9""",125 lbs.,"68.0""",Orthodox,1988-12-28,19,6,0,4.62,35%,4.47,62%,0.31,15%,50%,0.3,http://ufcstats.com/fighter-details/e872e9a9a902c045
-Chelsea Chandler,"5' 8""",135 lbs.,"68.0""",Southpaw,1990-11-23,8,4,0,3.43,45%,4.11,41%,0.75,50%,36%,0.5,http://ufcstats.com/fighter-details/af9efbfd63d39734
-Cody Chovancek,"5' 8""",135 lbs.,"67.0""",Switch,1998-07-24,9,1,0,1.23,46%,1.23,49%,0.0,0%,50%,0.0,http://ufcstats.com/fighter-details/3c4320a1b6106611
-Melissa Croden,"5' 9""",135 lbs.,"68.0""",Orthodox,1991-04-12,8,4,0,4.07,46%,2.17,59%,2.13,46%,68%,0.3,http://ufcstats.com/fighter-details/51e2f44a8dbf6984
-Timmy Cuamba,"5' 9""",135 lbs.,"71.0""",Orthodox,1999-02-08,11,4,0,2.88,43%,3.48,56%,1.78,43%,72%,0.2,http://ufcstats.com/fighter-details/0e46690e55a8df75
-Douglas da Lapa,"6' 3""",185 lbs.,"75.0""",Switch,1999-07-02,7,0,0,11.34,51%,6.69,54%,0.0,0%,33%,0.0,http://ufcstats.com/fighter-details/d399b2bfa2c27d9e
-Kyle Daukaus,"6' 2""",185 lbs.,"76.0""",Southpaw,1993-02-27,17,6,0,3.06,52%,3.15,41%,2.04,26%,79%,1.9,http://ufcstats.com/fighter-details/d6c0cdd7e467c440
-Jhonata Diniz,"6' 4""",254 lbs.,"79.0""",Orthodox,1991-06-23,9,3,0,3.32,53%,3.51,54%,0.0,0%,63%,0.0,http://ufcstats.com/fighter-details/25f9a5f3e8a52618
-Joel Faglier,"6' 2""",261 lbs.,"73.0""",Orthodox,2001-01-18,7,0,0,7.1,67%,8.35,47%,2.09,100%,66%,0.0,http://ufcstats.com/fighter-details/6188ad39d85a8bf8
-Greg Foster,"5' 10""",145 lbs.,"70.0""",Orthodox,1992-06-30,9,1,0,11.27,59%,6.2,46%,1.0,33%,87%,0.0,http://ufcstats.com/fighter-details/9c58d5a8c8d9fa73
-Luis Francischinelli,"6' 5""",170 lbs.,"80.0""",Southpaw,1996-03-16,7,1,0,6.96,69%,1.3,57%,6.52,100%,75%,0.0,http://ufcstats.com/fighter-details/d245202d8ace5b1a
-Nick Galanti,"6' 1""",185 lbs.,"75.0""",Southpaw,1998-06-18,9,1,0,4.46,75%,0.5,50%,14.88,66%,0%,7.4,http://ufcstats.com/fighter-details/8988705468d04ef7
-Jasmine Jasudavicius,"5' 7""",125 lbs.,"68.0""",Orthodox,1989-03-01,16,4,0,3.42,43%,3.52,51%,2.82,44%,72%,0.8,http://ufcstats.com/fighter-details/a9e260472d321361
-Louis Jourdain,"5' 9""",135 lbs.,"69.0""",Orthodox,1997-03-13,9,4,0,4.72,44%,2.6,55%,0.0,0%,28%,1.6,http://ufcstats.com/fighter-details/91cd52cb92dfdd52
-Steven Koslow,"5' 7""",135 lbs.,"69.0""",Switch,1997-01-22,7,1,0,2.16,52%,3.03,41%,4.7,69%,0%,1.6,http://ufcstats.com/fighter-details/84512339473dd300
-Nate Landwehr,"5' 9""",155 lbs.,"72.0""",Orthodox,1988-06-06,18,9,0,5.38,45%,6.18,50%,0.69,41%,69%,0.7,http://ufcstats.com/fighter-details/583ee11abddfc581
-Julien Leblanc,"6' 2""",185 lbs.,"74.0""",Southpaw,1992-01-21,10,4,0,1.05,57%,2.11,46%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/cd0dfd9846bd03b9
-Javad Mahjoub,"6' 1""",253 lbs.,"76.0""",Orthodox,1991-05-26,5,1,0,8.35,52%,7.1,32%,2.09,33%,0%,0.0,http://ufcstats.com/fighter-details/e9f9add1481fc11c
-Mike Malott,"6' 1""",170 lbs.,"73.0""",Orthodox,1991-11-07,15,2,1,4.09,49%,2.99,57%,1.51,50%,57%,0.6,http://ufcstats.com/fighter-details/dd6103dd7127db1d
-Mandel Nallo,"6' 0""",155 lbs.,"75.0""",Orthodox,1989-07-26,15,4,0,9.16,58%,3.61,62%,1.32,100%,100%,1.3,http://ufcstats.com/fighter-details/8f4528c10bd34fab
-Kyle Nelson,"5' 11""",155 lbs.,"71.0""",Switch,1991-04-20,17,8,1,3.63,45%,4.64,53%,1.17,23%,66%,0.5,http://ufcstats.com/fighter-details/31f8081c7600da93
-Aline Pereira,"5' 9""",135 lbs.,"70.0""",Southpaw,1990-10-06,3,3,0,5.67,44%,7.07,70%,1.0,100%,0%,0.0,http://ufcstats.com/fighter-details/aeeba48b683a05f1
-Cristian Perez,"5' 9""",155 lbs.,"72.0""",Orthodox,1999-08-17,16,2,0,3.73,46%,4.71,38%,2.3,30%,87%,0.8,http://ufcstats.com/fighter-details/d84033157714ee94
-Will Rentz,"6' 0""",170 lbs.,"71.0""",Orthodox,1999-03-19,8,3,0,1.3,42%,6.96,30%,6.52,25%,0%,0.0,http://ufcstats.com/fighter-details/bfb58d214212127b
-Mackenzie Stiller,"5' 2""",125 lbs.,"62.0""",Orthodox,1999-07-15,6,2,0,3.99,32%,6.71,54%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/55896e25df067f9d
-Smilla Sundell,"5' 10""",135 lbs.,"69.0""",Orthodox,2004-11-12,3,0,0,7.07,29%,5.67,55%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/b6a871a01c66438a
-Erick Visconde,"5' 6""",145 lbs.,"65.0""",Switch,1996-11-21,18,3,0,2.4,54%,1.6,40%,9.0,64%,0%,2.0,http://ufcstats.com/fighter-details/65ff41ab071ab326
-SuYoung You,"5' 6""",135 lbs.,"65.0""",Orthodox,1995-12-11,17,4,0,1.88,47%,1.72,68%,4.56,51%,66%,0.5,http://ufcstats.com/fighter-details/a474aade8eb3a8f0
+Nurullo Aliev,"5' 10""",155 lbs.,"72.0""",Orthodox,2000-12-08,12,1,0,2.68,48%,2.49,52%,3.02,51%,58%,0.4,http://ufcstats.com/fighter-details/ca28cdf526d6b6e9
+Nicolle Caliari,"5' 3""",115 lbs.,"62.0""",Orthodox,1996-11-04,9,5,0,2.61,43%,4.7,51%,3.03,31%,33%,0.8,http://ufcstats.com/fighter-details/fc0a4053eb8a3a59
+Asaf Chopurov,"5' 7""",135 lbs.,"67.0""",Orthodox,2001-11-17,11,1,0,3.6,56%,5.13,42%,8.0,66%,93%,0.0,http://ufcstats.com/fighter-details/a24bc9922ee76e9f
+Grant Dawson,"5' 10""",155 lbs.,"72.0""",Switch,1994-02-20,25,3,1,3.39,50%,2.31,44%,3.69,41%,64%,1.3,http://ufcstats.com/fighter-details/99bd51917728c25d
+Merab Dvalishvili,"5' 6""",135 lbs.,"68.0""",Orthodox,1991-01-10,21,6,0,4.48,41%,2.98,52%,5.74,31%,76%,0.3,http://ufcstats.com/fighter-details/c03520b5c88ed6b4
+Movsar Evloev,"5' 7""",145 lbs.,"72.0""",Orthodox,1994-02-11,20,1,0,3.91,48%,2.97,60%,4.77,51%,60%,0.2,http://ufcstats.com/fighter-details/76e2870ffafbe38f
+Noah Gugnon,"5' 11""",155 lbs.,"71.0""",Orthodox,2000-10-18,10,3,0,6.86,52%,5.9,56%,0.0,0%,66%,2.9,http://ufcstats.com/fighter-details/6266abf6e4245c72
+Lone'er Kavanagh,"5' 6""",125 lbs.,"67.0""",Orthodox,1999-06-09,11,2,0,4.18,50%,3.95,53%,1.06,46%,82%,0.3,http://ufcstats.com/fighter-details/bb2c3c3a466224af
+Losene Keita,"5' 9""",145 lbs.,"72.0""",Orthodox,1997-12-30,17,3,0,3.76,47%,4.02,63%,0.0,0%,66%,0.0,http://ufcstats.com/fighter-details/5b43d68174b6e2ab
+Nikita Krylov,"6' 3""",205 lbs.,"77.0""",Orthodox,1992-03-07,31,13,0,4.33,54%,2.74,47%,2.16,37%,52%,1.1,http://ufcstats.com/fighter-details/1091d4d957141094
+Rizvan Kuniev,"6' 4""",240 lbs.,"76.0""",Orthodox,1992-03-10,14,4,1,4.13,55%,2.78,49%,0.62,37%,93%,0.0,http://ufcstats.com/fighter-details/739fd4fbb5d862f4
+Iasmin Lucindo,"5' 3""",115 lbs.,"66.0""",Orthodox,2002-01-08,19,6,0,3.07,46%,2.66,60%,2.37,58%,65%,0.1,http://ufcstats.com/fighter-details/abcf2cc6efc42031
+Abus Magomedov,"6' 2""",185 lbs.,"78.0""",Orthodox,1990-09-02,30,7,1,3.13,49%,3.28,57%,2.44,59%,83%,0.8,http://ufcstats.com/fighter-details/36b8f265bcd1b7a4
+Jacob Malkoun,"5' 9""",185 lbs.,"73.0""",Orthodox,1995-08-26,10,4,0,4.6,55%,2.64,54%,4.69,40%,52%,0.7,http://ufcstats.com/fighter-details/d4270315cbcf2569
+Azamat Murzakanov,"5' 10""",205 lbs.,"71.0""",Southpaw,1989-04-12,16,2,0,4.28,56%,3.28,55%,0.65,18%,88%,0.2,http://ufcstats.com/fighter-details/e90a2f22417af68e
+Bolaji Oki,"5' 10""",145 lbs.,"73.0""",Orthodox,1995-11-15,10,5,0,6.05,47%,5.11,59%,1.22,60%,70%,0.0,http://ufcstats.com/fighter-details/4bdedbdeedff7d1d
+Aaron Pico,"5' 8""",145 lbs.,"70.0""",Orthodox,1996-09-23,15,5,0,6.08,54%,3.01,45%,6.89,50%,0%,0.0,http://ufcstats.com/fighter-details/5537efc6e496dd84
+Dominick Reyes,"6' 4""",205 lbs.,"77.0""",Southpaw,1989-12-26,17,5,0,5.0,53%,3.35,49%,0.25,28%,83%,0.2,http://ufcstats.com/fighter-details/2e19380f34871c6a
+Cam Rowston,"6' 3""",185 lbs.,"78.0""",Orthodox,1995-01-19,15,4,0,4.45,47%,2.28,50%,1.61,50%,33%,0.3,http://ufcstats.com/fighter-details/8ebc3a8da015d70c
+Daniel Santos,"5' 7""",145 lbs.,"67.0""",Orthodox,1995-03-12,15,3,0,5.14,41%,5.24,48%,2.49,34%,66%,0.2,http://ufcstats.com/fighter-details/b67d6bacc68d4c92
+Kody Steele,"5' 9""",155 lbs.,"71.0""",Orthodox,1995-04-21,9,1,0,4.16,35%,6.42,51%,1.41,27%,100%,0.5,http://ufcstats.com/fighter-details/aebaa8cec15b083d
+Ramazan Temirov,"5' 4""",125 lbs.,"63.0""",Orthodox,1997-01-31,20,4,0,4.62,41%,3.9,59%,0.56,50%,100%,0.0,http://ufcstats.com/fighter-details/7d0a1968b38ca439
+Colby Thicknesse,"5' 7""",135 lbs.,"69.0""",Orthodox,1999-06-23,10,1,0,3.72,45%,3.1,51%,0.75,6%,33%,1.2,http://ufcstats.com/fighter-details/ed7d329d7c29428d
+Abubakar Vagaev,"5' 11""",170 lbs.,"73.0""",Orthodox,1993-04-14,26,4,0,3.27,46%,4.63,51%,5.0,45%,81%,0.0,http://ufcstats.com/fighter-details/f7adc1fd115f8fdd
+Alexander Volkanovski,"5' 6""",145 lbs.,"71.0""",Orthodox,1988-09-29,29,4,0,5.98,56%,3.33,58%,1.63,34%,67%,0.2,http://ufcstats.com/fighter-details/e1248941344b3288
+Alexander Volkov,"6' 7""",250 lbs.,"80.0""",Orthodox,1988-10-24,41,11,0,4.84,57%,2.92,53%,0.52,62%,69%,0.3,http://ufcstats.com/fighter-details/279566840aa55bf2
+Abdul Rakhman Yakhyaev,"6' 2""",205 lbs.,"78.0""",Orthodox,2001-01-03,11,0,0,6.13,68%,1.95,53%,8.98,80%,100%,6.7,http://ufcstats.com/fighter-details/95aff2fd8d09a5f0
+Petr Yan,"5' 7""",135 lbs.,"67.0""",Switch,1993-02-11,21,5,0,5.16,55%,4.32,60%,1.56,48%,87%,0.1,http://ufcstats.com/fighter-details/d661ce4da776fc20
 Tom Aaron,,155 lbs.,,,1978-07-13,5,3,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/93fe7332d16c6ad9
 Danny Abbadi,"5' 11""",155 lbs.,,Orthodox,1983-07-03,4,6,0,3.29,38%,4.41,57%,0.0,0%,77%,0.0,http://ufcstats.com/fighter-details/15df64c02b6b0fde
 Nariman Abbasov,"5' 8""",155 lbs.,"66.0""",Orthodox,1994-02-01,28,4,0,3.0,20%,5.67,46%,0.0,0%,66%,0.0,http://ufcstats.com/fighter-details/59a9d6dac61c2540
@@ -121,7 +113,6 @@ Bill Algeo,"6' 0""",145 lbs.,"73.0""",Switch,1989-06-09,18,9,0,5.88,51%,4.38,47%
 Royce Alger,"5' 10""",199 lbs.,,Orthodox,1965-03-06,3,2,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/669a3cb6e394f515
 Amir Aliakbari,"6' 3""",250 lbs.,,,1984-06-10,10,1,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/e17770faae3ca54c
 Sultan Aliev,"5' 11""",170 lbs.,"74.0""",Orthodox,1984-09-17,15,3,0,1.41,45%,2.2,56%,1.76,38%,100%,0.0,http://ufcstats.com/fighter-details/e70de1859b7ee78e
-Nurullo Aliev,"5' 10""",155 lbs.,"72.0""",Orthodox,2000-12-08,12,0,0,2.29,44%,1.59,55%,3.48,51%,80%,0.5,http://ufcstats.com/fighter-details/ca28cdf526d6b6e9
 Kimbert Alintozon,"5' 3""",135 lbs.,"65.0""",Orthodox,1999-01-21,7,4,0,2.39,52%,4.06,46%,1.56,33%,75%,0.0,http://ufcstats.com/fighter-details/a075a34d7527fadf
 Ikram Aliskerov,"6' 0""",185 lbs.,"76.0""",Southpaw,1992-12-07,18,2,0,5.56,60%,4.01,45%,3.82,68%,100%,0.7,http://ufcstats.com/fighter-details/b07aed698fba8624
 Leon Aliu,"6' 0""",185 lbs.,"74.0""",Orthodox,1989-07-14,10,2,0,6.32,50%,10.11,38%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/6db394bf6c3b017c
@@ -199,6 +190,7 @@ Reese Andy,"6' 0""",205 lbs.,,Orthodox,1973-03-31,7,3,0,2.87,50%,3.5,58%,0.67,20
 Angga,"5' 7""",145 lbs.,"68.0""",Orthodox,1989-01-13,13,3,0,3.56,38%,3.77,53%,0.0,0%,33%,0.0,http://ufcstats.com/fighter-details/d6a3e131ad4ba064
 Julius Anglickas,"6' 3""",205 lbs.,,Orthodox,1991-07-23,5,1,0,4.62,78%,1.86,50%,4.47,50%,60%,1.1,http://ufcstats.com/fighter-details/e20ad078a7d63361
 Collin Anglin,"5' 9""",145 lbs.,"71.0""",Orthodox,1993-02-20,8,3,0,4.59,48%,5.54,51%,2.28,66%,100%,0.0,http://ufcstats.com/fighter-details/047a91d3d9c79b05
+Chad Anheliger,"5' 6""",135 lbs.,"64.0""",Orthodox,1986-12-01,13,9,0,3.0,47%,2.87,52%,0.58,30%,34%,0.4,http://ufcstats.com/fighter-details/c7c39e2fb70248b3
 Yoji Anjo,"5' 11""",205 lbs.,,Orthodox,1967-03-28,0,5,1,0.0,0%,3.13,25%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/e06fd1260ac865a7
 Magomed Ankalaev,"6' 3""",205 lbs.,"75.0""",Orthodox,1992-06-02,22,2,1,3.52,52%,2.49,55%,0.85,24%,87%,0.2,http://ufcstats.com/fighter-details/d802174b0c0c1f4e
 Gadzhimurad Antigulov,"5' 11""",205 lbs.,"70.0""",Orthodox,1987-02-09,20,8,0,2.08,55%,4.21,40%,5.08,36%,0%,1.4,http://ufcstats.com/fighter-details/af997f7611673880
@@ -244,6 +236,7 @@ Veta Arteaga,"5' 7""",125 lbs.,,,,3,1,0,3.2,36%,1.92,65%,0.0,0%,40%,0.0,http://u
 Cesar Arzamendia,"5' 11""",155 lbs.,,Orthodox,1991-01-31,8,3,0,5.37,45%,5.2,56%,7.32,75%,0%,2.4,http://ufcstats.com/fighter-details/49f78022126bf4a4
 Kai Asakura,"5' 8""",135 lbs.,"69.0""",Orthodox,1993-10-31,23,6,0,3.07,39%,3.15,51%,0.0,0%,50%,0.0,http://ufcstats.com/fighter-details/d33da8a3d82bdb62
 Teddy Ash,"6' 1""",185 lbs.,"73.0""",Switch,1989-12-27,14,5,0,7.27,61%,6.8,28%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/a373085066dbfb54
+Jason Asher,"5' 11""",145 lbs.,"72.0""",Switch,2000-08-10,5,1,0,6.2,53%,11.27,40%,1.0,12%,66%,1.0,http://ufcstats.com/fighter-details/78685c71d5c7f864
 Arman Ashimov,"5' 6""",125 lbs.,,,1992-01-14,11,3,1,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/d26a0988c9dc9886
 Yanal Ashmouz,"5' 9""",155 lbs.,"69.0""",Orthodox,1995-03-31,8,2,0,2.88,50%,4.78,50%,3.24,38%,64%,0.0,http://ufcstats.com/fighter-details/c739c2995a275314
 Asjabharan,"5' 6""",135 lbs.,,,1992-07-31,7,6,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/8be9deb7d6b36354
@@ -333,6 +326,7 @@ Dan Barrera,"5' 9""",170 lbs.,,Orthodox,1980-12-23,3,1,0,0.8,70%,1.2,28%,1.0,8%,
 Carlos Barreto,"6' 4""",230 lbs.,,Orthodox,1968-07-22,14,9,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/a220be6d41d6f97d
 Jose Barreto,,185 lbs.,,Southpaw,,0,1,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/c32eab6c2119e989
 Peter Barrett,"5' 10""",145 lbs.,"73.0""",Southpaw,1986-08-10,11,5,0,4.18,61%,4.32,42%,1.39,22%,66%,0.0,http://ufcstats.com/fighter-details/d21113c9ff3788ae
+Marc-Andre Barriault,"6' 1""",185 lbs.,"74.0""",Orthodox,1990-02-18,18,11,0,5.69,47%,5.82,49%,0.33,28%,68%,0.1,http://ufcstats.com/fighter-details/8e9eb3fc86db0f7d
 David Barrios,"5' 6""",145 lbs.,,,,4,8,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/e6015889f50075d2
 Alexandre Barros,"5' 9""",170 lbs.,,Southpaw,1976-11-19,22,11,0,0.98,40%,4.05,36%,1.84,50%,100%,0.0,http://ufcstats.com/fighter-details/8fd1f27e86661ede
 Ricardo Barros,"6' 1""",205 lbs.,,,1976-03-22,2,2,0,0.0,0%,8.22,31%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/d26394fc0e8e880a
@@ -436,6 +430,7 @@ Tom Blackledge,,205 lbs.,,Orthodox,,10,7,0,2.91,61%,2.55,46%,0.0,0%,75%,0.0,http
 Sherrard Blackledge,"5' 11""",155 lbs.,"75.0""",Orthodox,1993-08-16,5,1,0,3.7,49%,3.13,55%,4.0,33%,42%,0.0,http://ufcstats.com/fighter-details/0e5c79b3594ff0ad
 Da'Mon Blackshear,"5' 10""",135 lbs.,"72.0""",Switch,1994-08-12,17,8,1,4.33,45%,4.19,52%,1.48,33%,71%,1.5,http://ufcstats.com/fighter-details/da22387a0407a2dc
 Chasen Blair,"5' 10""",155 lbs.,"71.0""",Orthodox,1998-10-14,7,4,0,4.31,39%,5.39,55%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/0f4a536507f33576
+Erin Blanchfield,"5' 4""",125 lbs.,"66.0""",Orthodox,1999-05-04,14,3,0,5.12,44%,4.1,59%,1.85,34%,72%,0.8,http://ufcstats.com/fighter-details/669970f7feba8ecd
 Maximo Blanco,"5' 8""",145 lbs.,"71.0""",Orthodox,1983-10-16,12,8,1,4.11,44%,3.19,66%,1.85,36%,63%,0.3,http://ufcstats.com/fighter-details/4a1329cc8eb0928a
 David Blanco,"5' 7""",145 lbs.,,,,2,0,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/ebf298f8ac7e232b
 Curtis Blaydes,"6' 4""",265 lbs.,"80.0""",Orthodox,1991-02-18,20,6,0,3.99,51%,2.7,55%,5.04,47%,35%,0.0,http://ufcstats.com/fighter-details/fa6796c55d6c5440
@@ -476,6 +471,7 @@ Calen Born,"5' 8""",170 lbs.,"72.0""",Switch,1988-05-24,7,1,0,0.0,0%,0.0,0%,0.0,
 Caio Borralho,"6' 1""",185 lbs.,"75.0""",Southpaw,1993-01-16,18,2,0,3.47,56%,2.61,60%,1.25,50%,76%,0.4,http://ufcstats.com/fighter-details/4126a78111c0855a
 Zachary Borrego,"6' 2""",185 lbs.,"78.0""",Switch,1996-07-18,3,1,0,0.0,0%,1.94,33%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/b8fdb2903a2582a8
 Viacheslav Borshchev,"5' 11""",155 lbs.,"69.0""",Orthodox,1992-01-08,8,7,1,5.1,50%,4.46,57%,0.0,0%,43%,0.1,http://ufcstats.com/fighter-details/19c591115a58982c
+Tanner Boser,"6' 2""",245 lbs.,"75.0""",Orthodox,1991-08-02,23,11,1,4.63,54%,2.78,58%,0.34,75%,69%,0.1,http://ufcstats.com/fighter-details/04c8b08b16a5b99e
 Steve Bosse,"5' 11""",205 lbs.,"72.0""",Orthodox,1981-07-29,12,2,0,5.99,52%,5.38,50%,0.92,33%,100%,0.0,http://ufcstats.com/fighter-details/e023fa2e648ea0f1
 Marcus Bossett,"6' 1""",215 lbs.,,Orthodox,,1,3,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/e8fb8e53bc2e29d6
 Chris Bostick,,,,,,6,3,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/239224bedeb2c7a4
@@ -562,6 +558,7 @@ Marcus Buchecha,"6' 2""",255 lbs.,"77.0""",Orthodox,1990-01-08,5,3,1,1.59,50%,2.
 Justin Buchholz,"6' 0""",155 lbs.,"73.0""",Orthodox,1983-08-22,15,10,0,2.35,26%,4.14,51%,0.0,0%,33%,0.8,http://ufcstats.com/fighter-details/231926533134ec1f
 Zak Bucia,"5' 10""",170 lbs.,,,1984-09-27,17,8,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/6bbb8dc6e128779e
 Courtney Buck,"5' 10""",135 lbs.,,Orthodox,1982-03-19,12,11,0,1.49,28%,3.24,54%,0.0,0%,33%,0.0,http://ufcstats.com/fighter-details/3feed7d02711d8b7
+Joaquin Buckley,"5' 10""",170 lbs.,"76.0""",Southpaw,1994-04-27,21,9,0,3.55,36%,3.16,57%,1.37,45%,70%,0.1,http://ufcstats.com/fighter-details/b9437600497350f3
 Martin Buday,"6' 4""",265 lbs.,"77.0""",Orthodox,1991-11-11,16,2,0,4.39,53%,4.49,55%,0.15,20%,93%,0.1,http://ufcstats.com/fighter-details/8eb046f83e82bf26
 Julia Budd,"5' 7""",145 lbs.,"67.0""",,1983-07-04,10,2,0,2.42,74%,1.18,47%,3.6,57%,83%,0.0,http://ufcstats.com/fighter-details/dcdc4503b9d49977
 Dylan Budka,"6' 0""",185 lbs.,"75.0""",Switch,2000-01-14,7,5,0,1.06,38%,1.8,42%,1.93,38%,76%,0.4,http://ufcstats.com/fighter-details/a817e238b2747404
@@ -571,6 +568,7 @@ Mayra Bueno Silva,"5' 6""",135 lbs.,"66.0""",Orthodox,1991-08-22,10,7,1,3.52,56%
 Paul Buentello,"6' 2""",245 lbs.,"77.0""",Orthodox,1974-01-16,35,17,0,3.29,45%,3.83,52%,0.19,33%,39%,0.4,http://ufcstats.com/fighter-details/f0abbb6f3444dae7
 Marek Bujlo,"6' 4""",265 lbs.,"77.0""",Orthodox,1992-10-10,6,1,0,2.07,38%,3.27,37%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/ac0874309da489b9
 Modestas Bukauskas,"6' 3""",205 lbs.,"76.0""",Switch,1994-02-10,21,7,0,3.1,43%,3.89,49%,0.21,66%,77%,0.1,http://ufcstats.com/fighter-details/476fe566d2df676e
+Ilias Bulaid,"5' 8""",145 lbs.,"71.0""",Orthodox,1995-05-01,9,1,0,1.6,60%,2.4,45%,1.0,100%,35%,0.0,http://ufcstats.com/fighter-details/d189880f25580bcf
 Lee Kwan Bum,"6' 2""",286 lbs.,,Orthodox,1986-10-12,0,1,0,0.71,14%,0.0,100%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/c0342805a1948cbb
 Josh Bumgarner,"6' 1""",170 lbs.,,,1981-05-21,6,4,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/9900ab86a4c458bd
 Shawn Bunch,"5' 5""",135 lbs.,,,1983-03-19,7,3,0,0.0,0%,1.55,55%,0.0,0%,50%,0.0,http://ufcstats.com/fighter-details/6e9af164ab91a229
@@ -605,6 +603,7 @@ Charles Byrd,"5' 10""",185 lbs.,"73.0""",Orthodox,1983-10-11,10,7,0,3.43,55%,2.6
 Steve Byrnes,"6' 0""",170 lbs.,,Orthodox,1979-08-26,6,1,0,1.2,51%,2.67,27%,3.0,60%,0%,4.0,http://ufcstats.com/fighter-details/43612456979e5d5e
 Michael Byrnes,"5' 11""",155 lbs.,,,1990-07-17,5,3,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/87f0b37f153cf497
 Yan Cabral,"5' 11""",155 lbs.,"73.0""",Orthodox,1983-05-13,13,3,0,2.02,47%,1.98,62%,2.89,35%,37%,1.2,http://ufcstats.com/fighter-details/7cdd3e5d3aa9cb39
+Davi Cabral,"5' 8""",185 lbs.,"71.0""",Orthodox,1999-03-19,7,1,0,6.69,45%,11.34,48%,2.91,66%,0%,1.4,http://ufcstats.com/fighter-details/a6e76a8bf3c59ef6
 Juan Cabrera,,185 lbs.,,,2004-02-19,9,1,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/601f8439a0277670
 Alvin Cacdac,"5' 6""",125 lbs.,,Orthodox,,18,13,0,1.21,66%,0.61,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/ce7871949b0ed2bf
 Alex Caceres,"5' 10""",145 lbs.,"73.0""",Southpaw,1988-06-20,21,15,0,4.21,49%,3.09,62%,0.54,68%,64%,0.7,http://ufcstats.com/fighter-details/7aa3d6964eff4877
@@ -616,7 +615,6 @@ Ricky Calatayud,"5' 9""",125 lbs.,,,1982-10-10,16,2,0,0.0,0%,0.0,0%,0.0,0%,0%,0.
 Lucas Caldas,"5' 8""",155 lbs.,"70.0""",Orthodox,1996-05-22,6,2,0,4.8,41%,15.67,39%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/8661578c8bb80f51
 Carlos Calderon,"5' 11""",145 lbs.,"71.0""",Southpaw,1996-02-10,6,3,0,4.85,42%,4.98,33%,3.93,33%,0%,0.0,http://ufcstats.com/fighter-details/7d4d7583df7eebf9
 Darrion Caldwell,"5' 10""",135 lbs.,,,1987-12-19,10,1,0,0.85,34%,0.57,60%,3.41,66%,100%,0.8,http://ufcstats.com/fighter-details/b7dc25ee40ee8334
-Nicolle Caliari,"5' 3""",115 lbs.,"62.0""",Orthodox,1996-11-04,9,4,0,2.88,39%,5.59,52%,3.38,29%,50%,1.0,http://ufcstats.com/fighter-details/fc0a4053eb8a3a59
 Taylor Callens,"5' 10""",155 lbs.,,,1991-05-21,6,0,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/53d471e9bf5f2fc8
 Cynthia Calvillo,"5' 4""",115 lbs.,"64.0""",Orthodox,1987-07-13,9,6,1,4.41,38%,4.12,64%,1.8,44%,77%,0.8,http://ufcstats.com/fighter-details/98215d037be5bcb7
 Joe Camacho,"5' 9""",155 lbs.,,Orthodox,1972-03-10,13,19,3,0.31,17%,5.0,42%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/dfb965c9824425db
@@ -710,6 +708,7 @@ Henry Cejudo,"5' 4""",135 lbs.,"64.0""",Orthodox,1987-02-09,16,6,0,3.83,47%,3.84
 Adam Cella,"6' 2""",170 lbs.,,,1985-06-26,6,8,0,1.91,42%,2.61,51%,3.92,75%,50%,1.3,http://ufcstats.com/fighter-details/b27b8881d7444114
 Vinicius Cenci,"6' 1""",155 lbs.,"74.0""",Orthodox,1995-11-24,7,2,0,2.9,48%,2.69,62%,1.61,50%,0%,0.0,http://ufcstats.com/fighter-details/f21a152aaa3e95c6
 Vlasto Cepo,"6' 0""",185 lbs.,"73.0""",Orthodox,1995-01-25,14,4,0,6.89,29%,29.51,37%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/025c1ee70b2cedf4
+Katlyn Cerminara,"5' 9""",125 lbs.,"68.0""",Orthodox,1988-12-28,19,6,0,4.62,35%,4.47,62%,0.31,15%,50%,0.3,http://ufcstats.com/fighter-details/e872e9a9a902c045
 Rafael Cerqueira,"6' 3""",205 lbs.,"76.0""",Southpaw,1990-03-15,11,4,0,1.56,43%,5.05,36%,0.0,0%,36%,0.0,http://ufcstats.com/fighter-details/09a4447655fd4b7b
 Donald Cerrone,"6' 1""",155 lbs.,"73.0""",Orthodox,1983-03-29,36,17,0,4.41,46%,4.48,53%,1.16,33%,73%,1.2,http://ufcstats.com/fighter-details/1d00756835ca67c9
 Jared Chaffee,"5' 10""",155 lbs.,,,1984-12-15,5,2,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/fdf59144e535bc38
@@ -719,6 +718,7 @@ Edgar Chairez,"5' 7""",125 lbs.,"71.0""",Orthodox,1996-01-27,14,7,0,3.78,46%,4.6
 Ansar Chalangov,"5' 9""",170 lbs.,,Orthodox,1979-10-30,14,5,0,0.68,66%,1.69,54%,0.0,0%,0%,7.6,http://ufcstats.com/fighter-details/7342fcc41a4817fa
 Alex Chambers,"5' 3""",115 lbs.,"63.0""",Southpaw,1978-10-25,5,5,0,2.97,54%,5.1,50%,2.31,41%,53%,1.0,http://ufcstats.com/fighter-details/26b63bc5c0c1f65d
 Michael Chandler,"5' 8""",155 lbs.,"71.0""",Orthodox,1986-04-24,23,11,0,3.91,49%,4.51,43%,1.88,37%,61%,0.5,http://ufcstats.com/fighter-details/4b93a88f3b1de35b
+Chelsea Chandler,"5' 8""",135 lbs.,"68.0""",Southpaw,1990-11-23,8,4,0,3.43,45%,4.11,41%,0.75,50%,36%,0.5,http://ufcstats.com/fighter-details/af9efbfd63d39734
 Eduardo Chapolin,"5' 7""",125 lbs.,"67.0""",Orthodox,1995-11-23,15,3,0,3.46,41%,3.38,57%,3.38,60%,84%,0.0,http://ufcstats.com/fighter-details/62f3039da2f92a8c
 Donnie Chappell,"5' 11""",178 lbs.,,Southpaw,,0,1,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/8788beb528894f33
 Joe Charles,"6' 1""",260 lbs.,,Southpaw,,6,13,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/19ffeb5e3fffd6d5
@@ -751,7 +751,7 @@ Levan Chokheli,"5' 11""",170 lbs.,"72.0""",Orthodox,1996-10-02,15,3,0,15.65,54%,
 John Cholish,"5' 11""",155 lbs.,"74.0""",Orthodox,1983-12-17,8,3,0,2.65,49%,2.29,73%,1.82,31%,78%,0.4,http://ufcstats.com/fighter-details/03c9994c5b8958ec
 Ryo Chonan,"5' 9""",170 lbs.,"70.0""",Orthodox,1976-10-08,22,13,0,2.57,43%,2.25,60%,0.61,41%,39%,0.3,http://ufcstats.com/fighter-details/55a7b2d4e54ffac9
 Will Chope,"6' 4""",145 lbs.,,Switch,1990-09-08,34,13,0,4.43,27%,9.93,46%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/db5dc7cb80d7d418
-Asaf Chopurov,,135 lbs.,,Orthodox,2001-11-17,11,0,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/a24bc9922ee76e9f
+Cody Chovancek,"5' 8""",135 lbs.,"67.0""",Switch,1998-07-24,9,1,0,1.23,46%,1.23,49%,0.0,0%,50%,0.0,http://ufcstats.com/fighter-details/3c4320a1b6106611
 Joachim Christensen,"6' 3""",205 lbs.,"76.0""",Orthodox,1978-11-07,14,6,0,3.78,41%,3.29,46%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/2d447cc91bdaa545
 Kevin Christian,"6' 7""",205 lbs.,"80.0""",Orthodox,1995-01-21,9,4,0,2.19,58%,3.54,40%,0.0,0%,50%,1.9,http://ufcstats.com/fighter-details/7e9b36a9847db116
 Dan Christison,"6' 8""",265 lbs.,,Orthodox,1972-04-26,20,7,0,4.23,51%,3.88,54%,0.0,0%,37%,1.1,http://ufcstats.com/fighter-details/b369533a577fa97c
@@ -874,6 +874,7 @@ Paul Creighton,"5' 6""",155 lbs.,,Southpaw,1970-06-04,3,1,0,0.72,75%,4.65,30%,5.
 Helena Crevar,,,,,,0,0,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/a8c3ce469cb8b130
 Alexander Crispim,,145 lbs.,,,,8,6,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/15dedd05f8bcb475
 Alex Crispin,,155 lbs.,,,,0,1,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/8944a0f9b2f0ce6d
+Melissa Croden,"5' 9""",135 lbs.,"68.0""",Orthodox,1991-04-12,8,4,0,4.07,46%,2.17,59%,2.13,46%,68%,0.3,http://ufcstats.com/fighter-details/51e2f44a8dbf6984
 Kevin Croom,"5' 11""",135 lbs.,"73.0""",Orthodox,1987-07-15,21,15,0,2.65,34%,3.1,41%,0.48,5%,30%,0.5,http://ufcstats.com/fighter-details/35b3772629e27a49
 Kiefer Crosbie,"5' 11""",170 lbs.,"70.0""",Switch,1990-04-05,10,6,0,4.46,64%,5.8,46%,0.0,0%,40%,0.0,http://ufcstats.com/fighter-details/4729c93ba705a3bf
 Ken Cross,"6' 0""",155 lbs.,"72.0""",Southpaw,1994-10-04,11,3,0,2.2,57%,1.4,55%,1.0,12%,66%,0.0,http://ufcstats.com/fighter-details/923767209632e08a
@@ -885,6 +886,7 @@ Jimmy Crute,"6' 2""",205 lbs.,"74.0""",Orthodox,1996-03-04,14,4,2,4.15,52%,3.65,
 Marcio Cruz,"6' 4""",232 lbs.,,Orthodox,1978-04-24,8,3,0,2.92,46%,1.51,68%,0.53,7%,37%,1.6,http://ufcstats.com/fighter-details/6aa1cbc1466e9a0b
 Dominick Cruz,"5' 8""",135 lbs.,"68.0""",Orthodox,1985-03-09,24,4,0,3.91,33%,2.61,70%,2.82,42%,83%,0.1,http://ufcstats.com/fighter-details/10f3ba6cd2f44a97
 Aalon Cruz,"6' 0""",145 lbs.,"78.0""",Switch,1989-09-20,8,4,0,7.58,39%,8.88,58%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/003d82fa384ca1d0
+Timmy Cuamba,"5' 9""",135 lbs.,"71.0""",Orthodox,1999-02-08,11,4,0,2.88,43%,3.48,56%,1.78,43%,72%,0.2,http://ufcstats.com/fighter-details/0e46690e55a8df75
 Jay Cucciniello,"5' 7""",155 lbs.,,Orthodox,1986-07-23,8,1,0,0.93,21%,4.73,36%,0.0,0%,71%,0.0,http://ufcstats.com/fighter-details/683ea28a198936fe
 Emilio Cuellar,,125 lbs.,,,,6,1,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/3aeb69b4a13ff0e8
 Josh Culibao,"5' 10""",145 lbs.,"73.0""",Orthodox,1994-05-24,11,4,1,3.41,44%,3.04,59%,0.0,0%,65%,0.3,http://ufcstats.com/fighter-details/6751eacd16bd59bc
@@ -908,6 +910,7 @@ Chris Curtis,"5' 10""",170 lbs.,"75.0""",Orthodox,1987-07-15,32,13,0,5.52,50%,5.
 Ion Cutelaba,"6' 1""",205 lbs.,"75.0""",Southpaw,1993-12-14,20,12,1,4.13,43%,3.42,46%,4.02,51%,76%,0.3,http://ufcstats.com/fighter-details/cd13728ae1151f46
 Gleidson Cutis,"5' 9""",155 lbs.,,Orthodox,1989-02-07,7,4,0,2.99,52%,8.28,59%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/44a94bbde42246e4
 Sarah D'alelio,"5' 7""",145 lbs.,,,1980-12-13,11,7,0,2.4,33%,0.0,100%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/ac45450f75d14f16
+Douglas da Lapa,"6' 3""",185 lbs.,"75.0""",Switch,1999-07-02,7,0,0,11.34,51%,6.69,54%,0.0,0%,33%,0.0,http://ufcstats.com/fighter-details/d399b2bfa2c27d9e
 Marcos da Matta,"5' 4""",145 lbs.,,,1973-03-18,11,3,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/3b6d84343579fd33
 Henrique da Silva,"6' 3""",205 lbs.,"76.0""",Orthodox,1989-09-01,14,5,0,3.89,60%,5.28,40%,0.25,14%,22%,0.2,http://ufcstats.com/fighter-details/b0bd0c5425668b8f
 Ariane da Silva,"5' 6""",125 lbs.,"67.0""",Orthodox,1994-01-26,17,11,0,4.05,41%,4.4,50%,0.47,38%,68%,0.3,http://ufcstats.com/fighter-details/6551c64fbcd1a467
@@ -939,6 +942,7 @@ Adam Darby,"6' 3""",170 lbs.,"78.0""",,1998-11-13,8,1,0,14.25,55%,4.96,45%,0.0,0
 Beneil Dariush,"5' 10""",155 lbs.,"72.0""",Southpaw,1989-05-06,23,8,1,3.74,49%,2.63,57%,2.21,38%,82%,0.8,http://ufcstats.com/fighter-details/08af939f41b5a57b
 Alvi Dasuyev,"6' 0""",170 lbs.,"73.0""",Southpaw,2002-02-03,10,0,0,5.87,39%,5.07,43%,2.0,22%,0%,0.0,http://ufcstats.com/fighter-details/03c629aaa15a17ce
 Sean Daugherty,"6' 0""",175 lbs.,,,1975-12-04,0,2,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/a683f9ddb70aa4bd
+Kyle Daukaus,"6' 2""",185 lbs.,"76.0""",Southpaw,1993-02-27,17,6,0,3.06,52%,3.15,41%,2.04,26%,79%,1.9,http://ufcstats.com/fighter-details/d6c0cdd7e467c440
 Chris Daukaus,"6' 3""",205 lbs.,"76.0""",Orthodox,1989-09-25,12,7,0,6.05,50%,4.64,55%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/d0aaedcf7ccd0b45
 Brian Davidson,"5' 6""",145 lbs.,,,1975-11-22,13,4,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/42775dc893603154
 Rick Davis,"5' 9""",155 lbs.,,Orthodox,,3,1,1,3.09,50%,6.19,64%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/2549d63da9c456cb
@@ -953,7 +957,6 @@ Danny Davis,"6' 2""",170 lbs.,,,1982-07-28,13,11,1,0.0,0%,0.0,0%,0.0,0%,0%,0.0,h
 Brandon Davis,"5' 10""",135 lbs.,"72.0""",Orthodox,1990-05-08,14,10,0,4.68,35%,4.62,58%,0.74,42%,57%,0.1,http://ufcstats.com/fighter-details/cc351e408bbb7d43
 Mike Davis,"6' 0""",155 lbs.,"72.0""",Orthodox,1992-10-07,12,4,0,4.3,53%,4.66,54%,2.09,44%,52%,0.9,http://ufcstats.com/fighter-details/fb3e61720be4690c
 Hakeem Dawodu,"5' 8""",145 lbs.,"73.0""",Orthodox,1991-07-02,13,4,1,5.45,50%,3.37,56%,0.0,0%,65%,0.0,http://ufcstats.com/fighter-details/2c9d00968f818270
-Grant Dawson,"5' 10""",155 lbs.,"72.0""",Switch,1994-02-20,24,3,1,3.14,51%,2.14,44%,3.58,39%,66%,1.4,http://ufcstats.com/fighter-details/99bd51917728c25d
 Jason Day,"6' 0""",185 lbs.,"72.0""",Orthodox,1981-05-19,19,12,0,3.61,54%,3.46,47%,1.13,100%,0%,0.0,http://ufcstats.com/fighter-details/a6fd2173d5e2d7f0
 Martin Day,"5' 10""",145 lbs.,"73.0""",Orthodox,1988-11-10,8,6,0,3.97,45%,3.79,53%,0.72,60%,65%,0.5,http://ufcstats.com/fighter-details/ea3dcc417c322064
 Angel De Anda,"5' 9""",225 lbs.,,Orthodox,1985-05-28,18,6,0,5.68,46%,6.32,47%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/4b450aa602611baa
@@ -1036,6 +1039,7 @@ Ralph Dillon,"6' 2""",205 lbs.,,Orthodox,,0,2,1,0.34,14%,0.69,60%,0.0,0%,0%,0.0,
 Drew Dimanlig,,185 lbs.,,,,3,4,0,3.7,73%,3.17,20%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/cc2ad11b1f9d818b
 Ding Meng,"6' 2""",170 lbs.,"73.0""",Orthodox,1994-09-27,35,11,0,3.4,46%,3.8,49%,0.33,33%,63%,0.0,http://ufcstats.com/fighter-details/e0664abaa023fd6f
 Rodolfo Marques Diniz,"5' 6""",135 lbs.,,,1984-01-23,23,9,1,1.08,32%,2.36,33%,0.0,0%,50%,1.8,http://ufcstats.com/fighter-details/2d2239d0f6fa83dd
+Jhonata Diniz,"6' 4""",254 lbs.,"79.0""",Orthodox,1991-06-23,9,3,0,3.32,53%,3.51,54%,0.0,0%,63%,0.0,http://ufcstats.com/fighter-details/25f9a5f3e8a52618
 Adama Diop,"6' 1""",261 lbs.,"79.0""",Southpaw,1994-12-10,7,1,0,7.07,52%,4.02,42%,4.16,40%,0%,0.0,http://ufcstats.com/fighter-details/8730ab4b1057f925
 Helio Dipp,"6' 5""",185 lbs.,,Orthodox,1979-12-12,6,3,0,0.6,25%,1.8,62%,0.0,0%,50%,0.0,http://ufcstats.com/fighter-details/73eb2a552c92a821
 Rico DiSciullo,"5' 8""",135 lbs.,,Orthodox,1986-10-12,9,2,0,1.71,33%,4.41,56%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/ec7f7263bf36579b
@@ -1118,7 +1122,6 @@ Cody Durden,"5' 7""",125 lbs.,"67.0""",Southpaw,1991-03-29,18,11,1,3.27,44%,3.89
 Luiz Dutra,"5' 11""",170 lbs.,,Orthodox,1982-05-06,13,6,1,3.92,50%,4.8,41%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/2153a7f8396a46cc
 Rilley Dutro,"5' 8""",125 lbs.,,Orthodox,1987-09-03,11,4,0,4.74,54%,5.95,33%,0.0,0%,83%,0.0,http://ufcstats.com/fighter-details/43db649da89fac4b
 Bill Duvall,"6' 2""",185 lbs.,,Southpaw,,1,2,0,0.0,0%,2.4,40%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/7df4d3c38792b083
-Merab Dvalishvili,"5' 6""",135 lbs.,"68.0""",Orthodox,1991-01-10,21,5,0,4.42,41%,2.8,54%,5.97,35%,76%,0.3,http://ufcstats.com/fighter-details/c03520b5c88ed6b4
 David Dvorak,"5' 5""",125 lbs.,"68.0""",Orthodox,1992-06-05,20,6,0,3.48,43%,3.29,59%,0.58,30%,70%,0.2,http://ufcstats.com/fighter-details/9ada30894bf04e19
 Matt Dwyer,"6' 4""",170 lbs.,"76.0""",Orthodox,1989-12-17,9,4,0,2.57,34%,3.24,54%,0.44,10%,60%,0.0,http://ufcstats.com/fighter-details/8f0d576beba1cfcd
 Rolando Dy,"5' 8""",145 lbs.,"69.0""",Orthodox,1990-08-11,9,7,1,3.04,37%,4.47,52%,0.3,20%,68%,0.0,http://ufcstats.com/fighter-details/55ed59d541f8b90c
@@ -1220,7 +1223,6 @@ Ashlee Evans-Smith,"5' 8""",135 lbs.,"67.0""",Orthodox,1987-07-09,6,6,0,4.03,34%
 Dan Evensen,"6' 3""",250 lbs.,,Orthodox,1974-06-01,11,4,0,0.27,10%,3.86,38%,0.0,0%,0%,4.0,http://ufcstats.com/fighter-details/dd8aec6de7035943
 Salhahuddin Everett,"6' 3""",170 lbs.,"75.0""",Switch,1997-06-07,5,0,0,9.74,48%,8.21,48%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/4c718f671bf0b525
 Tonya Evinger,"5' 7""",135 lbs.,"70.0""",Orthodox,1981-06-04,19,8,0,1.16,42%,4.02,38%,0.93,30%,33%,0.9,http://ufcstats.com/fighter-details/b12a1d19ee383b7c
-Movsar Evloev,"5' 7""",145 lbs.,"72.0""",Orthodox,1994-02-11,20,0,0,3.91,47%,2.8,61%,4.78,52%,61%,0.2,http://ufcstats.com/fighter-details/76e2870ffafbe38f
 Andre Ewell,"5' 8""",145 lbs.,"75.0""",Southpaw,1988-01-21,17,9,0,4.28,40%,4.87,51%,0.36,75%,72%,0.1,http://ufcstats.com/fighter-details/5f6f049d54728e88
 Chris Ewert,"6' 0""",185 lbs.,"75.0""",Orthodox,1993-09-06,7,1,0,3.4,37%,4.33,50%,0.0,0%,42%,0.0,http://ufcstats.com/fighter-details/54c2576b7f2f1f57
 Neal Ewing,,185 lbs.,,,1985-09-30,6,0,0,2.27,60%,1.93,48%,5.0,62%,0%,0.0,http://ufcstats.com/fighter-details/0798f558681d0eb5
@@ -1232,6 +1234,7 @@ Urijah Faber,"5' 6""",135 lbs.,"67.0""",Orthodox,1979-05-14,35,11,0,2.65,40%,2.5
 Melinda Fabian,"5' 6""",125 lbs.,"66.0""",Orthodox,1987-06-25,4,4,2,4.03,41%,4.0,62%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/8c020156779f7888
 Wagnney Fabiano,"5' 6""",145 lbs.,"69.0""",Southpaw,1975-07-14,16,4,0,1.19,38%,0.66,70%,3.44,64%,100%,0.4,http://ufcstats.com/fighter-details/40389d39a92f5bfa
 Bartosz Fabinski,"6' 0""",170 lbs.,"75.0""",Orthodox,1986-04-26,15,5,0,2.23,68%,1.46,51%,7.1,70%,80%,0.0,http://ufcstats.com/fighter-details/e17ac6410c8377f4
+Joel Faglier,"6' 2""",261 lbs.,"73.0""",Orthodox,2001-01-18,7,0,0,7.1,67%,8.35,47%,2.09,100%,66%,0.0,http://ufcstats.com/fighter-details/6188ad39d85a8bf8
 Ron Faircloth,"5' 9""",205 lbs.,,Orthodox,1979-08-16,33,20,0,0.39,40%,8.9,42%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/453ee00c3e1ae9dd
 Jason Fairn,"6' 1""",230 lbs.,,,,4,5,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/adea9f0090aa8e14
 Zarah Fairn,"5' 8""",135 lbs.,"72.0""",Orthodox,1983-12-10,6,6,0,4.55,31%,7.4,45%,0.0,0%,60%,0.0,http://ufcstats.com/fighter-details/862b0b3375aa4b6e
@@ -1327,6 +1330,7 @@ Brianna Fortino,"5' 0""",115 lbs.,"62.0""",Southpaw,1993-08-04,9,3,0,3.53,41%,3.
 Marcel Fortuna,"6' 1""",205 lbs.,"74.0""",Orthodox,1985-10-22,9,3,0,3.83,46%,4.52,64%,0.45,8%,75%,0.5,http://ufcstats.com/fighter-details/d761b3766e38c5db
 Tyrell Fortune,"6' 3""",259 lbs.,"75.0""",Orthodox,1990-07-04,18,4,0,1.91,49%,4.31,50%,1.72,42%,100%,0.0,http://ufcstats.com/fighter-details/bc7f4b2d4c2724a2
 Brian Foster,"5' 9""",170 lbs.,"71.0""",Orthodox,1984-04-03,27,10,0,3.3,39%,1.63,65%,3.67,60%,37%,1.8,http://ufcstats.com/fighter-details/3dc3022232b79c7a
+Greg Foster,"5' 10""",145 lbs.,"70.0""",Orthodox,1992-06-30,9,1,0,11.27,59%,6.2,46%,1.0,33%,87%,0.0,http://ufcstats.com/fighter-details/9c58d5a8c8d9fa73
 Xavier Foupa-Pokam,"6' 1""",185 lbs.,,Open Stance,1982-07-03,32,22,0,1.47,43%,2.5,49%,0.0,0%,16%,0.0,http://ufcstats.com/fighter-details/ec33146e43e58933
 Mason Fowler,"5' 11""",170 lbs.,,,,2,0,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/d745d4146be48679
 Brandon Foxworth,"5' 11""",145 lbs.,,Orthodox,1979-04-28,18,4,0,1.33,32%,4.59,50%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/f65a0eb902f9476b
@@ -1334,6 +1338,7 @@ Hermes Franca,"5' 6""",155 lbs.,"71.0""",Orthodox,1974-08-26,24,17,0,1.78,39%,2.
 Glaico Franca Moreira,"6' 0""",155 lbs.,"77.0""",Orthodox,1991-02-28,15,5,0,2.35,42%,3.46,47%,2.68,42%,76%,0.3,http://ufcstats.com/fighter-details/00a3ff40c4b2cf21
 Francisco France,"6' 0""",205 lbs.,,,1983-01-21,13,5,1,0.54,33%,3.51,27%,0.0,0%,0%,6.1,http://ufcstats.com/fighter-details/ecfdbf38681a59ba
 John Franchi,"5' 6""",145 lbs.,"67.0""",Orthodox,1982-07-16,6,2,0,1.83,48%,2.59,48%,2.68,80%,40%,0.3,http://ufcstats.com/fighter-details/b9532d815060de7f
+Luis Francischinelli,"6' 5""",170 lbs.,"80.0""",Southpaw,1996-03-16,7,1,0,6.96,69%,1.3,57%,6.52,100%,75%,0.0,http://ufcstats.com/fighter-details/d245202d8ace5b1a
 Felipe Franco,"6' 1""",205 lbs.,"77.0""",Orthodox,2001-01-22,11,3,0,2.46,56%,2.43,43%,3.92,41%,87%,0.0,http://ufcstats.com/fighter-details/e564146b9cf6dbef
 Rich Franklin,"6' 1""",185 lbs.,"76.0""",Southpaw,1974-10-05,29,7,0,4.1,44%,2.07,62%,1.31,66%,63%,0.7,http://ufcstats.com/fighter-details/d897897060f10a3a
 Xavier Franklin,"5' 6""",135 lbs.,"66.0""",Southpaw,1996-10-15,5,1,0,3.07,33%,5.27,50%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/90957a918e26bf9c
@@ -1386,10 +1391,11 @@ Sheila Gaff,"5' 5""",135 lbs.,,Orthodox,1989-12-29,9,7,0,1.6,50%,2.89,28%,0.0,0%
 Muin Gafurov,"5' 7""",135 lbs.,"68.0""",Orthodox,1996-05-17,20,7,0,3.36,47%,2.51,55%,1.57,28%,70%,0.0,http://ufcstats.com/fighter-details/a54660deb6a8489c
 Mitch Gagnon,"5' 5""",135 lbs.,"65.0""",Southpaw,1984-10-10,12,5,0,2.76,46%,2.21,61%,1.16,25%,65%,1.9,http://ufcstats.com/fighter-details/b8592b4a383696cd
 Brandon Gaines,"6' 3""",185 lbs.,,,1982-02-24,5,21,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/8e6cfbd455f0f9c2
+Nick Galanti,"6' 1""",185 lbs.,"75.0""",Southpaw,1998-06-18,9,1,0,4.46,75%,0.5,50%,14.88,66%,0%,7.4,http://ufcstats.com/fighter-details/8988705468d04ef7
 Travis Galbraith,"6' 0""",170 lbs.,,Orthodox,1981-05-18,18,7,0,2.21,40%,3.45,48%,1.33,25%,0%,1.3,http://ufcstats.com/fighter-details/06dc1a58663579d2
 Dave Galera,"5' 11""",135 lbs.,,Orthodox,1978-01-12,5,1,0,1.67,69%,0.53,33%,0.0,0%,14%,2.0,http://ufcstats.com/fighter-details/0876d21328cf4a45
 Zelg Galesic,"6' 2""",185 lbs.,,Orthodox,1979-02-16,11,9,0,4.86,62%,0.61,66%,1.3,100%,20%,1.3,http://ufcstats.com/fighter-details/8a1b4330c7957961
-Mickey Gall,"6' 2""",170 lbs.,"74.0""",Switch,1992-01-22,7,7,0,3.5,49%,4.72,49%,1.15,32%,37%,1.6,http://ufcstats.com/fighter-details/9e50097a89442158
+Mickey Gall,"6' 2""",185 lbs.,"74.0""",Switch,1992-01-22,7,7,0,3.5,49%,4.72,49%,1.15,32%,37%,1.6,http://ufcstats.com/fighter-details/9e50097a89442158
 Daniel Gallemore,"6' 5""",265 lbs.,,,,7,3,0,3.1,41%,6.0,52%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/96706c75a2b14164
 Tom Gallicchio,"5' 10""",170 lbs.,,Southpaw,1986-09-23,19,10,0,3.53,26%,7.07,43%,1.0,11%,0%,0.0,http://ufcstats.com/fighter-details/cc81c92fe2254935
 Turrell Galloway,"5' 3""",145 lbs.,,,1976-08-11,8,6,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/7e654edcddd71550
@@ -1593,7 +1599,6 @@ Nandor Guelmino,"6' 3""",230 lbs.,,,1975-12-20,11,5,1,3.62,56%,3.16,33%,0.0,0%,4
 Fabricio Guerreiro,"5' 10""",145 lbs.,,,1990-07-24,21,5,0,1.87,31%,2.2,67%,2.0,50%,0%,0.0,http://ufcstats.com/fighter-details/2963369e327e1979
 Rainn Guerrero,"5' 6""",125 lbs.,"65.0""",Orthodox,1992-05-13,5,2,0,0.65,33%,0.87,50%,3.27,100%,0%,0.0,http://ufcstats.com/fighter-details/8300a47f6fd6fe4f
 Shannon Gugerty,"5' 10""",155 lbs.,"71.0""",Orthodox,1981-12-30,15,7,0,1.25,39%,1.88,58%,2.13,27%,50%,3.4,http://ufcstats.com/fighter-details/9f1641c08cf8fbe2
-Noah Gugnon,"5' 11""",155 lbs.,"71.0""",Orthodox,2000-10-18,10,2,0,3.7,45%,4.44,68%,0.0,0%,0%,11.1,http://ufcstats.com/fighter-details/6266abf6e4245c72
 Clay Guida,"5' 7""",155 lbs.,"70.0""",Orthodox,1981-12-08,38,22,0,2.63,33%,3.0,61%,3.1,35%,66%,0.6,http://ufcstats.com/fighter-details/c47df9303d318c67
 Jason Guida,"5' 10""",214 lbs.,,,1977-08-04,19,28,0,1.87,40%,3.33,52%,1.0,14%,50%,1.0,http://ufcstats.com/fighter-details/ce25b4ed82b1811b
 Melvin Guillard,"5' 9""",155 lbs.,"71.0""",Orthodox,1983-03-30,32,18,2,2.96,40%,1.85,66%,1.3,63%,61%,0.2,http://ufcstats.com/fighter-details/ccd1299e0345e0ce
@@ -1804,7 +1809,7 @@ David Hood,"6' 0""",200 lbs.,,,,1,3,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstat
 Lorenzo Hood,"6' 3""",265 lbs.,"80.0""",Southpaw,1989-03-02,14,5,0,2.64,61%,4.66,11%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/7f9abc4db2d05764
 Dan Hooker,"6' 0""",155 lbs.,"75.0""",Switch,1990-02-13,24,15,0,4.82,48%,4.94,48%,0.67,33%,77%,0.6,http://ufcstats.com/fighter-details/193b9d1858bc4df3
 Chase Hooper,"6' 1""",155 lbs.,"74.0""",Southpaw,1999-09-13,17,5,1,4.44,49%,2.97,39%,2.5,32%,55%,2.2,http://ufcstats.com/fighter-details/971246648e162f0d
-Dakota Hope,"5' 6""",155 lbs.,"68.0""",,1997-01-29,11,2,0,7.07,41%,7.0,33%,1.0,33%,100%,0.0,http://ufcstats.com/fighter-details/6142edbd477d20c9
+Dakota Hope,"5' 6""",145 lbs.,"68.0""",,1997-01-29,11,2,0,7.07,41%,7.0,33%,1.0,33%,100%,0.0,http://ufcstats.com/fighter-details/6142edbd477d20c9
 Darrell Horcher,"5' 10""",155 lbs.,"70.0""",Southpaw,1987-07-28,13,4,0,2.05,44%,4.21,39%,0.35,50%,47%,0.7,http://ufcstats.com/fighter-details/18e8b7070228e728
 Moti Horenstein,"6' 4""",230 lbs.,,Orthodox,1964-03-23,1,6,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/baf942f4bcb09894
 Yoshinori Horie,"5' 8""",145 lbs.,"70.0""",Orthodox,1995-05-10,8,2,0,2.76,49%,5.65,48%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/3fa7688bfe48a493
@@ -1932,6 +1937,7 @@ Keith Jardine,"6' 2""",185 lbs.,"76.0""",Orthodox,1975-10-31,17,11,2,3.25,36%,2.
 Brock Jardine,"5' 11""",170 lbs.,,Orthodox,1985-07-10,12,6,0,1.06,30%,3.34,56%,0.0,0%,14%,0.8,http://ufcstats.com/fighter-details/64959f90b6dd9759
 Josh Jarvis,,,,,,1,4,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/32e8e0e8498f03c2
 Rony Jason,"5' 7""",145 lbs.,"73.0""",Orthodox,1984-03-21,14,7,0,2.04,44%,3.14,53%,0.59,30%,36%,0.8,http://ufcstats.com/fighter-details/b71ce838b01f2cad
+Jasmine Jasudavicius,"5' 7""",125 lbs.,"68.0""",Orthodox,1989-03-01,16,4,0,3.42,43%,3.52,51%,2.82,44%,72%,0.8,http://ufcstats.com/fighter-details/a9e260472d321361
 Louis Jauregui,"5' 7""",170 lbs.,,,,4,2,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/0e8744ded08ee5fb
 Yazmin Jauregui,"5' 3""",115 lbs.,"64.0""",Orthodox,1999-02-28,12,2,0,7.26,40%,5.29,55%,0.34,16%,100%,0.0,http://ufcstats.com/fighter-details/40cb680ae1cd331f
 Justin Jaynes,"5' 7""",145 lbs.,"68.0""",Orthodox,1989-08-10,16,8,0,3.34,44%,5.33,62%,0.75,40%,20%,1.1,http://ufcstats.com/fighter-details/304a21d0595e1a08
@@ -2016,6 +2022,7 @@ Jeff Joslin,"6' 0""",170 lbs.,,Orthodox,1975-04-30,5,3,0,2.17,39%,1.57,65%,0.5,3
 Krzysztof Jotko,"6' 1""",185 lbs.,"77.0""",Southpaw,1989-08-19,24,6,0,2.98,42%,2.23,57%,1.33,39%,82%,0.1,http://ufcstats.com/fighter-details/4e06913c91da5200
 Alan Jouban,"6' 0""",170 lbs.,"73.0""",Southpaw,1981-11-25,17,7,0,5.67,50%,3.77,60%,0.51,44%,58%,0.3,http://ufcstats.com/fighter-details/cf65d56b0755ed3b
 Charles Jourdain,"5' 9""",135 lbs.,"69.0""",Switch,1995-11-27,18,9,1,5.44,50%,4.22,55%,0.36,20%,44%,0.6,http://ufcstats.com/fighter-details/f1d64ae34e088832
+Louis Jourdain,"5' 9""",135 lbs.,"69.0""",Orthodox,1997-03-13,9,4,0,4.72,44%,2.6,55%,0.0,0%,28%,1.6,http://ufcstats.com/fighter-details/91cd52cb92dfdd52
 Kevin Jousset,"6' 2""",170 lbs.,"75.0""",Orthodox,1993-05-02,10,4,0,6.61,51%,6.49,50%,0.69,40%,100%,0.3,http://ufcstats.com/fighter-details/dda15dbfafb792df
 Mike Joy,"5' 6""",155 lbs.,,Southpaw,1985-07-18,11,8,0,0.57,33%,1.71,47%,0.78,33%,0%,2.3,http://ufcstats.com/fighter-details/35080a7f406f9ab3
 Dustin Joynson,"6' 6""",244 lbs.,"78.0""",Orthodox,1985-10-14,5,0,0,3.28,53%,5.63,47%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/791367e8c35cfb6a
@@ -2069,7 +2076,6 @@ Hisaki Kato,"6' 0""",185 lbs.,,,1982-09-17,8,2,0,2.8,48%,1.72,68%,1.62,100%,0%,0
 Brad Katona,"5' 6""",135 lbs.,"64.0""",Orthodox,1991-12-19,16,5,0,4.81,52%,4.75,50%,1.86,34%,61%,0.0,http://ufcstats.com/fighter-details/7b433309b0fd12aa
 Calvin Kattar,"5' 11""",145 lbs.,"72.0""",Orthodox,1988-03-26,23,10,0,4.41,37%,6.55,54%,0.34,29%,77%,0.1,http://ufcstats.com/fighter-details/751de04455cfaac0
 Sarah Kaufman,"5' 5""",135 lbs.,"66.0""",Orthodox,1985-09-20,18,4,0,6.65,46%,4.0,62%,0.38,57%,81%,0.0,http://ufcstats.com/fighter-details/36df8e119aec6175
-Lone'er Kavanagh,"5' 6""",125 lbs.,"67.0""",Orthodox,1999-06-09,10,2,0,4.13,50%,3.94,53%,1.12,46%,82%,0.4,http://ufcstats.com/fighter-details/bb2c3c3a466224af
 Yusuke Kawaguchi,"6' 0""",255 lbs.,,,1980-08-14,18,12,0,2.87,47%,3.93,50%,0.0,0%,72%,0.0,http://ufcstats.com/fighter-details/fa2320781bfe4f49
 Canaan Kawaihae,"6' 0""",145 lbs.,"71.0""",Southpaw,1997-08-26,6,2,0,2.83,51%,4.59,36%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/58d42b9e920b25fc
 Tatsuya Kawajiri,"5' 7""",145 lbs.,"69.0""",Orthodox,1978-05-08,36,11,2,2.04,44%,2.01,50%,3.63,48%,63%,1.1,http://ufcstats.com/fighter-details/80d918336163b80c
@@ -2079,7 +2085,6 @@ Doug Kay,,,,,,0,0,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-deta
 Toshiomi Kazama,"5' 7""",135 lbs.,"69.0""",Orthodox,1997-05-15,11,5,0,1.49,53%,4.56,38%,1.94,16%,66%,1.0,http://ufcstats.com/fighter-details/148bb103cfbf123e
 Julie Kedzie,"5' 5""",135 lbs.,,Orthodox,1981-03-18,16,13,0,2.9,36%,3.18,46%,1.14,23%,78%,0.0,http://ufcstats.com/fighter-details/981ab7a0576f76a0
 Ryan Keenan,"5' 10""",170 lbs.,,,1985-06-15,6,2,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/a72b20136239ba39
-Losene Keita,"5' 9""",145 lbs.,"72.0""",Orthodox,1997-12-30,17,2,0,3.91,46%,3.97,64%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/5b43d68174b6e2ab
 CJ Keith,"6' 0""",155 lbs.,,Orthodox,1986-08-09,8,4,0,0.86,50%,1.82,50%,0.0,0%,62%,0.0,http://ufcstats.com/fighter-details/c0eecd851dbf3146
 Chris Kelades,"5' 7""",125 lbs.,"68.0""",Orthodox,1981-02-21,9,3,0,2.4,43%,2.64,48%,1.04,18%,53%,0.3,http://ufcstats.com/fighter-details/56c9acc4e86046a2
 Brian Kelleher,"5' 6""",135 lbs.,"66.0""",Switch,1986-08-19,24,16,0,3.31,41%,4.59,54%,1.68,41%,60%,0.7,http://ufcstats.com/fighter-details/7be14eaed4c74856
@@ -2174,6 +2179,7 @@ Bruno Korea,"5' 6""",135 lbs.,"65.0""",,1991-06-28,7,3,0,2.12,34%,3.96,42%,0.0,0
 Chungreng Koren,"5' 6""",135 lbs.,"67.0""",Orthodox,1998-02-01,8,3,0,3.92,44%,3.38,42%,6.88,50%,33%,0.6,http://ufcstats.com/fighter-details/000774e57404d8c7
 Andrey Koreshkov,"6' 0""",170 lbs.,,,1990-08-23,19,2,0,2.84,39%,1.92,63%,4.8,53%,0%,0.0,http://ufcstats.com/fighter-details/aee885b8ca29ab4f
 Josh Koscheck,"5' 10""",170 lbs.,"73.0""",Orthodox,1977-11-30,17,11,0,1.79,36%,2.27,63%,2.46,48%,64%,0.4,http://ufcstats.com/fighter-details/dd37fd509af89f15
+Steven Koslow,"5' 7""",135 lbs.,"69.0""",Switch,1997-01-22,7,1,0,2.16,52%,3.03,41%,4.7,69%,0%,1.6,http://ufcstats.com/fighter-details/84512339473dd300
 Naoyuki Kotani,"5' 8""",155 lbs.,"66.0""",Southpaw,1981-12-08,34,14,7,1.02,31%,2.89,50%,0.83,16%,46%,0.8,http://ufcstats.com/fighter-details/bc8f6b42767e28df
 Ilya Kotau,,170 lbs.,,,,1,2,0,3.94,40%,4.38,44%,6.57,100%,100%,6.6,http://ufcstats.com/fighter-details/a68d57ae177a5815
 Iouri Kotchkine,"6' 2""",235 lbs.,,Orthodox,1969-12-21,7,4,1,0.67,38%,4.92,15%,0.0,0%,25%,0.0,http://ufcstats.com/fighter-details/c6becb722706c7d8
@@ -2189,7 +2195,6 @@ Rene Kronvold,"5' 8""",170 lbs.,,Orthodox,1970-01-03,5,1,0,0.82,100%,2.47,60%,0.
 Joe Kropschot,"6' 3""",185 lbs.,"79.0""",Orthodox,1995-06-19,9,3,0,7.93,61%,3.93,62%,1.0,50%,50%,3.0,http://ufcstats.com/fighter-details/8a81a0707350c4a8
 Kaynan Kruschewsky,"6' 0""",155 lbs.,"73.0""",Orthodox,1991-04-04,15,3,0,5.67,50%,5.71,46%,2.74,100%,75%,2.1,http://ufcstats.com/fighter-details/ca36633b80be4a78
 Jorgen Kruth,"6' 2""",205 lbs.,,,1974-05-08,5,0,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/6071d786f6187810
-Nikita Krylov,"6' 3""",205 lbs.,"77.0""",Orthodox,1992-03-07,31,12,0,4.38,54%,2.75,48%,2.19,38%,53%,1.1,http://ufcstats.com/fighter-details/1091d4d957141094
 Mariusz Ksiazkiewicz,"6' 3""",185 lbs.,"75.0""",Southpaw,1989-10-04,8,1,0,0.93,45%,3.4,39%,4.0,100%,0%,2.0,http://ufcstats.com/fighter-details/ab16537dd1e5e81d
 Eliezer Kubanza,"5' 9""",170 lbs.,"74.0""",Orthodox,1997-12-23,7,1,0,2.11,50%,6.97,37%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/66579081831db7b0
 Junya Kudo,,135 lbs.,,Orthodox,1983-03-24,10,7,2,1.85,71%,4.44,33%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/487c170da059857d
@@ -2199,7 +2204,6 @@ Anton Kuivanen,"5' 8""",155 lbs.,"72.0""",Orthodox,1984-05-01,24,10,0,2.27,38%,1
 Maiju Kujala,,135 lbs.,,,1986-02-24,6,3,0,2.5,40%,5.5,36%,0.0,0%,50%,0.0,http://ufcstats.com/fighter-details/4e77d070239699e2
 Sumit Kumar,"5' 5""",125 lbs.,"66.0""",Orthodox,2000-09-09,8,1,0,2.8,24%,4.67,46%,6.0,30%,60%,0.0,http://ufcstats.com/fighter-details/a0a625221e0dd339
 Aleksei Kunchenko,"5' 8""",170 lbs.,"70.0""",Orthodox,1984-05-02,20,2,0,3.67,44%,2.83,63%,0.25,33%,80%,0.0,http://ufcstats.com/fighter-details/e2ccd9a9ace60de7
-Rizvan Kuniev,"6' 4""",240 lbs.,"76.0""",Orthodox,1992-03-10,14,3,1,4.32,54%,2.22,49%,0.79,75%,93%,0.0,http://ufcstats.com/fighter-details/739fd4fbb5d862f4
 Keigo Kunihara,"6' 0""",235 lbs.,,Orthodox,,3,2,0,0.17,10%,1.99,57%,4.97,40%,100%,2.5,http://ufcstats.com/fighter-details/782a2a17d3e38fdf
 Kiichi Kunimoto,"5' 10""",170 lbs.,"71.0""",Orthodox,1981-05-01,18,7,2,1.87,44%,3.92,41%,1.59,20%,28%,0.3,http://ufcstats.com/fighter-details/71df36d6d8cf0d74
 Jon Kunneman,"5' 9""",185 lbs.,"73.0""",Orthodox,1999-07-14,10,1,0,3.93,37%,7.93,38%,2.0,50%,50%,0.0,http://ufcstats.com/fighter-details/2694c4997a51ed01
@@ -2237,6 +2241,7 @@ Sean Lally,"6' 0""",170 lbs.,,Orthodox,1990-11-04,7,3,0,5.34,39%,7.23,30%,0.0,0%
 Ricardo Lamas,"5' 8""",145 lbs.,"71.0""",Orthodox,1982-05-21,20,8,0,3.13,47%,2.87,57%,1.84,33%,46%,0.9,http://ufcstats.com/fighter-details/3974fa35c917af1d
 Jason Lambert,"6' 3""",185 lbs.,"75.0""",Orthodox,1975-06-03,26,13,0,3.21,58%,1.84,50%,1.35,36%,28%,2.4,http://ufcstats.com/fighter-details/5be86bb2f78fef2f
 Jose Landi-Jons,"5' 11""",170 lbs.,,Orthodox,1973-09-09,29,16,0,0.99,40%,0.77,43%,2.2,80%,40%,2.2,http://ufcstats.com/fighter-details/7e062824c175f975
+Nate Landwehr,"5' 9""",155 lbs.,"72.0""",Orthodox,1988-06-06,18,9,0,5.38,45%,6.18,50%,0.69,41%,69%,0.7,http://ufcstats.com/fighter-details/583ee11abddfc581
 Austen Lane,"6' 6""",205 lbs.,"80.0""",Orthodox,1987-11-09,13,8,0,2.7,50%,2.45,39%,1.5,28%,33%,0.0,http://ufcstats.com/fighter-details/be9bdec19b7e9ffe
 Aaron Lanfranco,,155 lbs.,,,1986-08-26,5,1,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/d73e856f150744b2
 Jeremy Lang,"5' 11""",205 lbs.,,Southpaw,1975-05-11,21,2,0,1.13,50%,1.41,42%,4.22,60%,0%,4.2,http://ufcstats.com/fighter-details/09422812370fbdfe
@@ -2280,6 +2285,7 @@ Carlos Leal,"5' 11""",170 lbs.,"74.0""",Orthodox,1994-05-04,23,7,0,8.75,47%,7.78
 Jordan Leavitt,"5' 9""",145 lbs.,"71.0""",Southpaw,1995-06-02,13,4,0,2.18,58%,1.57,59%,2.97,30%,30%,1.2,http://ufcstats.com/fighter-details/ac026518a9b4dc0f
 Jerome LeBanner,"6' 3""",265 lbs.,,Southpaw,1972-12-26,3,2,0,0.92,35%,1.03,37%,0.0,0%,50%,0.0,http://ufcstats.com/fighter-details/2d0b10789feafddb
 Chris Leben,"5' 11""",185 lbs.,"73.0""",Southpaw,1980-07-21,22,11,0,2.87,42%,2.87,52%,1.14,41%,53%,0.8,http://ufcstats.com/fighter-details/d43a048a880efdff
+Julien Leblanc,"6' 2""",185 lbs.,"74.0""",Southpaw,1992-01-21,10,4,0,1.05,57%,2.11,46%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/cd0dfd9846bd03b9
 Jean-Paul Lebosnoyani,"5' 11""",170 lbs.,"72.0""",Switch,1999-01-27,11,2,0,4.14,46%,4.05,57%,2.89,42%,100%,1.9,http://ufcstats.com/fighter-details/a3dda21be645be93
 Mickael Lebout,"5' 11""",155 lbs.,"73.0""",Orthodox,1987-08-16,16,7,1,2.6,34%,2.98,54%,0.0,0%,60%,0.0,http://ufcstats.com/fighter-details/c575ab451e3c5b1d
 Stephen Ledbetter,"5' 9""",145 lbs.,,Orthodox,1982-06-30,8,3,0,1.2,38%,1.6,57%,5.0,45%,100%,0.0,http://ufcstats.com/fighter-details/56ec58954158966a
@@ -2365,7 +2371,7 @@ John Lineker,"5' 3""",135 lbs.,"67.0""",Orthodox,1990-06-12,31,9,0,5.36,40%,4.27
 Austin Lingo,"5' 10""",145 lbs.,"70.0""",Orthodox,1994-07-10,9,3,0,3.86,37%,4.86,57%,0.43,66%,75%,0.0,http://ufcstats.com/fighter-details/305d73ede05e31ad
 Lucio Linhares,"6' 2""",185 lbs.,,Orthodox,1973-12-08,19,8,0,0.99,22%,3.47,34%,1.86,50%,50%,1.9,http://ufcstats.com/fighter-details/a780d16cf7eed44d
 Philipe Lins,"6' 2""",205 lbs.,"78.0""",Orthodox,1985-08-17,18,5,0,3.8,49%,3.59,46%,1.65,33%,100%,0.0,http://ufcstats.com/fighter-details/53c943c873cffe90
-Tainara Lisboa,"5' 7""",135 lbs.,"67.0""",Orthodox,1991-03-02,7,4,0,2.01,44%,2.88,45%,1.67,31%,53%,0.3,http://ufcstats.com/fighter-details/2c5f5749569eef66
+Tainara Lisboa,"5' 7""",125 lbs.,"67.0""",Orthodox,1991-03-02,7,4,0,2.01,44%,2.88,45%,1.67,31%,53%,0.3,http://ufcstats.com/fighter-details/2c5f5749569eef66
 Dean Lister,"6' 1""",185 lbs.,"75.0""",Orthodox,1976-02-13,13,7,0,1.26,35%,1.89,61%,1.58,15%,50%,1.1,http://ufcstats.com/fighter-details/68c6cd5287b473a7
 Wesley Little,"6' 4""",205 lbs.,,,,4,8,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/008c6e1a25751575
 Liu Ce,"6' 3""",205 lbs.,"77.0""",Orthodox,1996-09-04,4,1,0,13.31,71%,6.32,50%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/a9936818d709e2d7
@@ -2418,7 +2424,6 @@ Robert Lucarelli,"6' 2""",245 lbs.,,,,0,1,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://u
 Matt Lucas,"6' 1""",205 lbs.,,,1973-12-27,15,3,0,1.27,48%,3.93,40%,1.0,10%,0%,0.0,http://ufcstats.com/fighter-details/668222c99c5c311d
 Cleber Luciano,"5' 6""",155 lbs.,,,,14,6,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/9bdebbf2735d14c2
 Stephanie Luciano,"5' 6""",115 lbs.,"65.0""",Orthodox,1999-12-16,8,2,1,5.25,42%,3.29,63%,1.47,66%,80%,0.5,http://ufcstats.com/fighter-details/1b35af4d1529adf6
-Iasmin Lucindo,"5' 3""",115 lbs.,"66.0""",Orthodox,2002-01-08,18,6,0,3.22,45%,2.8,62%,2.28,55%,68%,0.1,http://ufcstats.com/fighter-details/abcf2cc6efc42031
 Duane Ludwig,"5' 10""",170 lbs.,"70.0""",Orthodox,1978-08-04,21,14,0,4.62,44%,3.05,57%,0.43,25%,59%,0.1,http://ufcstats.com/fighter-details/84ac950d4c1722dd
 Lawrence Lui,"5' 7""",135 lbs.,"72.0""",Orthodox,1996-08-04,8,2,0,3.96,41%,3.56,63%,4.57,39%,100%,0.0,http://ufcstats.com/fighter-details/a1ad35b98a9136e5
 Mike Lullo,"5' 8""",145 lbs.,,Orthodox,1979-07-24,8,3,0,2.48,36%,4.84,40%,1.18,11%,0%,0.6,http://ufcstats.com/fighter-details/e26882820f9e8df5
@@ -2471,7 +2476,6 @@ Raimond Magomedaliev,"6' 1""",170 lbs.,"75.0""",Orthodox,1990-06-10,10,2,0,4.07,
 Ibragim Magomedov,"6' 0""",250 lbs.,,Orthodox,1975-06-08,22,8,1,0.26,4%,3.86,42%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/e7e970d508529bf3
 Rashid Magomedov,"5' 9""",155 lbs.,"70.0""",Orthodox,1984-11-29,20,2,0,4.4,49%,3.05,54%,0.67,57%,89%,0.2,http://ufcstats.com/fighter-details/7ea1f74cef32f906
 Ruslan Magomedov,"6' 3""",242 lbs.,"78.0""",Orthodox,1986-11-26,14,1,0,4.02,47%,1.47,66%,0.33,100%,88%,0.0,http://ufcstats.com/fighter-details/369e1ce458ef50a6
-Abus Magomedov,"6' 2""",185 lbs.,"78.0""",Orthodox,1990-09-02,29,7,1,3.06,48%,3.34,56%,2.5,59%,100%,0.6,http://ufcstats.com/fighter-details/36b8f265bcd1b7a4
 Shara Magomedov,"6' 2""",185 lbs.,"73.0""",Orthodox,1994-05-16,17,1,0,5.55,62%,3.62,45%,0.0,0%,73%,0.0,http://ufcstats.com/fighter-details/06734ca9d88dec3a
 Murtazali Magomedov,"5' 9""",145 lbs.,"70.0""",Orthodox,1999-08-26,11,0,0,4.83,48%,2.07,81%,5.17,50%,0%,5.2,http://ufcstats.com/fighter-details/d436f5d55156a521
 Zabit Magomedsharipov,"6' 1""",145 lbs.,"73.0""",Orthodox,1991-03-01,18,1,0,4.89,48%,3.0,64%,5.22,56%,77%,0.8,http://ufcstats.com/fighter-details/87aa9fb63d6b51a1
@@ -2479,6 +2483,7 @@ John Maguire,"5' 9""",155 lbs.,"69.0""",Southpaw,1983-05-19,24,9,0,1.41,41%,2.44
 Lolohea Mahe,,,,,,10,4,1,1.71,29%,6.92,40%,2.44,40%,0%,0.0,http://ufcstats.com/fighter-details/fb0b6593cec84356
 Michelle Maher,,145 lbs.,,,,1,2,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/118463dd8db16e7f
 Maheshate,"6' 0""",155 lbs.,"71.0""",Orthodox,1999-12-01,12,5,0,3.97,31%,5.89,52%,0.0,0%,47%,0.2,http://ufcstats.com/fighter-details/8c1ca54b5089d199
+Javad Mahjoub,"6' 1""",253 lbs.,"76.0""",Orthodox,1991-05-26,5,1,0,8.35,52%,7.1,32%,2.09,33%,0%,0.0,http://ufcstats.com/fighter-details/e9f9add1481fc11c
 Bill Mahood,"6' 3""",200 lbs.,,Orthodox,1967-02-01,20,7,1,1.54,85%,3.59,17%,0.0,0%,0%,3.9,http://ufcstats.com/fighter-details/ae58685caf8e4a0d
 Klayton Mai,"5' 9""",125 lbs.,,,1986-11-30,8,3,0,1.53,42%,1.02,63%,3.83,100%,0%,7.7,http://ufcstats.com/fighter-details/7a9c1bb08a743d7f
 Demian Maia,"6' 1""",170 lbs.,"72.0""",Southpaw,1977-11-06,28,11,0,1.8,43%,2.07,63%,2.49,24%,61%,1.0,http://ufcstats.com/fighter-details/427b5953ac8e3a27
@@ -2498,7 +2503,7 @@ Marvin Maldonado,"5' 6""",135 lbs.,,,,2,4,0,0.87,56%,3.47,43%,0.0,0%,20%,0.0,htt
 Bea Malecki,"5' 9""",135 lbs.,"74.0""",Orthodox,1991-08-23,4,1,0,6.84,46%,6.96,62%,0.0,0%,78%,1.1,http://ufcstats.com/fighter-details/b60c980f79b87ce8
 Nazareno Malegarie,"5' 8""",155 lbs.,,,1986-05-16,28,4,0,3.87,34%,3.27,69%,1.0,33%,0%,0.0,http://ufcstats.com/fighter-details/d38e8c6ae2dfc051
 Carl Malenko,"5' 11""",200 lbs.,,Orthodox,1970-01-25,6,4,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/a314687f372b2cec
-Jacob Malkoun,"5' 9""",185 lbs.,"73.0""",Orthodox,1995-08-26,10,3,0,4.23,56%,2.33,55%,5.39,42%,55%,0.8,http://ufcstats.com/fighter-details/d4270315cbcf2569
+Mike Malott,"6' 1""",170 lbs.,"73.0""",Orthodox,1991-11-07,15,2,1,4.09,49%,2.99,57%,1.51,50%,57%,0.6,http://ufcstats.com/fighter-details/dd6103dd7127db1d
 Dan Manasoiu,,,,,,0,0,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/eefc73b53d4a05d7
 Troy Mandaloniz,"5' 9""",170 lbs.,,Orthodox,1980-02-01,3,2,0,3.52,56%,4.71,63%,3.1,66%,57%,0.0,http://ufcstats.com/fighter-details/725a834930c2b5bf
 Nate Maness,"5' 10""",125 lbs.,"72.0""",Orthodox,1991-06-27,16,3,0,3.14,50%,3.88,42%,0.68,75%,80%,0.7,http://ufcstats.com/fighter-details/6e9f40c706f91f32
@@ -2876,7 +2881,6 @@ Lerone Murphy,"5' 9""",145 lbs.,"73.0""",Orthodox,1991-07-22,17,1,1,4.34,51%,2.6
 Lee Murray,"6' 3""",185 lbs.,,Orthodox,1977-09-12,8,2,1,0.36,15%,3.28,32%,0.9,100%,42%,1.8,http://ufcstats.com/fighter-details/32016899d0a222a3
 Jesse Murray,"6' 3""",205 lbs.,"78.0""",Orthodox,1993-01-26,8,4,0,2.38,28%,7.72,43%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/d0147e906106cd2e
 Khalid Murtazaliev,"6' 0""",185 lbs.,"76.0""",Orthodox,1993-07-15,14,2,0,4.8,69%,0.4,78%,7.5,100%,33%,0.0,http://ufcstats.com/fighter-details/231cae8b77fbbcc1
-Azamat Murzakanov,"5' 10""",205 lbs.,"71.0""",Southpaw,1989-04-12,16,1,0,4.4,56%,3.2,56%,0.68,20%,88%,0.2,http://ufcstats.com/fighter-details/e90a2f22417af68e
 Josias Musasa,"5' 8""",135 lbs.,"74.0""",Southpaw,1998-10-10,8,2,0,3.19,45%,4.39,36%,0.9,50%,81%,0.5,http://ufcstats.com/fighter-details/723b64c0e9a8f348
 Tofiq Musayev,"5' 9""",155 lbs.,"69.0""",Orthodox,1989-12-15,24,6,0,2.86,43%,2.79,48%,1.57,50%,57%,0.0,http://ufcstats.com/fighter-details/ae81a3ac7b260411
 Nicholas Musoke,"6' 0""",170 lbs.,"75.0""",Orthodox,1986-04-05,13,5,0,3.56,35%,3.8,57%,1.16,19%,82%,0.2,http://ufcstats.com/fighter-details/8b5f9ea38184ded3
@@ -2904,6 +2908,7 @@ Keiichiro Nakamura,"5' 10""",145 lbs.,"70.0""",Southpaw,1998-12-02,8,1,0,4.48,41
 Tokitaka Nakanishi,"5' 6""",135 lbs.,"66.0""",Orthodox,1996-07-28,12,4,0,1.1,44%,1.57,45%,3.0,37%,0%,0.0,http://ufcstats.com/fighter-details/eb9446a4f44e19cf
 Jutaro Nakao,"5' 9""",170 lbs.,,Southpaw,1970-11-30,25,19,4,0.53,38%,1.06,44%,0.38,50%,56%,0.0,http://ufcstats.com/fighter-details/95eb112a85601a0a
 Yoshihiro Nakao,"6' 0""",220 lbs.,,Southpaw,1972-06-25,9,3,0,1.73,35%,2.06,64%,2.69,46%,0%,0.5,http://ufcstats.com/fighter-details/e18012194473e8b0
+Mandel Nallo,"6' 0""",155 lbs.,"75.0""",Orthodox,1989-07-26,15,4,0,9.16,58%,3.61,62%,1.32,100%,100%,1.3,http://ufcstats.com/fighter-details/8f4528c10bd34fab
 Yui Chul Nam,"5' 9""",145 lbs.,,Orthodox,1981-07-16,18,8,1,3.53,51%,2.0,48%,1.33,16%,57%,0.3,http://ufcstats.com/fighter-details/a00ec21cfbba17b6
 Tyson Nam,"5' 7""",125 lbs.,"68.0""",Orthodox,1983-10-06,21,14,1,3.87,33%,4.97,65%,0.0,0%,87%,0.0,http://ufcstats.com/fighter-details/6e00cfffd54653c4
 Rose Namajunas,"5' 5""",125 lbs.,"65.0""",Orthodox,1992-06-29,15,8,0,3.5,41%,3.38,63%,1.47,48%,62%,0.3,http://ufcstats.com/fighter-details/47b63240018d5d86
@@ -2936,6 +2941,7 @@ Steve Nelmark,"6' 0""",240 lbs.,,Orthodox,,2,1,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,htt
 Shane Nelson,"5' 9""",155 lbs.,"70.0""",Southpaw,1984-11-29,16,7,0,1.38,31%,2.84,61%,1.31,18%,54%,1.6,http://ufcstats.com/fighter-details/2db7fa8db6bc9632
 Roy Nelson,"6' 0""",263 lbs.,"73.0""",Orthodox,1976-06-20,22,14,0,2.18,36%,4.79,46%,1.14,27%,65%,0.1,http://ufcstats.com/fighter-details/3f7c14c7eca7195d
 Gunnar Nelson,"5' 11""",170 lbs.,"72.0""",Switch,1988-07-28,19,6,1,1.77,61%,3.06,48%,2.0,52%,68%,1.0,http://ufcstats.com/fighter-details/fd55393021a8c255
+Kyle Nelson,"5' 11""",155 lbs.,"71.0""",Switch,1991-04-20,17,8,1,3.63,45%,4.64,53%,1.17,23%,66%,0.5,http://ufcstats.com/fighter-details/31f8081c7600da93
 Cam Nelson,"5' 11""",170 lbs.,"72.0""",Orthodox,1998-07-28,8,1,0,2.73,58%,2.6,50%,4.0,36%,100%,0.0,http://ufcstats.com/fighter-details/34d4cae19105eb68
 Lissette Neri,"5' 2""",145 lbs.,,,1987-08-05,6,4,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/f4db63258ecf0613
 Mario Neto,"6' 0""",229 lbs.,,Orthodox,,13,5,0,1.89,50%,1.89,70%,2.84,100%,0%,0.0,http://ufcstats.com/fighter-details/1209b5134401ca53
@@ -3035,7 +3041,6 @@ Koji Oishi,"5' 8""",170 lbs.,,Orthodox,1977-05-31,25,10,10,1.43,9%,17.86,43%,0.0
 Takayuki Okada,"6' 1""",290 lbs.,,Orthodox,1973-05-08,3,3,2,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/32541eb5d12668b4
 Yushin Okami,"6' 2""",170 lbs.,"75.0""",Southpaw,1981-07-21,34,12,0,2.06,38%,2.25,60%,1.98,39%,84%,0.5,http://ufcstats.com/fighter-details/acff437707625fc7
 JJ Okanovich,"5' 11""",155 lbs.,"76.0""",Orthodox,1990-11-04,7,1,0,6.93,55%,5.27,50%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/aa40fe6038db56cb
-Bolaji Oki,"5' 10""",155 lbs.,"73.0""",Orthodox,1995-11-15,10,4,0,6.42,45%,5.12,61%,1.02,57%,75%,0.0,http://ufcstats.com/fighter-details/4bdedbdeedff7d1d
 Kazuki Okubo,"5' 11""",175 lbs.,,Orthodox,1979-06-30,7,9,0,1.53,38%,1.97,46%,0.51,25%,36%,2.0,http://ufcstats.com/fighter-details/33454ad90754cb49
 Masakatsu Okuda,,,,,1976-01-16,8,5,0,0.0,0%,4.27,34%,0.0,0%,0%,4.3,http://ufcstats.com/fighter-details/02a65a55f25fb4f3
 Aleksei Oleinik,"6' 2""",240 lbs.,"80.0""",Orthodox,1977-06-20,60,17,1,3.29,48%,3.8,44%,1.82,46%,37%,1.9,http://ufcstats.com/fighter-details/98c23cb6da5b3352
@@ -3211,6 +3216,7 @@ Alex Pereira,"6' 4""",251 lbs.,"79.0""",Orthodox,1987-07-07,13,4,0,5.01,61%,3.72
 Daniel Pereira,"5' 10""",185 lbs.,,,1990-12-13,9,2,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/44f46b0592ca0814
 Luciano Pereira,,125 lbs.,,Orthodox,2001-01-09,13,1,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/d7ee49bf3c779fa6
 Alice Pereira,"5' 8""",135 lbs.,"71.0""",Orthodox,2005-12-20,8,1,0,3.03,40%,2.79,65%,0.51,25%,75%,0.0,http://ufcstats.com/fighter-details/81d2c551886bd5a1
+Aline Pereira,"5' 9""",135 lbs.,"70.0""",Southpaw,1990-10-06,3,3,0,5.67,44%,7.07,70%,1.0,100%,0%,0.0,http://ufcstats.com/fighter-details/aeeba48b683a05f1
 Rolando Perez,"5' 8""",135 lbs.,,Orthodox,,7,5,2,4.23,36%,4.83,63%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/4a9e305633f3ef47
 Philip Perez,"5' 5""",155 lbs.,,Southpaw,,7,5,1,1.36,100%,0.68,66%,10.23,100%,0%,10.2,http://ufcstats.com/fighter-details/eee8efec7b951d84
 Erik Perez,"5' 8""",135 lbs.,"68.0""",Orthodox,1989-11-19,17,6,0,3.16,40%,2.09,66%,3.16,55%,69%,0.2,http://ufcstats.com/fighter-details/af62f99eb7606308
@@ -3220,6 +3226,7 @@ Jose Perez,,,,,,1,0,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-de
 Alex Perez,"5' 6""",125 lbs.,"65.0""",Orthodox,1992-03-21,26,11,0,3.79,44%,3.18,57%,2.31,46%,75%,0.7,http://ufcstats.com/fighter-details/ab2b4ff41d6ebe0f
 Markus Perez,"6' 1""",185 lbs.,"73.0""",Orthodox,1988-06-22,12,5,0,2.6,47%,3.72,52%,0.81,25%,77%,1.0,http://ufcstats.com/fighter-details/2ac4628c08ec5125
 Ailin Perez,"5' 5""",135 lbs.,"66.0""",Switch,1994-10-05,14,2,0,2.82,54%,1.79,56%,4.34,45%,66%,0.1,http://ufcstats.com/fighter-details/06e4245d16fc5315
+Cristian Perez,"5' 9""",155 lbs.,"72.0""",Orthodox,1999-08-17,16,2,0,3.73,46%,4.71,38%,2.3,30%,87%,0.8,http://ufcstats.com/fighter-details/d84033157714ee94
 Rafael Pergentino,"6' 1""",205 lbs.,"76.0""",Orthodox,2002-01-08,5,1,0,0.0,0%,32.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/8d3b4a630b1bf1e6
 Brando Pericic,"6' 5""",245 lbs.,"79.0""",Orthodox,1994-08-03,7,1,0,11.0,57%,4.26,58%,0.0,0%,71%,0.0,http://ufcstats.com/fighter-details/d0fd0d9ee560dae7
 Anthony Perosh,"6' 3""",205 lbs.,"75.0""",Orthodox,1972-10-05,15,10,0,2.27,43%,3.77,53%,2.03,22%,33%,1.1,http://ufcstats.com/fighter-details/4b4753d19489297f
@@ -3262,7 +3269,6 @@ Adam Piccolotti,"5' 11""",155 lbs.,,,1988-10-23,9,0,0,4.61,50%,2.83,71%,2.96,60%
 Vinc Pichel,"5' 10""",155 lbs.,"72.0""",Orthodox,1982-11-23,14,5,0,3.78,46%,3.17,54%,2.5,51%,31%,0.2,http://ufcstats.com/fighter-details/c77a953488e5607d
 Brad Pickett,"5' 6""",135 lbs.,"68.0""",Orthodox,1978-09-24,25,14,0,3.02,31%,4.63,55%,2.47,44%,58%,0.4,http://ufcstats.com/fighter-details/c945adc22c2bfe8f
 Jamie Pickett,"6' 2""",185 lbs.,"80.0""",Orthodox,1988-08-29,13,11,0,2.65,47%,3.62,50%,1.26,40%,67%,0.1,http://ufcstats.com/fighter-details/830f60497fab345a
-Aaron Pico,"5' 8""",145 lbs.,"70.0""",Orthodox,1996-09-23,14,5,0,6.16,53%,3.11,45%,6.54,50%,0%,0.0,http://ufcstats.com/fighter-details/5537efc6e496dd84
 Fabiola Pidroni,,115 lbs.,,,1994-01-04,5,0,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/9561eb5f0d63ffcc
 Oskar Piechota,"6' 0""",185 lbs.,"76.0""",Southpaw,1990-01-24,11,3,1,3.3,52%,3.93,51%,0.61,40%,38%,1.5,http://ufcstats.com/fighter-details/1cf7ccf64a5bf24e
 Nick Piedmont,"5' 10""",145 lbs.,,,,12,7,1,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/df7d386a54e07446
@@ -3418,8 +3424,8 @@ Marion Reneau,"5' 6""",135 lbs.,"68.0""",Orthodox,1977-06-20,9,8,1,3.2,41%,3.52,
 Solomon Renfro,"5' 9""",170 lbs.,"72.0""",Switch,1997-02-05,8,2,0,5.2,44%,3.53,61%,2.0,50%,100%,0.0,http://ufcstats.com/fighter-details/ce6b5b93a96dd15b
 John Renken,"6' 0""",190 lbs.,,Orthodox,1972-12-31,18,28,4,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/1507214bbc7a79e2
 Herman Renting,"6' 0""",215 lbs.,,Switch,1968-12-31,1,3,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/f57cf3d54a641385
+Will Rentz,"6' 0""",170 lbs.,"71.0""",Orthodox,1999-03-19,8,3,0,1.3,42%,6.96,30%,6.52,25%,0%,0.0,http://ufcstats.com/fighter-details/bfb58d214212127b
 Marco Polo Reyes,"5' 11""",155 lbs.,"71.0""",Orthodox,1984-11-07,8,7,0,6.0,37%,5.52,59%,0.0,0%,46%,0.0,http://ufcstats.com/fighter-details/edd02825c29028fe
-Dominick Reyes,"6' 4""",205 lbs.,"77.0""",Southpaw,1989-12-26,16,5,0,4.99,53%,3.4,49%,0.25,28%,82%,0.2,http://ufcstats.com/fighter-details/2e19380f34871c6a
 Alex Reyes,"5' 11""",155 lbs.,"73.0""",Orthodox,1986-10-02,13,5,0,4.46,46%,6.92,48%,1.5,28%,0%,0.0,http://ufcstats.com/fighter-details/dc07493a87dc0a6e
 Kyle Reyes,"5' 8""",145 lbs.,,,,15,7,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/7333d6e0f6428acb
 Javier Reyes,"5' 7""",145 lbs.,"73.0""",Orthodox,1993-10-13,23,6,0,6.28,47%,3.06,41%,1.27,50%,50%,0.0,http://ufcstats.com/fighter-details/4a574b8512fc1b30
@@ -3567,7 +3573,6 @@ Ronda Rousey,"5' 7""",135 lbs.,"66.0""",Orthodox,1987-02-01,12,2,0,4.17,52%,4.14
 Ray Routh,"5' 8""",185 lbs.,,Orthodox,,2,1,0,0.54,21%,3.22,28%,2.69,33%,0%,0.0,http://ufcstats.com/fighter-details/cba3a2dfbc06ce79
 Roberta Rovel,"5' 8""",145 lbs.,,,,4,1,0,0.87,46%,3.0,26%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/9d7fbf438766791f
 Phil Rowe,"6' 3""",170 lbs.,"80.0""",Orthodox,1990-07-18,11,7,0,3.51,49%,4.15,50%,0.46,36%,53%,0.2,http://ufcstats.com/fighter-details/8e382b585a92affe
-Cam Rowston,"6' 3""",185 lbs.,"78.0""",Orthodox,1995-01-19,15,3,0,4.6,48%,2.12,52%,1.34,44%,33%,0.3,http://ufcstats.com/fighter-details/8ebc3a8da015d70c
 Kain Royer,,185 lbs.,,,,2,2,0,0.0,0%,1.63,14%,0.0,0%,0%,4.1,http://ufcstats.com/fighter-details/712aa894b3a344df
 Brad Royster,,135 lbs.,,,,1,2,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/09f8c233de88998d
 Brandon Royval,"5' 9""",125 lbs.,"68.0""",Southpaw,1992-08-16,18,9,0,5.6,42%,4.24,42%,0.89,64%,45%,1.2,http://ufcstats.com/fighter-details/6e15f63b6c2e2c15
@@ -3687,7 +3692,6 @@ Yana Santos,"5' 6""",135 lbs.,"68.0""",Orthodox,1989-11-11,17,8,0,4.41,57%,3.12,
 Taila Santos,"5' 6""",125 lbs.,"68.0""",Orthodox,1993-06-22,19,3,0,3.39,48%,2.64,58%,2.0,76%,86%,1.1,http://ufcstats.com/fighter-details/f7467152fd9f18a2
 Marilia Santos,"5' 4""",125 lbs.,,Orthodox,1992-12-12,10,3,0,4.4,54%,4.07,53%,1.0,100%,66%,1.0,http://ufcstats.com/fighter-details/4cb79988b2a9bd07
 Edivan Santos,"6' 4""",248 lbs.,"78.0""",Orthodox,1992-05-03,12,3,1,1.55,48%,7.09,26%,0.0,0%,25%,0.0,http://ufcstats.com/fighter-details/78719f6663ad9160
-Daniel Santos,"5' 7""",145 lbs.,"67.0""",Orthodox,1995-03-12,14,3,0,5.15,40%,5.38,50%,2.6,33%,73%,0.0,http://ufcstats.com/fighter-details/b67d6bacc68d4c92
 Gabriel Santos,"5' 9""",145 lbs.,"70.0""",Orthodox,1996-11-28,12,2,0,4.35,60%,4.31,45%,3.8,54%,87%,1.2,http://ufcstats.com/fighter-details/f2f140ce7532e327
 Luana Santos,"5' 6""",135 lbs.,"67.0""",Orthodox,2000-04-16,11,2,0,2.53,53%,2.45,64%,2.14,37%,85%,1.0,http://ufcstats.com/fighter-details/5078e1dacf9d25f4
 Djorden Santos,"6' 0""",185 lbs.,"75.0""",Orthodox,1997-08-01,11,4,0,6.43,42%,6.63,48%,0.47,28%,85%,0.0,http://ufcstats.com/fighter-details/312f7d7b2b2f7de4
@@ -4006,7 +4010,6 @@ Damian Stasiak,"5' 5""",135 lbs.,"70.0""",Orthodox,1990-02-20,10,6,0,1.86,36%,3.
 Adam Steele,,170 lbs.,,,,0,1,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/16044bd8762cf794
 Dominique Steele,"5' 10""",170 lbs.,"74.0""",Orthodox,1988-01-27,14,9,0,2.32,49%,2.42,50%,2.95,42%,76%,0.0,http://ufcstats.com/fighter-details/68c11c27d4d56572
 Ricky Steele,"5' 9""",135 lbs.,"74.0""",Orthodox,1988-05-26,6,0,0,4.07,70%,2.93,50%,0.0,0%,91%,0.0,http://ufcstats.com/fighter-details/09a6ed4ee97a5606
-Kody Steele,"5' 9""",155 lbs.,"71.0""",Orthodox,1995-04-21,8,1,0,3.85,32%,6.2,52%,1.07,25%,100%,0.5,http://ufcstats.com/fighter-details/aebaa8cec15b083d
 Eric Steenberg,,155 lbs.,,,1983-06-22,5,1,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/377bc9dc0b2745f9
 Steve Steinbeiss,"6' 3""",185 lbs.,"75.0""",Orthodox,1981-05-05,9,4,0,3.92,55%,1.86,49%,0.44,50%,58%,0.0,http://ufcstats.com/fighter-details/0b5b6876c2a4723f
 Ray Steinbeiss,"5' 11""",170 lbs.,,Orthodox,1979-09-12,14,7,0,0.0,0%,0.0,100%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/6000b5ae6c462142
@@ -4021,6 +4024,7 @@ Luke Stewart,"5' 11""",170 lbs.,,Orthodox,,6,3,0,3.75,56%,2.34,53%,3.75,33%,50%,
 Darren Stewart,"6' 0""",205 lbs.,"74.0""",Orthodox,1990-12-30,12,8,0,3.05,45%,3.29,48%,1.75,45%,67%,0.1,http://ufcstats.com/fighter-details/a17ad5a5048e8c3f
 Kyle Stewart,"6' 0""",170 lbs.,"76.0""",Orthodox,1989-01-31,11,3,0,1.41,35%,2.42,43%,1.32,20%,60%,0.0,http://ufcstats.com/fighter-details/bb61823f76361297
 Alex Stiebling,"6' 2""",205 lbs.,,Southpaw,1976-12-26,19,11,1,1.77,42%,1.45,52%,0.35,66%,66%,0.7,http://ufcstats.com/fighter-details/df5a77121ba84a5d
+Mackenzie Stiller,"5' 2""",125 lbs.,"62.0""",Orthodox,1999-07-15,6,2,0,3.99,32%,6.71,54%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/55896e25df067f9d
 Tyler Stinson,"6' 3""",170 lbs.,,,1986-01-17,30,10,0,2.8,23%,4.6,56%,0.5,100%,0%,0.5,http://ufcstats.com/fighter-details/2cf520143e76cd2e
 Navajo Stirling,"6' 4""",205 lbs.,"79.0""",Orthodox,1997-11-07,11,0,0,6.47,55%,2.56,58%,0.82,25%,71%,0.0,http://ufcstats.com/fighter-details/b4b496ec2197ee3e
 Dan Stittgen,"6' 1""",170 lbs.,,Orthodox,1980-11-17,12,5,0,2.97,46%,4.42,37%,0.78,100%,100%,0.0,http://ufcstats.com/fighter-details/cc3147b49c7d7d92
@@ -4063,6 +4067,7 @@ Amar Suloev,"5' 9""",183 lbs.,,Orthodox,1976-07-01,24,7,0,1.98,37%,2.19,70%,0.27
 Magomed Sultanakhmedov,"6' 2""",185 lbs.,,Southpaw,1984-05-11,18,6,0,0.0,0%,2.4,42%,9.0,100%,0%,9.0,http://ufcstats.com/fighter-details/fe1fdc6be470f773
 Justin Sumter,"6' 2""",185 lbs.,"80.0""",Southpaw,1989-11-16,7,3,0,2.68,48%,7.64,34%,2.87,100%,0%,0.0,http://ufcstats.com/fighter-details/31f9a1f56cbb6ac5
 Sumudaerji,"5' 8""",125 lbs.,"72.0""",Southpaw,1996-01-20,20,7,0,4.21,50%,2.1,64%,0.68,33%,70%,0.5,http://ufcstats.com/fighter-details/3cf18e01cb6cbde3
+Smilla Sundell,"5' 10""",135 lbs.,"69.0""",Orthodox,2004-11-12,3,0,0,7.07,29%,5.67,55%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/b6a871a01c66438a
 Rama Supandhi,"5' 5""",125 lbs.,"66.0""",Southpaw,1991-11-07,8,4,0,2.2,42%,3.53,48%,1.0,11%,0%,0.0,http://ufcstats.com/fighter-details/6d537248fe7cccf1
 Aji Susilo,"5' 10""",155 lbs.,,,,6,4,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/22af3546bd967280
 Baisangur Susurkaev,"6' 2""",185 lbs.,"79.0""",Orthodox,2001-01-08,12,0,0,5.74,54%,4.45,58%,2.09,26%,100%,0.8,http://ufcstats.com/fighter-details/d1feea7a4bdcd503
@@ -4084,7 +4089,7 @@ Kevin Syler,"5' 9""",155 lbs.,"71.0""",Switch,1993-07-29,10,1,0,5.6,69%,4.03,48%
 Leo Sylvest,"5' 11""",205 lbs.,,Orthodox,1973-09-03,10,16,0,0.0,0%,6.58,27%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/58a36b4ccf5dc30e
 Tony Sylvester,"6' 1""",225 lbs.,,Southpaw,1978-01-27,11,3,0,0.0,0%,10.12,12%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/87b7df65c30008c4
 Tim Sylvia,"6' 8""",265 lbs.,"80.0""",Orthodox,1976-03-05,31,10,0,4.23,41%,2.61,61%,0.11,100%,75%,0.1,http://ufcstats.com/fighter-details/2a542ee8a8b83559
-Lucia Szabova,,135 lbs.,,,1997-12-23,12,0,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/184f6ec4ee712e9f
+Lucia Szabova,,135 lbs.,,Orthodox,1997-12-23,12,0,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/184f6ec4ee712e9f
 Kevin Szaflarski,"6' 5""",260 lbs.,"77.0""",Orthodox,1994-12-30,11,2,0,1.13,28%,8.07,30%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/d2d05dda5f887f87
 Sebastian Szalay,"5' 6""",145 lbs.,"66.0""",Orthodox,1994-02-03,10,2,0,4.94,41%,2.2,65%,0.51,20%,84%,0.0,http://ufcstats.com/fighter-details/f201f21cf2c79eb2
 Bartosz Szewczyk,"6' 4""",205 lbs.,"73.0""",Orthodox,1997-09-18,8,3,1,2.7,33%,3.52,47%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/224050896306f00c
@@ -4147,7 +4152,6 @@ John Teixeira,"5' 7""",145 lbs.,,Orthodox,1986-11-18,21,2,2,3.36,35%,3.2,63%,1.0
 Ewerton Teixeira,"6' 1""",242 lbs.,,,1982-02-13,3,1,0,2.0,39%,3.22,35%,0.0,0%,33%,0.0,http://ufcstats.com/fighter-details/de9e331b3e6bae70
 Tallison Teixeira,"6' 7""",258 lbs.,"83.0""",Orthodox,1999-12-07,9,2,0,4.85,62%,4.1,41%,2.4,30%,0%,0.0,http://ufcstats.com/fighter-details/17923f676f100e16
 Tra Telligman,"6' 2""",233 lbs.,,Orthodox,1965-02-07,7,5,1,1.83,35%,3.02,56%,0.87,100%,80%,0.0,http://ufcstats.com/fighter-details/1dab0d1d81dd06db
-Ramazan Temirov,"5' 4""",125 lbs.,"63.0""",Orthodox,1997-01-31,20,3,0,4.73,41%,3.65,62%,0.68,50%,100%,0.0,http://ufcstats.com/fighter-details/7d0a1968b38ca439
 Taneisha Tennant,"5' 7""",145 lbs.,"70.0""",Orthodox,1989-06-15,5,1,0,5.67,55%,3.4,71%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/87911d22a79d3203
 Herman Terrado,,170 lbs.,,,1989-09-27,15,3,1,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/61d6368013f8637f
 Dave Terrel,"5' 8""",170 lbs.,,Southpaw,1978-05-10,7,7,0,2.62,43%,2.8,48%,3.28,38%,100%,0.0,http://ufcstats.com/fighter-details/b9aa0024f295609e
@@ -4163,7 +4167,6 @@ Brandon Thatch,"6' 2""",170 lbs.,"74.0""",Switch,1985-07-11,11,5,0,2.7,42%,3.63,
 Elias Theodorou,"6' 1""",185 lbs.,"75.0""",Orthodox,1988-05-31,16,3,0,4.19,42%,2.39,53%,1.27,28%,59%,0.0,http://ufcstats.com/fighter-details/34f88592c0ab7a54
 Nik Theotikos,,185 lbs.,,Orthodox,,6,2,0,0.0,0%,5.48,19%,0.0,0%,0%,4.8,http://ufcstats.com/fighter-details/ca936c67687789e9
 Paulo Thiago,"5' 11""",170 lbs.,"74.0""",Orthodox,1981-01-25,18,9,0,1.71,39%,1.99,63%,1.42,31%,63%,1.2,http://ufcstats.com/fighter-details/30a09e43f15f1d75
-Colby Thicknesse,"5' 7""",135 lbs.,"69.0""",Orthodox,1999-06-23,9,1,0,3.24,41%,2.93,54%,0.67,7%,33%,1.7,http://ufcstats.com/fighter-details/ed7d329d7c29428d
 Din Thomas,"5' 9""",155 lbs.,,Orthodox,1976-09-28,26,9,0,1.85,37%,2.6,59%,1.38,52%,76%,1.2,http://ufcstats.com/fighter-details/40a604761ca7d64d
 Ryan Thomas,"6' 0""",170 lbs.,,Orthodox,1984-11-05,20,8,0,2.01,36%,4.17,30%,5.59,33%,0%,2.2,http://ufcstats.com/fighter-details/b732b326c362fb62
 Noah Thomas,"5' 9""",135 lbs.,,Orthodox,1981-03-27,14,7,0,0.44,13%,4.99,33%,0.0,0%,0%,1.3,http://ufcstats.com/fighter-details/319c15b8aac5bfde
@@ -4280,7 +4283,6 @@ Mohammed Usman,"6' 2""",239 lbs.,"79.0""",Orthodox,1989-04-01,12,4,0,3.85,39%,4.
 Darren Uyenoyama,"5' 6""",125 lbs.,"65.0""",Orthodox,1979-10-15,10,6,0,1.34,39%,2.21,66%,1.42,33%,35%,0.7,http://ufcstats.com/fighter-details/6546af7ab545b90c
 Richie Vaculik,"5' 6""",125 lbs.,"69.0""",Orthodox,1983-06-19,10,4,0,3.69,46%,4.09,57%,3.0,45%,31%,1.0,http://ufcstats.com/fighter-details/54578e5927adea53
 Rashid Vagabov,"5' 7""",125 lbs.,"63.0""",Orthodox,1998-06-27,14,2,0,1.87,38%,0.93,67%,3.0,50%,100%,3.0,http://ufcstats.com/fighter-details/0d1190beced94f7c
-Abubakar Vagaev,"5' 11""",170 lbs.,"73.0""",Orthodox,1993-04-14,25,4,0,1.8,38%,2.2,60%,4.0,40%,71%,0.0,http://ufcstats.com/fighter-details/f7adc1fd115f8fdd
 Artem Vakhitov,"6' 1""",205 lbs.,"75.0""",Orthodox,1991-04-04,3,1,0,3.88,85%,0.68,80%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/43e549b803ec7375
 Egidijus Valavicius,"6' 0""",200 lbs.,,Orthodox,1978-12-23,29,12,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/fc1868f56d3036eb
 Genaro Valdez,"5' 9""",155 lbs.,"72.0""",Orthodox,1992-01-16,10,3,0,4.08,30%,7.16,48%,1.54,44%,36%,0.4,http://ufcstats.com/fighter-details/cda1099995b46cc2
@@ -4364,15 +4366,14 @@ Danillo Villefort,"6' 1""",185 lbs.,,Orthodox,1983-05-08,15,5,0,2.86,37%,2.4,68%
 Yuri Villefort,"6' 0""",170 lbs.,"73.0""",Orthodox,1991-03-23,10,5,0,3.18,43%,5.42,55%,2.0,35%,40%,0.3,http://ufcstats.com/fighter-details/0fb1e2694a39a02f
 Tre'ston Vines,"6' 0""",185 lbs.,"79.0""",Orthodox,1996-06-18,10,4,1,0.78,50%,1.68,48%,5.39,40%,28%,0.0,http://ufcstats.com/fighter-details/563a1d42bb0e3cef
 Marcos Vinicius,"5' 9""",125 lbs.,,Orthodox,1979-12-05,23,11,1,1.93,49%,2.91,47%,0.0,0%,25%,0.5,http://ufcstats.com/fighter-details/e363b21261814830
+Erick Visconde,"5' 6""",145 lbs.,"65.0""",Switch,1996-11-21,18,3,0,2.4,54%,1.6,40%,9.0,64%,0%,2.0,http://ufcstats.com/fighter-details/65ff41ab071ab326
 Brandon Visher,"5' 6""",135 lbs.,"68.0""",Orthodox,1984-05-06,13,3,0,2.55,45%,3.76,42%,0.67,20%,0%,0.0,http://ufcstats.com/fighter-details/7c4ec656d8fcb867
 Falaniko Vitale,"5' 10""",185 lbs.,,Orthodox,1974-07-14,30,11,0,1.88,49%,3.68,47%,0.72,33%,86%,0.0,http://ufcstats.com/fighter-details/445a98acb8985970
 Cheyanne Vlismas,"5' 3""",115 lbs.,"63.0""",Switch,1995-06-25,7,3,0,4.93,50%,2.57,64%,0.25,33%,66%,0.2,http://ufcstats.com/fighter-details/4959f10a62f3fec3
 Bobby Voelker,"6' 0""",170 lbs.,"74.0""",Orthodox,1979-04-26,19,13,0,4.01,35%,5.84,42%,1.04,50%,66%,0.0,http://ufcstats.com/fighter-details/fb8a3025ae722e64
 Mateo Vogel,"5' 8""",145 lbs.,"71.0""",Orthodox,1996-03-05,8,3,0,4.47,46%,2.87,65%,1.0,16%,0%,0.0,http://ufcstats.com/fighter-details/90b57b19d20e1969
 Danylo Voievodkin,"6' 4""",265 lbs.,"78.0""",Southpaw,2000-07-19,7,0,0,9.86,46%,0.0,100%,0.0,0%,0%,12.3,http://ufcstats.com/fighter-details/d73a7c36746fbc5b
-Alexander Volkanovski,"5' 6""",145 lbs.,"71.0""",Orthodox,1988-09-29,28,4,0,5.99,57%,3.31,58%,1.63,34%,68%,0.2,http://ufcstats.com/fighter-details/e1248941344b3288
 Jacob Volkmann,"5' 9""",155 lbs.,"71.0""",Southpaw,1980-09-05,19,7,0,1.19,34%,1.78,52%,3.19,48%,52%,2.0,http://ufcstats.com/fighter-details/6f81b6de2557739a
-Alexander Volkov,"6' 7""",250 lbs.,"80.0""",Orthodox,1988-10-24,40,11,0,4.84,57%,2.9,54%,0.54,62%,68%,0.2,http://ufcstats.com/fighter-details/279566840aa55bf2
 Mark Vologdin,"5' 3""",135 lbs.,"65.0""",Orthodox,2000-04-18,12,5,2,5.56,45%,7.93,45%,1.33,26%,50%,0.0,http://ufcstats.com/fighter-details/0e6b611451a9a7d8
 Jason Von Flue,"6' 0""",170 lbs.,,Orthodox,1975-08-01,14,12,1,1.89,36%,3.23,52%,0.62,16%,58%,1.5,http://ufcstats.com/fighter-details/c4b9296214f4c09c
 Milco Voorn,,220 lbs.,,Orthodox,,20,11,1,0.0,0%,0.0,100%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/277ffed20cf07aea
@@ -4533,7 +4534,6 @@ Jamie Yager,"6' 1""",185 lbs.,,Orthodox,1983-11-29,8,4,0,3.08,39%,2.55,63%,0.0,0
 Eddie Yagin,"5' 7""",145 lbs.,,Orthodox,1979-03-23,16,7,1,3.13,30%,5.77,42%,0.0,0%,62%,1.0,http://ufcstats.com/fighter-details/cc84b68f862b466f
 Rani Yahya,"5' 6""",135 lbs.,"67.0""",Orthodox,1984-09-12,28,12,1,1.71,38%,2.08,50%,2.73,30%,29%,1.8,http://ufcstats.com/fighter-details/94527830000ab715
 Mohammad Yahya,"5' 9""",145 lbs.,"73.0""",Switch,1994-05-23,12,6,0,3.5,39%,6.39,43%,0.5,20%,42%,0.5,http://ufcstats.com/fighter-details/3753714927f18437
-Abdul Rakhman Yakhyaev,"6' 2""",205 lbs.,"78.0""",Orthodox,2001-01-03,10,0,0,8.64,68%,2.22,59%,11.11,75%,100%,7.4,http://ufcstats.com/fighter-details/95aff2fd8d09a5f0
 Alexander Yakovlev,"6' 3""",155 lbs.,"74.0""",Southpaw,1984-07-18,24,10,1,1.74,47%,2.41,58%,1.66,35%,72%,0.1,http://ufcstats.com/fighter-details/d06f8869449ba7bd
 Keiichiro Yamamiya,"5' 11""",185 lbs.,,Southpaw,1972-07-12,45,35,10,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/6014d25e73b669c9
 Kenichi Yamamoto,"6' 0""",170 lbs.,,Orthodox,1976-07-11,5,12,2,0.3,46%,1.93,38%,0.0,0%,10%,0.3,http://ufcstats.com/fighter-details/9f488f520ed25bbf
@@ -4545,7 +4545,6 @@ Goiti Yamauchi,"5' 10""",145 lbs.,,,1993-01-05,21,3,0,1.66,54%,1.01,66%,0.0,0%,0
 Wataru Yamauchi,"5' 6""",125 lbs.,"68.0""",Orthodox,1999-06-22,7,2,0,4.01,52%,3.57,62%,0.0,0%,66%,0.0,http://ufcstats.com/fighter-details/d8bf3df51ff3a270
 Takeshi Yamazaki,"5' 8""",139 lbs.,,Southpaw,1977-05-25,15,12,3,0.57,25%,1.57,47%,4.5,50%,100%,1.0,http://ufcstats.com/fighter-details/d1d20e651e6cbc02
 Yan Xiaonan,"5' 5""",115 lbs.,"63.0""",Orthodox,1989-06-16,19,6,0,4.67,44%,3.24,60%,0.82,73%,64%,0.0,http://ufcstats.com/fighter-details/c41d426cc7326d1b
-Petr Yan,"5' 7""",135 lbs.,"67.0""",Switch,1993-02-11,20,5,0,5.16,54%,4.24,59%,1.7,49%,86%,0.1,http://ufcstats.com/fighter-details/d661ce4da776fc20
 Yan Qihui,"5' 3""",125 lbs.,"62.0""",Orthodox,1996-10-21,25,5,0,4.38,46%,5.06,54%,3.68,69%,62%,0.0,http://ufcstats.com/fighter-details/5c9c2e247c836b67
 Yuito Yanagawa,"5' 8""",145 lbs.,"68.0""",Orthodox,2000-10-16,8,2,0,0.3,33%,3.32,42%,0.0,0%,100%,4.5,http://ufcstats.com/fighter-details/7c592bf20095fd17
 Adam Yandiev,"5' 9""",185 lbs.,"74.0""",Orthodox,1988-08-07,9,1,0,0.18,8%,6.14,36%,0.0,0%,25%,0.0,http://ufcstats.com/fighter-details/0a95c474e61a6c44
@@ -4573,6 +4572,7 @@ ChangMin Yoon,"5' 8""",145 lbs.,"70.0""",Orthodox,1994-05-10,8,3,1,5.7,48%,2.15,
 Yoshiyuki Yoshida,"5' 11""",170 lbs.,"70.0""",Southpaw,1974-05-10,18,9,0,0.85,36%,3.67,36%,1.41,28%,25%,2.8,http://ufcstats.com/fighter-details/ab8900ae1f1dfd4c
 Hidehiko Yoshida,"5' 11""",225 lbs.,,Orthodox,1969-09-03,6,8,1,1.05,36%,1.89,62%,1.09,33%,71%,2.2,http://ufcstats.com/fighter-details/2eae41f61776c60f
 Kai Yoshida,"5' 9""",125 lbs.,"69.0""",Southpaw,1999-10-10,6,2,0,4.32,50%,4.96,54%,0.0,0%,100%,0.0,http://ufcstats.com/fighter-details/2e517966267a468a
+SuYoung You,"5' 6""",135 lbs.,"65.0""",Orthodox,1995-12-11,17,4,0,1.88,47%,1.72,68%,4.56,51%,66%,0.5,http://ufcstats.com/fighter-details/a474aade8eb3a8f0
 Kaitlin Young,"5' 9""",135 lbs.,,Orthodox,1985-09-15,7,9,1,2.83,26%,6.33,51%,2.5,100%,0%,0.0,http://ufcstats.com/fighter-details/79ff6545b0abc685
 Artenus Young,,205 lbs.,,,1980-07-16,10,12,0,0.0,0%,0.0,0%,0.0,0%,0%,0.0,http://ufcstats.com/fighter-details/8d4943a9ce9f521b
 Trenell Young,"5' 6""",145 lbs.,,Orthodox,1976-06-19,11,9,0,1.43,22%,5.13,50%,1.13,20%,0%,1.1,http://ufcstats.com/fighter-details/bf5183e1c1afc3b2
